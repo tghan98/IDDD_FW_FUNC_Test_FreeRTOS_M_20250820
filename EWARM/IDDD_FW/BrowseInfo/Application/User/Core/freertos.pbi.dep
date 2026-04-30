@@ -1,0 +1,71 @@
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\BrowseInfo\Application\User\Core\freertos.pbi: \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\Core\Src\freertos.c \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\FreeRTOS.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stddef.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Full.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ysizet.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdint.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Core\Inc\FreeRTOSConfig.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\projdefs.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\portable.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\deprecated_definitions.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\portable\IAR\ARM_CM0\portmacro.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\mpu_wrappers.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\task.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\list.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Core\Inc\main.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Core\Inc\stm32u0xx_hal_conf.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_rcc.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_def.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\CMSIS\Device\ST\STM32U0xx\Include\stm32u0xx.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\CMSIS\Device\ST\STM32U0xx\Include\stm32u031xx.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\CMSIS\Include\core_cm0plus.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\CMSIS\Include\cmsis_version.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\CMSIS\Include\cmsis_compiler.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\CMSIS\Include\cmsis_iccarm.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\aarch32\iccarm_builtin.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\CMSIS\Include\mpu_armv7.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\CMSIS\Device\ST\STM32U0xx\Include\system_stm32u0xx.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_rcc_ex.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_gpio.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_gpio_ex.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_dma.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_ll_dma.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_ll_dmamux.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_dma_ex.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_cortex.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_adc.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_ll_adc.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_adc_ex.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_adc_ex.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_dac.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_dac_ex.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_exti.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_flash.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_flash_ex.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_i2c.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_i2c_ex.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_pwr.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_pwr_ex.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_tim.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_tim_ex.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_uart.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Drivers\STM32U0xx_HAL_Driver\Inc\stm32u0xx_hal_uart_ex.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\timers.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\task.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\queue.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\semphr.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\queue.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\event_groups.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\timers.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\USER\L0_Common\Rework_PP_Drv.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\USER\L0_Common\hsDebug_MSG.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\USER\L0_Common\hsCommon_Utill.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\USER\L0_Common\hsGlobalErrorHandle.h \
+  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\USER\L1_Drive\L1_00_HW\Common_HAL.h

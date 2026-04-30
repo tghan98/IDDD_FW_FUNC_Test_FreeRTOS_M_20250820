@@ -1,0 +1,1495 @@
+###############################################################################
+#
+# IAR ELF Linker V9.20.4.327/W64 for ARM                  11/Sep/2025  15:01:29
+# Copyright 2007-2022 IAR Systems AB.
+#
+#    Output file  =
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Exe\IDDD_FW.out
+#    Map file     =
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\List\IDDD_FW.map
+#    Command line =
+#        -f
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Exe\IDDD_FW.out.rsp
+#        (D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_03_BoTnLE525_Drv\BoTnLE525BLE_Drv.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_03_BoTnLE525_Drv\BoTnLE525BLE_Port.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_00_HW\Common_HAL.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\croutine.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_03_IDDD_Display_App\Display_Application.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_03_IDDD_Display_Interface\Display_Interface.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\event_groups.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\freertos.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_00_FreeRTOS_Plus_CLI\FreeRTOS_CLI.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\freertos_hooks.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\MemMang\heap_4.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_00_hsDEBUG_USART_CLI_App\hsCLI_Command.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common\hsCommon_Utill.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_01_hsDBA_Module\hsDataBlockAccess_Module.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common\hsDebug_MSG.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_00_hsDEBUG_USART_CLI_App\hsDEBUG_UART_CLI_App.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_00_EEPROM\hsEEPROM_Drv.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common\hsGlobalErrorHandle.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_02_Key_Module\hsKey_Module.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_01_IDDD_TRF\IDDD_ADC_SCAN_Drv.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_02_IDDD_BAT_ACD\IDDD_BAT_ADC_Drv.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_00_IDDD_DBA_Interface\IDDD_DBA_RAM_Interface.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_00_IDDD_DBA_Interface\IDDD_DBA_ROM_Interface.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_01_IDDD_TRF\IDDD_LED_CTRL_Drv.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_01_IDDD_RunCommand_Interface\IDDD_RunCmd_TRF_Interface.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_01_IDDD_RunCommand_App\IDDD_RunCommand_App.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_01_IDDD_RunCommand_Interface\IDDD_RunCommand_Interface.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_01_IDDD_TRF\IDDD_TRF_Timer_CTRL.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\list.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\main.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_02_IDDD_Main_Communication_App\Main_Communication_App.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\IAR\port.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_00_hsDEBUG_USART_CLI_App\port_hsDEBUG_UART_CLI_App.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_00_EEPROM\port_hsEEPROM_Drv.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\IAR\portasm.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\queue.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common\Rework_PP_Drv.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\EWARM\startup_stm32u031xx.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_adc.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_adc_ex.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_cortex.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_dac.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_dac_ex.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_dma.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_dma_ex.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_exti.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_flash.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_flash_ex.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_gpio.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_i2c.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_i2c_ex.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\stm32u0xx_hal_msp.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_pwr.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_pwr_ex.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_rcc.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_rcc_ex.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_tim.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_tim_ex.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\stm32u0xx_hal_timebase_tim.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_uart.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_uart_ex.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\stm32u0xx_it.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_ll_adc.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_ll_i2c.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\stream_buffer.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\CMSIS\system_stm32u0xx.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\tasks.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\timers.o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\User_Main.o
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --no_out_extension -o
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Exe\IDDD_FW.out
+#        --map
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\List\IDDD_FW.map
+#        --config
+#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\stm32u031xx_flash.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x800'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'2fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0xc0
+  .intvec            ro code   0x800'0000    0xc0  startup_stm32u031xx.o [1]
+                             - 0x800'00c0    0xc0
+
+"P1":                                      0xbfcc
+  .text              ro code   0x800'00c0  0x1474  stm32u0xx_hal_uart.o [4]
+  .text              ro code   0x800'1534   0x4ac  stm32u0xx_hal_msp.o [2]
+  .text              ro code   0x800'19e0   0x4a4  stm32u0xx_hal_dma.o [4]
+  .text              ro code   0x800'1e84     0x2  stm32u0xx_hal_uart.o [4]
+  .text              ro code   0x800'1e86     0x2  stm32u0xx_hal_uart.o [4]
+  .text              ro code   0x800'1e88     0x2  stm32u0xx_hal_uart.o [4]
+  .text              ro code   0x800'1e8a     0x2  stm32u0xx_hal_uart_ex.o [4]
+  .text              ro code   0x800'1e8c     0x2  stm32u0xx_hal_uart_ex.o [4]
+  .text              ro code   0x800'1e8e     0x2  stm32u0xx_hal_uart_ex.o [4]
+  .text              ro code   0x800'1e90   0x7e4  stm32u0xx_hal_rcc_ex.o [4]
+  .text              ro code   0x800'2674    0xe0  I32DivModFast.o [27]
+  .text              ro code   0x800'2754    0x32  I64Mul.o [27]
+  .text              ro code   0x800'2786    0x7c  I64DivMod.o [27]
+  .text              ro code   0x800'2802    0x7e  lz77_init_single.o [27]
+  .text              ro code   0x800'2880   0x5e2  Common_HAL.o [10]
+  .text              ro code   0x800'2e62     0x2  stm32u0xx_hal_uart.o [4]
+  .text              ro code   0x800'2e64    0x14  memset.o [27]
+  .text              ro code   0x800'2e78   0x5f2  main.o [2]
+  .rodata            const     0x800'346a     0x2  xlocale_c.o [25]
+  .text              ro code   0x800'346c   0x360  stm32u0xx_hal_gpio.o [4]
+  .text              ro code   0x800'37cc    0xf0  stm32u0xx_hal_cortex.o [4]
+  .text              ro code   0x800'38bc   0x894  stm32u0xx_hal_rcc.o [4]
+  .text              ro code   0x800'4150     0x2  IntDivZer.o [27]
+  .rodata            const     0x800'4152     0x2  xlocale_c.o [25]
+  .text              ro code   0x800'4154     0x2  I64DivZer.o [27]
+  .text              ro code   0x800'4156     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'4158    0x74  Rework_PP_Drv.o [9]
+  .text              ro code   0x800'41cc    0xbc  hsGlobalErrorHandle.o [9]
+  .text              ro code   0x800'4288   0x228  stm32u0xx_hal_dac.o [4]
+  .text              ro code   0x800'44b0    0x4e  ABImemset.o [27]
+  .text              ro code   0x800'44fe     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'4500    0x1c  stm32u0xx_hal.o [4]
+  .text              ro code   0x800'451c   0x124  User_Main.o [8]
+  .text              ro code   0x800'4640   0xca0  tasks.o [5]
+  .text              ro code   0x800'52e0    0x94  stm32u0xx_hal_pwr_ex.o [4]
+  .text              ro code   0x800'5374   0x91c  stm32u0xx_hal_adc.o [4]
+  .text              ro code   0x800'5c90   0x1d8  stm32u0xx_hal_dac_ex.o [4]
+  .text              ro code   0x800'5e68   0x824  stm32u0xx_hal_i2c.o [4]
+  .text              ro code   0x800'668c    0xcc  stm32u0xx_hal_i2c_ex.o [4]
+  .text              ro code   0x800'6758   0x8d8  stm32u0xx_hal_tim.o [4]
+  .text              ro code   0x800'7030    0x88  stm32u0xx_hal_tim_ex.o [4]
+  .text              ro code   0x800'70b8   0x160  stm32u0xx_hal_uart_ex.o [4]
+  .text              ro code   0x800'7218    0x7c  stm32u0xx_hal_timebase_tim.o [2]
+  .text              ro code   0x800'7294   0x802  queue.o [5]
+  .text              ro code   0x800'7a96     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'7a98   0x414  hsDEBUG_UART_CLI_App.o [21]
+  .text              ro code   0x800'7eac   0x204  IDDD_RunCommand_App.o [22]
+  .text              ro code   0x800'80b0   0x2d4  Display_Application.o [24]
+  .text              ro code   0x800'8384   0x124  hsKey_Module.o [17]
+  .text              ro code   0x800'84a8    0x54  Display_Interface.o [20]
+  .text              ro code   0x800'84fc   0x220  heap_4.o [7]
+  .text              ro code   0x800'871c    0x82  list.o [5]
+  .text              ro code   0x800'879e     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'87a0    0xd4  port.o [6]
+  .text              ro code   0x800'8874    0x18  freertos.o [2]
+  .text              ro code   0x800'888c    0x14  freertos_hooks.o [2]
+  .text              ro code   0x800'88a0    0x14  stm32u0xx_hal_adc.o [4]
+  .text              ro code   0x800'88b4    0x30  stm32u0xx_hal_adc.o [4]
+  .text              ro code   0x800'88e4   0x1e8  IDDD_ADC_SCAN_Drv.o [12]
+  .text              ro code   0x800'8acc     0x2  stm32u0xx_hal_adc.o [4]
+  .text              ro code   0x800'8ace     0x2  stm32u0xx_hal_adc.o [4]
+  .text              ro code   0x800'8ad0     0x2  stm32u0xx_hal_tim.o [4]
+  .text              ro code   0x800'8ad2     0x2  stm32u0xx_hal_tim.o [4]
+  .text              ro code   0x800'8ad4     0x2  stm32u0xx_hal_tim.o [4]
+  .text              ro code   0x800'8ad6     0x2  stm32u0xx_hal_tim.o [4]
+  .text              ro code   0x800'8ad8     0x2  stm32u0xx_hal_tim_ex.o [4]
+  .text              ro code   0x800'8ada     0x2  stm32u0xx_hal_tim_ex.o [4]
+  .text              ro code   0x800'8adc     0x2  stm32u0xx_hal_tim.o [4]
+  .text              ro code   0x800'8ade     0x2  stm32u0xx_hal_tim_ex.o [4]
+  CODE               ro code   0x800'8ae0    0x7c  portasm.o [6]
+  .text              ro code   0x800'8b5c    0x4e  ABImemcpy.o [27]
+  .text              ro code   0x800'8baa     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'8bac   0x1dc  BoTnLE525BLE_Drv.o [14]
+  .text              ro code   0x800'8d88    0x66  port_hsDEBUG_UART_CLI_App.o [21]
+  .text              ro code   0x800'8dee     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'8df0    0x84  hsDebug_MSG.o [9]
+  .text              ro code   0x800'8e74   0x1ec  FreeRTOS_CLI.o [15]
+  .text              ro code   0x800'9060    0x50  IDDD_RunCommand_Interface.o [19]
+  .text              ro code   0x800'90b0   0x164  IDDD_RunCmd_TRF_Interface.o [19]
+  .text              ro code   0x800'9214   0x198  IDDD_DBA_ROM_Interface.o [18]
+  .text              ro code   0x800'93ac    0x44  IDDD_DBA_RAM_Interface.o [18]
+  .text              ro code   0x800'93f0    0x34  port.o [6]
+  .text              ro code   0x800'9424    0x56  BoTnLE525BLE_Port.o [14]
+  .text              ro code   0x800'947a     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'947c    0x40  vsnprint.o [25]
+  .text              ro code   0x800'94bc     0xe  strlen.o [27]
+  .text              ro code   0x800'94ca    0x2c  strncmp.o [25]
+  .text              ro code   0x800'94f6     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'94f8    0xc0  strncpy.o [27]
+  .text              ro code   0x800'95b8    0xe8  IDDD_LED_CTRL_Drv.o [12]
+  .text              ro code   0x800'96a0   0x138  IDDD_TRF_Timer_CTRL.o [12]
+  .text              ro code   0x800'97d8   0x118  hsDataBlockAccess_Module.o [16]
+  .text              ro code   0x800'98f0   0x188  hsEEPROM_Drv.o [11]
+  .text              ro code   0x800'9a78   0xffc  xprintffull_nomb.o [25]
+  .text              ro code   0x800'aa74    0x40  port_hsEEPROM_Drv.o [11]
+  .text              ro code   0x800'aab4    0x12  strchr.o [27]
+  .text              ro code   0x800'aac6     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'aac8    0x48  xfail_s.o [25]
+  .text              ro code   0x800'ab10    0x16  memchr.o [27]
+  .text              ro code   0x800'ab26    0x2a  frexp.o [26]
+  .text              ro code   0x800'ab50    0x32  DblCmpLe.o [26]
+  .text              ro code   0x800'ab82    0x32  DblCmpGe.o [26]
+  .text              ro code   0x800'abb4    0x70  ldexp.o [26]
+  .text              ro code   0x800'ac24    0x52  DblToI32.o [26]
+  .text              ro code   0x800'ac76     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'ac78    0x34  IxxToDbl.o [26]
+  .text              ro code   0x800'acac   0x1a8  DblAddSub.o [26]
+  .text              ro code   0x800'ae54    0xc2  DblDiv.o [26]
+  .text              ro code   0x800'af16   0x184  DblMul.o [26]
+  .text              ro code   0x800'b09a     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'b09c    0x40  xlocale_c.o [25]
+  .text              ro code   0x800'b0dc     0xa  abort.o [25]
+  .text              ro code   0x800'b0e6     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'b0e8    0x14  exit.o [28]
+  .text              ro code   0x800'b0fc   0x378  hsCLI_Command.o [21]
+  .text              ro code   0x800'b474   0x15e  iar_Stoulx.o [25]
+  .text              ro code   0x800'b5d2     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'b5d4    0x4c  snprintf.o [25]
+  .text              ro code   0x800'b620    0x12  isspace.o [25]
+  .text              ro code   0x800'b632    0x12  tolower.o [25]
+  .rodata            const     0x800'b644    0x90  hsCLI_Command.o [21]
+  .text              ro code   0x800'b6d4    0x80  stm32u0xx_it.o [2]
+  .rodata            const     0x800'b754    0x6a  xprintffull_nomb.o [25]
+  .text              ro code   0x800'b7be     0x2  startup_stm32u031xx.o [1]
+  .rodata            const     0x800'b7c0    0x58  FreeRTOS_CLI.o [15]
+  .rodata            const     0x800'b818    0x50  FreeRTOS_CLI.o [15]
+  .rodata            const     0x800'b868    0x50  iar_Stoulx.o [25]
+  .rodata            const     0x800'b8b8    0x40  hsCLI_Command.o [21]
+  .rodata            const     0x800'b8f8    0x40  hsCLI_Command.o [21]
+  .rodata            const     0x800'b938    0x40  hsCLI_Command.o [21]
+  .text              ro code   0x800'b978    0x40  system_stm32u0xx.o [3]
+  .text              ro code   0x800'b9b8    0x3c  zero_init3.o [27]
+  .rodata            const     0x800'b9f4    0x38  hsCLI_Command.o [21]
+  .rodata            const     0x800'ba2c    0x38  hsCLI_Command.o [21]
+  .rodata            const     0x800'ba64    0x38  hsCLI_Command.o [21]
+  .rodata            const     0x800'ba9c    0x38  hsCLI_Command.o [21]
+  .rodata            const     0x800'bad4    0x38  hsCLI_Command.o [21]
+  .rodata            const     0x800'bb0c    0x38  IDDD_RunCommand_App.o [22]
+  .rodata            const     0x800'bb44    0x34  hsCLI_Command.o [21]
+  .rodata            const     0x800'bb78    0x34  hsDEBUG_UART_CLI_App.o [21]
+  .rodata            const     0x800'bbac    0x30  FreeRTOS_CLI.o [15]
+  .rodata            const     0x800'bbdc    0x30  system_stm32u0xx.o [3]
+  .rodata            const     0x800'bc0c    0x2c  IDDD_RunCommand_App.o [22]
+  .rodata            const     0x800'bc38    0x28  hsCLI_Command.o [21]
+  .rodata            const     0x800'bc60    0x28  hsCLI_Command.o [21]
+  .rodata            const     0x800'bc88    0x28  IDDD_RunCommand_App.o [22]
+  .rodata            const     0x800'bcb0    0x28  IDDD_RunCommand_App.o [22]
+  .text              ro code   0x800'bcd8    0x28  data_init.o [27]
+  .rodata            const     0x800'bd00    0x24  hsCLI_Command.o [21]
+  .iar.init_table    const     0x800'bd24    0x20  - Linker created -
+  .rodata            const     0x800'bd44    0x20  hsCLI_Command.o [21]
+  .text              ro code   0x800'bd64    0x1e  cmain.o [27]
+  .text              ro code   0x800'bd82     0x4  low_level_init.o [25]
+  .text              ro code   0x800'bd86     0x8  exit.o [25]
+  .text              ro code   0x800'bd8e     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'bd90     0xa  cexit.o [27]
+  .text              ro code   0x800'bd9a     0x2  startup_stm32u031xx.o [1]
+  .rodata            const     0x800'bd9c    0x1c  hsCLI_Command.o [21]
+  .rodata            const     0x800'bdb8    0x1c  IDDD_RunCommand_App.o [22]
+  .rodata            const     0x800'bdd4    0x1c  IDDD_RunCommand_App.o [22]
+  .text              ro code   0x800'bdf0    0x1c  cstartup_M.o [27]
+  .text              ro code   0x800'be0c    0x1c  xsnprout.o [25]
+  .rodata            const     0x800'be28    0x18  hsCLI_Command.o [21]
+  .rodata            const     0x800'be40    0x18  hsCLI_Command.o [21]
+  .rodata            const     0x800'be58    0x18  IDDD_RunCmd_TRF_Interface.o [19]
+  .rodata            const     0x800'be70    0x18  IDDD_RunCommand_App.o [22]
+  .rodata            const     0x800'be88    0x18  stm32u0xx_hal_uart.o [4]
+  .rodata            const     0x800'bea0    0x14  hsCLI_Command.o [21]
+  .rodata            const     0x800'beb4    0x10  FreeRTOS_CLI.o [15]
+  .rodata            const     0x800'bec4    0x10  hsCLI_Command.o [21]
+  .rodata            const     0x800'bed4    0x10  hsCLI_Command.o [21]
+  .rodata            const     0x800'bee4    0x10  IDDD_RunCmd_TRF_Interface.o [19]
+  .rodata            const     0x800'bef4    0x10  IDDD_RunCommand_App.o [22]
+  .rodata            const     0x800'bf04    0x10  system_stm32u0xx.o [3]
+  .text              ro code   0x800'bf14    0x10  startup_stm32u031xx.o [1]
+  .rodata            const     0x800'bf24     0xc  hsCLI_Command.o [21]
+  .rodata            const     0x800'bf30     0xc  hsCLI_Command.o [21]
+  .rodata            const     0x800'bf3c     0xc  hsCLI_Command.o [21]
+  .rodata            const     0x800'bf48     0xc  hsCLI_Command.o [21]
+  .rodata            const     0x800'bf54     0xc  hsCLI_Command.o [21]
+  .rodata            const     0x800'bf60     0xc  hsCLI_Command.o [21]
+  .rodata            const     0x800'bf6c     0x8  Display_Application.o [24]
+  .rodata            const     0x800'bf74     0x8  FreeRTOS_CLI.o [15]
+  .rodata            const     0x800'bf7c     0x8  hsCLI_Command.o [21]
+  .rodata            const     0x800'bf84     0x8  hsCLI_Command.o [21]
+  .rodata            const     0x800'bf8c     0x8  hsCLI_Command.o [21]
+  .rodata            const     0x800'bf94     0x8  hsCLI_Command.o [21]
+  .rodata            const     0x800'bf9c     0x8  hsCLI_Command.o [21]
+  .rodata            const     0x800'bfa4     0x8  hsCLI_Command.o [21]
+  .rodata            const     0x800'bfac     0x8  hsCLI_Command.o [21]
+  .rodata            const     0x800'bfb4     0x8  hsCLI_Command.o [21]
+  .rodata            const     0x800'bfbc     0x8  hsCLI_Command.o [21]
+  .rodata            const     0x800'bfc4     0x8  hsCLI_Command.o [21]
+  .rodata            const     0x800'bfcc     0x8  hsCLI_Command.o [21]
+  .rodata            const     0x800'bfd4     0x8  hsDEBUG_UART_CLI_App.o [21]
+  .rodata            const     0x800'bfdc     0x8  hsDEBUG_UART_CLI_App.o [21]
+  .rodata            const     0x800'bfe4     0x8  hsDEBUG_UART_CLI_App.o [21]
+  .rodata            const     0x800'bfec     0x8  IDDD_RunCommand_App.o [22]
+  .rodata            const     0x800'bff4     0x8  stm32u0xx_hal_uart_ex.o [4]
+  .rodata            const     0x800'bffc     0x8  stm32u0xx_hal_uart_ex.o [4]
+  .rodata            const     0x800'c004     0x8  system_stm32u0xx.o [3]
+  .rodata            const     0x800'c00c     0x8  tasks.o [5]
+  .rodata            const     0x800'c014     0x8  User_Main.o [8]
+  .rodata            const     0x800'c01c     0x4  heap_4.o [7]
+  .rodata            const     0x800'c020     0x4  hsCLI_Command.o [21]
+  .rodata            const     0x800'c024     0x4  hsDEBUG_UART_CLI_App.o [21]
+  .text              ro code   0x800'c028     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'c02a     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'c02c     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'c02e     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'c030     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'c032     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'c034     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'c036     0x2  startup_stm32u031xx.o [1]
+  .text              ro code   0x800'c038     0x2  startup_stm32u031xx.o [1]
+  .rodata            const     0x800'c03a     0x1  xlocale_c.o [25]
+  .rodata            const     0x800'c03b     0x0  zero_init3.o [27]
+  .rodata            const     0x800'c03b     0x0  lz77_init_single.o [27]
+  Initializer bytes  const     0x800'c03b    0x51  <for P2-1>
+                             - 0x800'c08c  0xbfcc
+
+"P2", part 1 of 3:                           0xa8
+  P2-1                        0x2000'0000    0xa8  <Init block>
+    .data            inited   0x2000'0000     0x8  FreeRTOS_CLI.o [15]
+    .data            inited   0x2000'0008     0x4  FreeRTOS_CLI.o [15]
+    .data            inited   0x2000'000c     0x4  hsDEBUG_UART_CLI_App.o [21]
+    .data            inited   0x2000'0010     0x4  hsDEBUG_UART_CLI_App.o [21]
+    .data            inited   0x2000'0014     0x4  port.o [6]
+    .data            inited   0x2000'0018     0x4  stm32u0xx_hal.o [4]
+    .data            inited   0x2000'001c     0x4  stm32u0xx_hal.o [4]
+    .data            inited   0x2000'0020     0x4  system_stm32u0xx.o [3]
+    .data            inited   0x2000'0024     0x4  tasks.o [5]
+    .data            inited   0x2000'0028    0x38  xlocale_c.o [25]
+    .data            inited   0x2000'0060    0x48  xlocale_c.o [25]
+                            - 0x2000'00a8    0xa8
+
+"P2", part 2 of 3:                         0x22a8
+  .bss               zero     0x2000'00a8  0x1800  heap_4.o [7]
+  .bss               zero     0x2000'18a8   0x100  freertos.o [2]
+  .bss               zero     0x2000'19a8    0xa0  hsDEBUG_UART_CLI_App.o [21]
+  .bss               zero     0x2000'1a48    0x94  main.o [2]
+  .bss               zero     0x2000'1adc    0x94  main.o [2]
+  .bss               zero     0x2000'1b70    0x8c  tasks.o [5]
+  .bss               zero     0x2000'1bfc    0x80  hsDebug_MSG.o [9]
+  .bss               zero     0x2000'1c7c    0x80  hsDEBUG_UART_CLI_App.o [21]
+  .bss               zero     0x2000'1cfc    0x80  hsDEBUG_UART_CLI_App.o [21]
+  .bss               zero     0x2000'1d7c    0x64  main.o [2]
+  .bss               zero     0x2000'1de0    0x5c  main.o [2]
+  .bss               zero     0x2000'1e3c    0x5c  main.o [2]
+  .bss               zero     0x2000'1e98    0x5c  main.o [2]
+  .bss               zero     0x2000'1ef4    0x54  freertos.o [2]
+  .bss               zero     0x2000'1f48    0x54  main.o [2]
+  .bss               zero     0x2000'1f9c    0x54  main.o [2]
+  .bss               zero     0x2000'1ff0    0x4c  main.o [2]
+  .bss               zero     0x2000'203c    0x4c  stm32u0xx_hal_timebase_tim.o [2]
+  .bss               zero     0x2000'2088    0x44  IDDD_DBA_ROM_Interface.o [18]
+  .bss               zero     0x2000'20cc    0x34  hsDEBUG_UART_CLI_App.o [21]
+  .bss               zero     0x2000'2100    0x34  IDDD_DBA_ROM_Interface.o [18]
+  .bss               zero     0x2000'2134    0x30  Rework_PP_Drv.o [9]
+  .bss               zero     0x2000'2164    0x20  IDDD_RunCmd_TRF_Interface.o [19]
+  .bss               zero     0x2000'2184    0x1c  IDDD_DBA_RAM_Interface.o [18]
+  .bss               zero     0x2000'21a0    0x14  IDDD_DBA_RAM_Interface.o [18]
+  .bss               zero     0x2000'21b4    0x14  IDDD_DBA_ROM_Interface.o [18]
+  .bss               zero     0x2000'21c8    0x14  main.o [2]
+  .bss               zero     0x2000'21dc    0x14  tasks.o [5]
+  .bss               zero     0x2000'21f0    0x14  tasks.o [5]
+  .bss               zero     0x2000'2204    0x14  tasks.o [5]
+  .bss               zero     0x2000'2218    0x14  tasks.o [5]
+  .bss               zero     0x2000'222c    0x14  tasks.o [5]
+  .bss               zero     0x2000'2240     0xc  IDDD_DBA_ROM_Interface.o [18]
+  .bss               zero     0x2000'224c     0x8  Common_HAL.o [10]
+  .bss               zero     0x2000'2254     0x8  Common_HAL.o [10]
+  .bss               zero     0x2000'225c     0x8  heap_4.o [7]
+  .bss               zero     0x2000'2264     0x4  BoTnLE525BLE_Drv.o [14]
+  .bss               zero     0x2000'2268     0x4  Common_HAL.o [10]
+  .bss               zero     0x2000'226c     0x4  Display_Application.o [24]
+  .bss               zero     0x2000'2270     0x4  Display_Application.o [24]
+  .bss               zero     0x2000'2274     0x4  Display_Application.o [24]
+  .bss               zero     0x2000'2278     0x4  Display_Application.o [24]
+  .bss               zero     0x2000'227c     0x4  Display_Application.o [24]
+  .bss               zero     0x2000'2280     0x4  Display_Application.o [24]
+  .bss               zero     0x2000'2284     0x4  Display_Application.o [24]
+  .bss               zero     0x2000'2288     0x4  Display_Application.o [24]
+  .bss               zero     0x2000'228c     0x4  FreeRTOS_CLI.o [15]
+  .bss               zero     0x2000'2290     0x4  FreeRTOS_CLI.o [15]
+  .bss               zero     0x2000'2294     0x4  heap_4.o [7]
+  .bss               zero     0x2000'2298     0x4  heap_4.o [7]
+  .bss               zero     0x2000'229c     0x4  heap_4.o [7]
+  .bss               zero     0x2000'22a0     0x4  heap_4.o [7]
+  .bss               zero     0x2000'22a4     0x4  heap_4.o [7]
+  .bss               zero     0x2000'22a8     0x4  hsDebug_MSG.o [9]
+  .bss               zero     0x2000'22ac     0x4  hsDebug_MSG.o [9]
+  .bss               zero     0x2000'22b0     0x4  hsDEBUG_UART_CLI_App.o [21]
+  .bss               zero     0x2000'22b4     0x4  hsDEBUG_UART_CLI_App.o [21]
+  .bss               zero     0x2000'22b8     0x4  hsDEBUG_UART_CLI_App.o [21]
+  .bss               zero     0x2000'22bc     0x4  hsDEBUG_UART_CLI_App.o [21]
+  .bss               zero     0x2000'22c0     0x4  hsDEBUG_UART_CLI_App.o [21]
+  .bss               zero     0x2000'22c4     0x4  hsDEBUG_UART_CLI_App.o [21]
+  .bss               zero     0x2000'22c8     0x4  hsGlobalErrorHandle.o [9]
+  .bss               zero     0x2000'22cc     0x4  hsGlobalErrorHandle.o [9]
+  .bss               zero     0x2000'22d0     0x4  hsGlobalErrorHandle.o [9]
+  .bss               zero     0x2000'22d4     0x4  hsKey_Module.o [17]
+  .bss               zero     0x2000'22d8     0x4  hsKey_Module.o [17]
+  .bss               zero     0x2000'22dc     0x4  hsKey_Module.o [17]
+  .bss               zero     0x2000'22e0     0x4  hsKey_Module.o [17]
+  .bss               zero     0x2000'22e4     0x4  hsKey_Module.o [17]
+  .bss               zero     0x2000'22e8     0x4  IDDD_ADC_SCAN_Drv.o [12]
+  .bss               zero     0x2000'22ec     0x4  IDDD_ADC_SCAN_Drv.o [12]
+  .bss               zero     0x2000'22f0     0x4  IDDD_ADC_SCAN_Drv.o [12]
+  .bss               zero     0x2000'22f4     0x4  IDDD_LED_CTRL_Drv.o [12]
+  .bss               zero     0x2000'22f8     0x4  IDDD_RunCommand_App.o [22]
+  .bss               zero     0x2000'22fc     0x4  IDDD_RunCommand_App.o [22]
+  .bss               zero     0x2000'2300     0x4  IDDD_RunCommand_Interface.o [19]
+  .bss               zero     0x2000'2304     0x4  tasks.o [5]
+  .bss               zero     0x2000'2308     0x4  tasks.o [5]
+  .bss               zero     0x2000'230c     0x4  tasks.o [5]
+  .bss               zero     0x2000'2310     0x4  tasks.o [5]
+  .bss               zero     0x2000'2314     0x4  tasks.o [5]
+  .bss               zero     0x2000'2318     0x4  tasks.o [5]
+  .bss               zero     0x2000'231c     0x4  tasks.o [5]
+  .bss               zero     0x2000'2320     0x4  tasks.o [5]
+  .bss               zero     0x2000'2324     0x4  tasks.o [5]
+  .bss               zero     0x2000'2328     0x4  tasks.o [5]
+  .bss               zero     0x2000'232c     0x4  tasks.o [5]
+  .bss               zero     0x2000'2330     0x4  tasks.o [5]
+  .bss               zero     0x2000'2334     0x4  tasks.o [5]
+  .bss               zero     0x2000'2338     0x4  tasks.o [5]
+  .bss               zero     0x2000'233c     0x4  tasks.o [5]
+  .bss               zero     0x2000'2340     0x4  User_Main.o [8]
+  .bss               zero     0x2000'2344     0x4  User_Main.o [8]
+  .bss               zero     0x2000'2348     0x4  xfail_s.o [25]
+  .bss               zero     0x2000'234c     0x1  hsDEBUG_UART_CLI_App.o [21]
+  .bss               zero     0x2000'234d     0x1  hsDEBUG_UART_CLI_App.o [21]
+                            - 0x2000'234e  0x22a6
+
+"P2", part 3 of 3:                          0x400
+  CSTACK                      0x2000'2350   0x400  <Block>
+    CSTACK           uninit   0x2000'2350   0x400  <Block tail>
+                            - 0x2000'2750   0x400
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+   0x800'c08c   0x800'ffff  0x3f74
+  0x2000'2750  0x2000'2fff   0x8b0
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x22a6:
+          0x2000'00a8  0x22a6
+
+Copy/lz77 (__iar_lz77_init_single3)
+    1 source range, total size 0x51 (48% of destination):
+           0x800'c03b    0x51
+    1 destination range, total size 0xa8:
+          0x2000'0000    0xa8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                        ro code  ro data  rw data
+    ------                        -------  -------  -------
+command line/config:
+    -------------------------------------------------------
+    Total:
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\EWARM: [1]
+    startup_stm32u031xx.o             258
+    -------------------------------------------------------
+    Total:                            258
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core: [2]
+    freertos.o                         24               340
+    freertos_hooks.o                   20
+    main.o                          1'522               936
+    stm32u0xx_hal_msp.o             1'196
+    stm32u0xx_hal_timebase_tim.o      124                76
+    stm32u0xx_it.o                    128
+    -------------------------------------------------------
+    Total:                          3'014             1'352
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\CMSIS: [3]
+    system_stm32u0xx.o                 64       74        4
+    -------------------------------------------------------
+    Total:                             64       74        4
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver: [4]
+    stm32u0xx_hal.o                    28        4        8
+    stm32u0xx_hal_adc.o             2'404
+    stm32u0xx_hal_cortex.o            240
+    stm32u0xx_hal_dac.o               552
+    stm32u0xx_hal_dac_ex.o            472
+    stm32u0xx_hal_dma.o             1'188
+    stm32u0xx_hal_gpio.o              864
+    stm32u0xx_hal_i2c.o             2'084
+    stm32u0xx_hal_i2c_ex.o            204
+    stm32u0xx_hal_pwr_ex.o            148
+    stm32u0xx_hal_rcc.o             2'196
+    stm32u0xx_hal_rcc_ex.o          2'020
+    stm32u0xx_hal_tim.o             2'274
+    stm32u0xx_hal_tim_ex.o            142
+    stm32u0xx_hal_uart.o            5'244       24
+    stm32u0xx_hal_uart_ex.o           358       16
+    -------------------------------------------------------
+    Total:                         20'418       44        8
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS: [5]
+    list.o                            130
+    queue.o                         2'050
+    tasks.o                         3'232       10      304
+    -------------------------------------------------------
+    Total:                          5'412       10      304
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\IAR: [6]
+    port.o                            264        2        4
+    portasm.o                         124
+    -------------------------------------------------------
+    Total:                            388        2        4
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\MemMang: [7]
+    heap_4.o                          544        4    6'172
+    -------------------------------------------------------
+    Total:                            544        4    6'172
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER: [8]
+    User_Main.o                       292        8        8
+    -------------------------------------------------------
+    Total:                            292        8        8
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common: [9]
+    Rework_PP_Drv.o                   116                48
+    hsDebug_MSG.o                     132               136
+    hsGlobalErrorHandle.o             188                12
+    -------------------------------------------------------
+    Total:                            436               196
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_00_HW: [10]
+    Common_HAL.o                    1'506                20
+    -------------------------------------------------------
+    Total:                          1'506                20
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_00_EEPROM: [11]
+    hsEEPROM_Drv.o                    392
+    port_hsEEPROM_Drv.o                64
+    -------------------------------------------------------
+    Total:                            456
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_01_IDDD_TRF: [12]
+    IDDD_ADC_SCAN_Drv.o               488                12
+    IDDD_LED_CTRL_Drv.o               232                 4
+    IDDD_TRF_Timer_CTRL.o             312
+    -------------------------------------------------------
+    Total:                          1'032                16
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_02_IDDD_BAT_ACD: [13]
+    -------------------------------------------------------
+    Total:
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_03_BoTnLE525_Drv: [14]
+    BoTnLE525BLE_Drv.o                476                 4
+    BoTnLE525BLE_Port.o                86
+    -------------------------------------------------------
+    Total:                            562                 4
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_00_FreeRTOS_Plus_CLI: [15]
+    FreeRTOS_CLI.o                    492      245       20
+    -------------------------------------------------------
+    Total:                            492      245       20
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_01_hsDBA_Module: [16]
+    hsDataBlockAccess_Module.o        280
+    -------------------------------------------------------
+    Total:                            280
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_02_Key_Module: [17]
+    hsKey_Module.o                    292                20
+    -------------------------------------------------------
+    Total:                            292                20
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_00_IDDD_DBA_Interface: [18]
+    IDDD_DBA_RAM_Interface.o           68                48
+    IDDD_DBA_ROM_Interface.o          408               152
+    -------------------------------------------------------
+    Total:                            476               200
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_01_IDDD_RunCommand_Interface: [19]
+    IDDD_RunCmd_TRF_Interface.o       356       40       32
+    IDDD_RunCommand_Interface.o        80                 4
+    -------------------------------------------------------
+    Total:                            436       40       36
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_03_IDDD_Display_Interface: [20]
+    Display_Interface.o                84
+    -------------------------------------------------------
+    Total:                             84
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_00_hsDEBUG_USART_CLI_App: [21]
+    hsCLI_Command.o                   888    1'108
+    hsDEBUG_UART_CLI_App.o          1'044       84      502
+    port_hsDEBUG_UART_CLI_App.o       102
+    -------------------------------------------------------
+    Total:                          2'034    1'192      502
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_01_IDDD_RunCommand_App: [22]
+    IDDD_RunCommand_App.o             516      284        8
+    -------------------------------------------------------
+    Total:                            516      284        8
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_02_IDDD_Main_Communication_App: [23]
+    -------------------------------------------------------
+    Total:
+
+D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_03_IDDD_Display_App: [24]
+    Display_Application.o             724        8       32
+    -------------------------------------------------------
+    Total:                            724        8       32
+
+dl6M_tlf.a: [25]
+    abort.o                            10
+    exit.o                              8
+    iar_Stoulx.o                      350       80
+    isspace.o                          18
+    low_level_init.o                    4
+    snprintf.o                         76
+    strncmp.o                          44
+    tolower.o                          18
+    vsnprint.o                         64
+    xfail_s.o                          72                 4
+    xlocale_c.o                        64       67      128
+    xprintffull_nomb.o              4'092      106
+    xsnprout.o                         28
+    -------------------------------------------------------
+    Total:                          4'848      253      132
+
+m6M_tl.a: [26]
+    DblAddSub.o                       424
+    DblCmpGe.o                         50
+    DblCmpLe.o                         50
+    DblDiv.o                          194
+    DblMul.o                          388
+    DblToI32.o                         82
+    IxxToDbl.o                         52
+    frexp.o                            42
+    ldexp.o                           112
+    -------------------------------------------------------
+    Total:                          1'394
+
+rt6M_tl.a: [27]
+    ABImemcpy.o                        78
+    ABImemset.o                        78
+    I32DivModFast.o                   224
+    I64DivMod.o                       124
+    I64DivZer.o                         2
+    I64Mul.o                           50
+    IntDivZer.o                         2
+    cexit.o                            10
+    cmain.o                            30
+    cstartup_M.o                       28
+    data_init.o                        40
+    lz77_init_single.o                126
+    memchr.o                           22
+    memset.o                           20
+    strchr.o                           18
+    strlen.o                           14
+    strncpy.o                         192
+    zero_init3.o                       60
+    -------------------------------------------------------
+    Total:                          1'118
+
+shb_l.a: [28]
+    exit.o                             20
+    -------------------------------------------------------
+    Total:                             20
+
+    Linker created                              32    1'024
+-----------------------------------------------------------
+    Grand Total:                   47'096    2'196   10'062
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address    Size  Type      Object
+-----                       -------    ----  ----      ------
+.iar.init_table$$Base    0x800'bd24           --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'bd44           --   Gb  - Linker created -
+?main                    0x800'bd65          Code  Gb  cmain.o [27]
+ADC_ConversionStop       0x800'5a49    0x5c  Code  Gb  stm32u0xx_hal_adc.o [4]
+ADC_DMAConvCplt          0x800'5bd7    0x82  Code  Lc  stm32u0xx_hal_adc.o [4]
+ADC_DMAError             0x800'5c77    0x1a  Code  Lc  stm32u0xx_hal_adc.o [4]
+ADC_DMAHalfConvCplt      0x800'5c6d     0xa  Code  Lc  stm32u0xx_hal_adc.o [4]
+ADC_Disable              0x800'5b55    0x82  Code  Gb  stm32u0xx_hal_adc.o [4]
+ADC_Enable               0x800'5aa5    0xb0  Code  Gb  stm32u0xx_hal_adc.o [4]
+AHBPrescTable            0x800'bf04    0x10  Data  Gb  system_stm32u0xx.o [3]
+APBPrescTable            0x800'c004     0x8  Data  Gb  system_stm32u0xx.o [3]
+BLE_Test                 0x800'b119    0xaa  Code  Gb  hsCLI_Command.o [21]
+BoTLE_UART_RX_IRQ_Handler
+                         0x800'8bad    0xac  Code  Gb  BoTnLE525BLE_Drv.o [14]
+BoTLE_UART_TX_IRQ_Handler
+                         0x800'8c59    0x2a  Code  Gb  BoTnLE525BLE_Drv.o [14]
+BoTnLE_AT_Command_Send   0x800'8d09    0x80  Code  Gb  BoTnLE525BLE_Drv.o [14]
+BotnLE_BLE_Config        0x800'8c83    0x7c  Code  Gb  BoTnLE525BLE_Drv.o [14]
+CLI_HandleBackspace      0x800'7dfd    0x2c  Code  Gb  hsDEBUG_UART_CLI_App.o [21]
+CLI_HandleCharacterInput
+                         0x800'7e41    0x36  Code  Gb  hsDEBUG_UART_CLI_App.o [21]
+CLI_HandleNewline        0x800'7db5    0x42  Code  Gb  hsDEBUG_UART_CLI_App.o [21]
+CSTACK$$Base            0x2000'2350           --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'2750           --   Gb  - Linker created -
+CmdRun_RegData_Info      0x800'7fd9    0xa2  Code  Gb  IDDD_RunCommand_App.o [22]
+CmdRun_TRF_Run           0x800'7f7f    0x5a  Code  Gb  IDDD_RunCommand_App.o [22]
+DMA1_Channel1_IRQHandler
+                         0x800'b703     0xa  Code  Gb  stm32u0xx_it.o [2]
+DMA1_Channel2_3_IRQHandler
+                         0x800'b70d    0x10  Code  Gb  stm32u0xx_it.o [2]
+DMA_CalcDMAMUXChannelBaseAndMask
+                         0x800'1e21    0x2e  Code  Lc  stm32u0xx_hal_dma.o [4]
+DMA_CalcDMAMUXRequestGenBaseAndMask
+                         0x800'1e55    0x20  Code  Lc  stm32u0xx_hal_dma.o [4]
+DMA_SetConfig            0x800'1dd1    0x4a  Code  Lc  stm32u0xx_hal_dma.o [4]
+Error_Handler            0x800'3465     0x6  Code  Gb  main.o [2]
+FreeRTOS_CLIGetParameter
+                         0x800'8f57    0x62  Code  Gb  FreeRTOS_CLI.o [15]
+FreeRTOS_CLIProcessCommand
+                         0x800'8ea5    0xb2  Code  Gb  FreeRTOS_CLI.o [15]
+FreeRTOS_CLIProcessCommand::pxCommand
+                        0x2000'228c     0x4  Data  Lc  FreeRTOS_CLI.o [15]
+FreeRTOS_CLIRegisterCommand
+                         0x800'8e75    0x2e  Code  Gb  FreeRTOS_CLI.o [15]
+HAL_ADC_ConfigChannel    0x800'5875   0x1ac  Code  Gb  stm32u0xx_hal_adc.o [4]
+HAL_ADC_ConvCpltCallback
+                         0x800'88e5    0x32  Code  Gb  IDDD_ADC_SCAN_Drv.o [12]
+HAL_ADC_Init             0x800'54a1   0x24a  Code  Gb  stm32u0xx_hal_adc.o [4]
+HAL_ADC_MspInit          0x800'1561    0xc8  Code  Gb  stm32u0xx_hal_msp.o [2]
+HAL_ADC_Start_DMA        0x800'5711    0xb6  Code  Gb  stm32u0xx_hal_adc.o [4]
+HAL_ADC_Stop_DMA         0x800'57c7    0x98  Code  Gb  stm32u0xx_hal_adc.o [4]
+HAL_DACEx_SelfCalibrate
+                         0x800'5c91   0x1ce  Code  Gb  stm32u0xx_hal_dac_ex.o [4]
+HAL_DAC_ConfigChannel    0x800'432b   0x17a  Code  Gb  stm32u0xx_hal_dac.o [4]
+HAL_DAC_Init             0x800'4289    0x2c  Code  Gb  stm32u0xx_hal_dac.o [4]
+HAL_DAC_MspInit          0x800'1629    0x58  Code  Gb  stm32u0xx_hal_msp.o [2]
+HAL_DAC_SetValue         0x800'4305    0x26  Code  Gb  stm32u0xx_hal_dac.o [4]
+HAL_DAC_Start            0x800'42b5    0x50  Code  Gb  stm32u0xx_hal_dac.o [4]
+HAL_DMA_Abort            0x800'1bcd    0x84  Code  Gb  stm32u0xx_hal_dma.o [4]
+HAL_DMA_Abort_IT         0x800'1c55    0x88  Code  Gb  stm32u0xx_hal_dma.o [4]
+HAL_DMA_DeInit           0x800'1a8f    0x8c  Code  Gb  stm32u0xx_hal_dma.o [4]
+HAL_DMA_IRQHandler       0x800'1ce9    0xe8  Code  Gb  stm32u0xx_hal_dma.o [4]
+HAL_DMA_Init             0x800'19e1    0xae  Code  Gb  stm32u0xx_hal_dma.o [4]
+HAL_DMA_Start_IT         0x800'1b1b    0xb2  Code  Gb  stm32u0xx_hal_dma.o [4]
+HAL_Delay                0x800'28ff    0x24  Code  Gb  Common_HAL.o [10]
+HAL_GPIO_DeInit          0x800'3659   0x13a  Code  Gb  stm32u0xx_hal_gpio.o [4]
+HAL_GPIO_Init            0x800'346d   0x1e2  Code  Gb  stm32u0xx_hal_gpio.o [4]
+HAL_GPIO_WritePin        0x800'37a5    0x14  Code  Gb  stm32u0xx_hal_gpio.o [4]
+HAL_GetTick              0x800'2923     0x6  Code  Gb  Common_HAL.o [10]
+HAL_I2CEx_ConfigAnalogFilter
+                         0x800'668d    0x64  Code  Gb  stm32u0xx_hal_i2c_ex.o [4]
+HAL_I2CEx_ConfigDigitalFilter
+                         0x800'66f1    0x5e  Code  Gb  stm32u0xx_hal_i2c_ex.o [4]
+HAL_I2C_Init             0x800'5e69    0xda  Code  Gb  stm32u0xx_hal_i2c.o [4]
+HAL_I2C_Mem_Read         0x800'6105   0x1b4  Code  Gb  stm32u0xx_hal_i2c.o [4]
+HAL_I2C_Mem_Write        0x800'5f55   0x1ae  Code  Gb  stm32u0xx_hal_i2c.o [4]
+HAL_I2C_MspInit          0x800'1681    0xc6  Code  Gb  stm32u0xx_hal_msp.o [2]
+HAL_IncTick              0x800'28f1     0xe  Code  Gb  Common_HAL.o [10]
+HAL_Init                 0x800'4501    0x1c  Code  Gb  stm32u0xx_hal.o [4]
+HAL_InitTick             0x800'7219    0x68  Code  Gb  stm32u0xx_hal_timebase_tim.o [2]
+HAL_MspInit              0x800'1535    0x2c  Code  Gb  stm32u0xx_hal_msp.o [2]
+HAL_NVIC_DisableIRQ      0x800'38a3     0xa  Code  Gb  stm32u0xx_hal_cortex.o [4]
+HAL_NVIC_EnableIRQ       0x800'3899     0xa  Code  Gb  stm32u0xx_hal_cortex.o [4]
+HAL_NVIC_SetPriority     0x800'388f     0xa  Code  Gb  stm32u0xx_hal_cortex.o [4]
+HAL_PWREx_ControlVoltageScaling
+                         0x800'52e1    0x74  Code  Gb  stm32u0xx_hal_pwr_ex.o [4]
+HAL_PWREx_GetVoltageRange
+                         0x800'5355     0xc  Code  Gb  stm32u0xx_hal_pwr_ex.o [4]
+HAL_RCCEx_GetPLLClockFreq
+                         0x800'256f    0xde  Code  Gb  stm32u0xx_hal_rcc_ex.o [4]
+HAL_RCCEx_GetPeriphCLKFreq
+                         0x800'2101   0x46e  Code  Gb  stm32u0xx_hal_rcc_ex.o [4]
+HAL_RCCEx_PeriphCLKConfig
+                         0x800'1e91   0x22a  Code  Gb  stm32u0xx_hal_rcc_ex.o [4]
+HAL_RCC_ClockConfig      0x800'3e21   0x140  Code  Gb  stm32u0xx_hal_rcc.o [4]
+HAL_RCC_GetClockConfig   0x800'4075    0x2e  Code  Gb  stm32u0xx_hal_rcc.o [4]
+HAL_RCC_GetHCLKFreq      0x800'4037     0x6  Code  Gb  stm32u0xx_hal_rcc.o [4]
+HAL_RCC_GetPCLK1Freq     0x800'4041    0x1c  Code  Gb  stm32u0xx_hal_rcc.o [4]
+HAL_RCC_GetSysClockFreq
+                         0x800'3f6d    0xca  Code  Gb  stm32u0xx_hal_rcc.o [4]
+HAL_RCC_OscConfig        0x800'38bd   0x54e  Code  Gb  stm32u0xx_hal_rcc.o [4]
+HAL_TIMEx_Break2Callback
+                         0x800'8adb     0x2  Code  Wk  stm32u0xx_hal_tim_ex.o [4]
+HAL_TIMEx_BreakCallback
+                         0x800'8ad9     0x2  Code  Wk  stm32u0xx_hal_tim_ex.o [4]
+HAL_TIMEx_CommutCallback
+                         0x800'8adf     0x2  Code  Wk  stm32u0xx_hal_tim_ex.o [4]
+HAL_TIMEx_MasterConfigSynchronization
+                         0x800'7031    0x78  Code  Gb  stm32u0xx_hal_tim_ex.o [4]
+HAL_TIM_Base_Init        0x800'6759    0x64  Code  Gb  stm32u0xx_hal_tim.o [4]
+HAL_TIM_Base_MspInit     0x800'174d    0x1e  Code  Gb  stm32u0xx_hal_msp.o [2]
+HAL_TIM_Base_Start_IT    0x800'67bd    0x70  Code  Gb  stm32u0xx_hal_tim.o [4]
+HAL_TIM_ConfigClockSource
+                         0x800'6b85    0xf4  Code  Gb  stm32u0xx_hal_tim.o [4]
+HAL_TIM_IRQHandler       0x800'68a1   0x174  Code  Gb  stm32u0xx_hal_tim.o [4]
+HAL_TIM_MspPostInit      0x800'1779    0x48  Code  Gb  stm32u0xx_hal_msp.o [2]
+HAL_TIM_PWM_ConfigChannel
+                         0x800'6a15   0x162  Code  Gb  stm32u0xx_hal_tim.o [4]
+HAL_TIM_PWM_Init         0x800'683d    0x64  Code  Gb  stm32u0xx_hal_tim.o [4]
+HAL_TIM_PeriodElapsedCallback
+                         0x800'341d    0x10  Code  Gb  main.o [2]
+HAL_UARTEx_DisableFifoMode
+                         0x800'70b9    0x44  Code  Gb  stm32u0xx_hal_uart_ex.o [4]
+HAL_UARTEx_RxFifoFullCallback
+                         0x800'1e8f     0x2  Code  Wk  stm32u0xx_hal_uart_ex.o [4]
+HAL_UARTEx_SetRxFifoThreshold
+                         0x800'7151    0x54  Code  Gb  stm32u0xx_hal_uart_ex.o [4]
+HAL_UARTEx_SetTxFifoThreshold
+                         0x800'70fd    0x54  Code  Gb  stm32u0xx_hal_uart_ex.o [4]
+HAL_UARTEx_TxFifoEmptyCallback
+                         0x800'1e8d     0x2  Code  Wk  stm32u0xx_hal_uart_ex.o [4]
+HAL_UARTEx_WakeupCallback
+                         0x800'1e8b     0x2  Code  Wk  stm32u0xx_hal_uart_ex.o [4]
+HAL_UART_AbortReceive_IT
+                         0x800'02d1    0xf2  Code  Gb  stm32u0xx_hal_uart.o [4]
+HAL_UART_DeInit          0x800'0145    0x4a  Code  Gb  stm32u0xx_hal_uart.o [4]
+HAL_UART_IRQHandler      0x800'03d1   0x398  Code  Gb  stm32u0xx_hal_uart.o [4]
+HAL_UART_Init            0x800'00c1    0x7e  Code  Gb  stm32u0xx_hal_uart.o [4]
+HAL_UART_MspDeInit       0x800'1955    0x5a  Code  Gb  stm32u0xx_hal_msp.o [2]
+HAL_UART_MspInit         0x800'17d5   0x176  Code  Gb  stm32u0xx_hal_msp.o [2]
+HAL_UART_Receive_IT      0x800'018f    0x78  Code  Gb  stm32u0xx_hal_uart.o [4]
+HAL_UART_RxCpltCallback
+                         0x800'2881    0x38  Code  Gb  Common_HAL.o [10]
+HAL_UART_Transmit_DMA    0x800'0207    0xb6  Code  Gb  stm32u0xx_hal_uart.o [4]
+HAL_UART_TxCpltCallback
+                         0x800'28b9    0x38  Code  Gb  Common_HAL.o [10]
+HW_All_LED_ONOFF         0x800'2b71   0x10a  Code  Gb  Common_HAL.o [10]
+HW_BAT_LED_ONnOFF        0x800'297f    0x5a  Code  Gb  Common_HAL.o [10]
+HW_BLE_LED_ONnOFF        0x800'29d9    0x18  Code  Gb  Common_HAL.o [10]
+HW_BLE_Power_ONnOFF      0x800'2cc9    0x16  Code  Gb  Common_HAL.o [10]
+HW_CC_CK_LED_ONnOFF      0x800'2a0d    0x1c  Code  Gb  Common_HAL.o [10]
+HW_COVID_LED             0x800'2b1d    0x34  Code  Gb  Common_HAL.o [10]
+HW_Cassette_CK_LED_ONnOFF
+                         0x800'2a29    0x18  Code  Gb  Common_HAL.o [10]
+HW_DAC_CTRL              0x800'2c7b    0x12  Code  Gb  Common_HAL.o [10]
+HW_Error_Handle          0x800'2d8d    0x7a  Code  Gb  Common_HAL.o [10]
+HW_Error_LED_ONnOFF      0x800'29f1    0x1c  Code  Gb  Common_HAL.o [10]
+HW_Error_Malloc_Fail     0x800'2e07    0x2e  Code  Gb  Common_HAL.o [10]
+HW_Error_StackOverflow   0x800'2e35    0x2e  Code  Gb  Common_HAL.o [10]
+HW_Flu_A_LED             0x800'2a99    0x3c  Code  Gb  Common_HAL.o [10]
+HW_Flu_B_LED             0x800'2ad5    0x3c  Code  Gb  Common_HAL.o [10]
+HW_Incubator_LED_ONnOFF
+                         0x800'2a59    0x1c  Code  Gb  Common_HAL.o [10]
+HW_LowCode_Error         0x800'2d35    0x58  Code  Gb  Common_HAL.o [10]
+HW_PW_LED_ONnOFF         0x800'2a75    0x1c  Code  Gb  Common_HAL.o [10]
+HW_ReadPin_BLE_ConnectStatus
+                         0x800'2ce9    0x12  Code  Gb  Common_HAL.o [10]
+HW_ReadPin_PWSW_Status   0x800'2cfb    0x12  Code  Gb  Common_HAL.o [10]
+HW_Sample_LED_ONnOFF     0x800'2a41    0x18  Code  Gb  Common_HAL.o [10]
+HW_USART_RX_Linker       0x800'2c95    0x12  Code  Gb  Common_HAL.o [10]
+HW_USART_TX_Linker       0x800'2cad    0x12  Code  Gb  Common_HAL.o [10]
+HardFault_Handler        0x800'b6d9    0x2a  Code  Gb  stm32u0xx_it.o [2]
+I2C_Flush_TXDR           0x800'63c1    0x28  Code  Lc  stm32u0xx_hal_i2c.o [4]
+I2C_IsErrorOccurred      0x800'652f   0x126  Code  Lc  stm32u0xx_hal_i2c.o [4]
+I2C_RequestMemoryRead    0x800'6341    0x7a  Code  Lc  stm32u0xx_hal_i2c.o [4]
+I2C_RequestMemoryWrite   0x800'62c5    0x7c  Code  Lc  stm32u0xx_hal_i2c.o [4]
+I2C_TransferConfig       0x800'6655    0x2e  Code  Lc  stm32u0xx_hal_i2c.o [4]
+I2C_WaitOnFlagUntilTimeout
+                         0x800'63e9    0x82  Code  Lc  stm32u0xx_hal_i2c.o [4]
+I2C_WaitOnSTOPFlagUntilTimeout
+                         0x800'64d3    0x5c  Code  Lc  stm32u0xx_hal_i2c.o [4]
+I2C_WaitOnTXISFlagUntilTimeout
+                         0x800'646b    0x68  Code  Lc  stm32u0xx_hal_i2c.o [4]
+IDDD_DBA_RAM_Interface_Config
+                         0x800'93ad    0x16  Code  Gb  IDDD_DBA_RAM_Interface.o [18]
+IDDD_DBA_REG_RAM_Single_Read
+                         0x800'93c3    0x12  Code  Gb  IDDD_DBA_RAM_Interface.o [18]
+IDDD_DBA_REG_RAM_Single_Write
+                         0x800'93d5    0x12  Code  Gb  IDDD_DBA_RAM_Interface.o [18]
+IDDD_DBA_REG_ROM_Load    0x800'9319    0x3e  Code  Gb  IDDD_DBA_ROM_Interface.o [18]
+IDDD_DBA_REG_ROM_Save    0x800'9357    0x3e  Code  Gb  IDDD_DBA_ROM_Interface.o [18]
+IDDD_DBA_REG_ROM_Single_Read
+                         0x800'92f5    0x12  Code  Gb  IDDD_DBA_ROM_Interface.o [18]
+IDDD_DBA_REG_ROM_Single_Write
+                         0x800'9307    0x12  Code  Gb  IDDD_DBA_ROM_Interface.o [18]
+IDDD_DBA_ROM_Default_Data_Setting
+                         0x800'9299    0x5c  Code  Gb  IDDD_DBA_ROM_Interface.o [18]
+IDDD_DBA_ROM_Interface_Config
+                         0x800'9215    0x52  Code  Gb  IDDD_DBA_ROM_Interface.o [18]
+IDDD_DBA_ROM_Loading     0x800'9267    0x32  Code  Gb  IDDD_DBA_ROM_Interface.o [18]
+IDDD_Disp_BAT_Status_Read
+                         0x800'84d3     0xe  Code  Gb  Display_Interface.o [20]
+IDDD_Disp_BAT_Status_Write
+                         0x800'84c5     0xe  Code  Gb  Display_Interface.o [20]
+IDDD_Disp_BLE_Status_Read
+                         0x800'84b7     0xe  Code  Gb  Display_Interface.o [20]
+IDDD_Disp_BLE_Status_Write
+                         0x800'84a9     0xe  Code  Gb  Display_Interface.o [20]
+IDDD_Disp_Status_Read    0x800'84ef     0xe  Code  Gb  Display_Interface.o [20]
+IDDD_Disp_Status_Write   0x800'84e1     0xe  Code  Gb  Display_Interface.o [20]
+IDDD_Display_App         0x800'80cf   0x288  Code  Gb  Display_Application.o [24]
+IDDD_Display_App_Config
+                         0x800'80b1    0x1e  Code  Gb  Display_Application.o [24]
+IDDD_LED_Channel_Select
+                         0x800'95b9    0xac  Code  Gb  IDDD_LED_CTRL_Drv.o [12]
+IDDD_LED_Current_Set     0x800'9665    0x24  Code  Gb  IDDD_LED_CTRL_Drv.o [12]
+IDDD_OPT_Channel_SEL_Write_Interface
+                         0x800'91f9     0xe  Code  Gb  IDDD_RunCmd_TRF_Interface.o [19]
+IDDD_OPT_LED_CurrentData_Write_Interface
+                         0x800'91a5     0xe  Code  Gb  IDDD_RunCmd_TRF_Interface.o [19]
+IDDD_OPT_LED_Current_Read_Interface
+                         0x800'91b3     0xe  Code  Gb  IDDD_RunCmd_TRF_Interface.o [19]
+IDDD_OPT_LED_ON_Time_Read_Interface
+                         0x800'91cf     0xe  Code  Gb  IDDD_RunCmd_TRF_Interface.o [19]
+IDDD_OPT_LED_ON_Time_Write_Interface
+                         0x800'91c1     0xe  Code  Gb  IDDD_RunCmd_TRF_Interface.o [19]
+IDDD_OPT_OPT_Channel_SEL_Read_Interface
+                         0x800'9207     0xe  Code  Gb  IDDD_RunCmd_TRF_Interface.o [19]
+IDDD_OPT_PD_ScanTime_Read_Interface
+                         0x800'91eb     0xe  Code  Gb  IDDD_RunCmd_TRF_Interface.o [19]
+IDDD_OPT_PD_Scan_Time_Write_Interface
+                         0x800'91dd     0xe  Code  Gb  IDDD_RunCmd_TRF_Interface.o [19]
+IDDD_PD_ADC_Channel_Select
+                         0x800'89c9    0xac  Code  Gb  IDDD_ADC_SCAN_Drv.o [12]
+IDDD_PD_ADC_Complete_Flag_CTRL
+                         0x800'8a99     0x6  Code  Gb  IDDD_ADC_SCAN_Drv.o [12]
+IDDD_PD_ADC_Config       0x800'894d    0x7c  Code  Gb  IDDD_ADC_SCAN_Drv.o [12]
+IDDD_PD_ADC_DMA_Start    0x800'8a75    0x14  Code  Gb  IDDD_ADC_SCAN_Drv.o [12]
+IDDD_PD_ADC_DMA_Stop     0x800'8a89    0x10  Code  Gb  IDDD_ADC_SCAN_Drv.o [12]
+IDDD_PD_ADC_Lock         0x800'8917    0x24  Code  Gb  IDDD_ADC_SCAN_Drv.o [12]
+IDDD_PD_ADC_Unlock       0x800'893b    0x12  Code  Gb  IDDD_ADC_SCAN_Drv.o [12]
+IDDD_RunCmd_Exec         0x800'7f41    0x3e  Code  Gb  IDDD_RunCommand_App.o [22]
+IDDD_RunCmd_Interface_Config
+                         0x800'9061    0x16  Code  Gb  IDDD_RunCommand_Interface.o [19]
+IDDD_RunCmd_SyncTRF_Run
+                         0x800'90c5    0xd2  Code  Gb  IDDD_RunCmd_TRF_Interface.o [19]
+IDDD_RunCmd_TRF_Config   0x800'90b1    0x14  Code  Gb  IDDD_RunCmd_TRF_Interface.o [19]
+IDDD_RunCommand_App      0x800'7edb    0x66  Code  Gb  IDDD_RunCommand_App.o [22]
+IDDD_RunCommand_App_Config
+                         0x800'7ead    0x2e  Code  Gb  IDDD_RunCommand_App.o [22]
+IDDD_TRF_PWM_Channel_Enanle
+                         0x800'97a9    0x1a  Code  Gb  IDDD_TRF_Timer_CTRL.o [12]
+IDDD_TRF_PWM_Start       0x800'9765    0x28  Code  Gb  IDDD_TRF_Timer_CTRL.o [12]
+IDDD_TRF_PWM_Stop        0x800'978d    0x1c  Code  Gb  IDDD_TRF_Timer_CTRL.o [12]
+IDDD_TRF_TImer_Config    0x800'96a1    0xc4  Code  Gb  IDDD_TRF_Timer_CTRL.o [12]
+LL_ADC_Disable           0x800'5451     0xe  Code  Lc  stm32u0xx_hal_adc.o [4]
+LL_ADC_Enable            0x800'5443     0xe  Code  Lc  stm32u0xx_hal_adc.o [4]
+LL_ADC_EnableInternalRegulator
+                         0x800'5429    0x10  Code  Lc  stm32u0xx_hal_adc.o [4]
+LL_ADC_GetCommonPathInternalCh
+                         0x800'5381     0xa  Code  Lc  stm32u0xx_hal_adc.o [4]
+LL_ADC_GetSamplingTimeCommonChannels
+                         0x800'53a7    0x18  Code  Lc  stm32u0xx_hal_adc.o [4]
+LL_ADC_IsDisableOngoing
+                         0x800'5469     0xa  Code  Lc  stm32u0xx_hal_adc.o [4]
+LL_ADC_IsEnabled         0x800'545f     0xa  Code  Lc  stm32u0xx_hal_adc.o [4]
+LL_ADC_IsInternalRegulatorEnabled
+                         0x800'5439     0xa  Code  Lc  stm32u0xx_hal_adc.o [4]
+LL_ADC_REG_IsConversionOngoing
+                         0x800'548f     0xa  Code  Lc  stm32u0xx_hal_adc.o [4]
+LL_ADC_REG_IsTriggerSourceSWStart
+                         0x800'53bf    0x16  Code  Lc  stm32u0xx_hal_adc.o [4]
+LL_ADC_REG_SetSequencerChAdd
+                         0x800'53f9     0xc  Code  Lc  stm32u0xx_hal_adc.o [4]
+LL_ADC_REG_SetSequencerChRem
+                         0x800'5405     0xc  Code  Lc  stm32u0xx_hal_adc.o [4]
+LL_ADC_REG_SetSequencerRanks
+                         0x800'53d5    0x24  Code  Lc  stm32u0xx_hal_adc.o [4]
+LL_ADC_REG_StartConversion
+                         0x800'5473     0xe  Code  Lc  stm32u0xx_hal_adc.o [4]
+LL_ADC_REG_StopConversion
+                         0x800'5481     0xe  Code  Lc  stm32u0xx_hal_adc.o [4]
+LL_ADC_SetChannelSamplingTime
+                         0x800'5411    0x18  Code  Lc  stm32u0xx_hal_adc.o [4]
+LL_ADC_SetCommonPathInternalCh
+                         0x800'5375     0xc  Code  Lc  stm32u0xx_hal_adc.o [4]
+LL_ADC_SetSamplingTimeCommonChannels
+                         0x800'538b    0x1c  Code  Lc  stm32u0xx_hal_adc.o [4]
+Led_Power                0x800'b1c3    0x9e  Code  Gb  hsCLI_Command.o [21]
+Lock_Rework_PP_Drv       0x800'41a9    0x14  Code  Gb  Rework_PP_Drv.o [9]
+MSIRangeTable            0x800'bbdc    0x30  Data  Gb  system_stm32u0xx.o [3]
+MX_ADC1_Init             0x800'2f29    0x7c  Code  Lc  main.o [2]
+MX_DAC1_Init             0x800'2fa5    0x6c  Code  Lc  main.o [2]
+MX_DMA_Init              0x800'322b    0x36  Code  Lc  main.o [2]
+MX_GPIO_Init             0x800'3289   0x190  Code  Lc  main.o [2]
+MX_I2C1_Init             0x800'3011    0x4e  Code  Lc  main.o [2]
+MX_I2C2_Init             0x800'305f    0x4e  Code  Lc  main.o [2]
+MX_TIM3_Init             0x800'30ad    0xb4  Code  Lc  main.o [2]
+MX_USART1_UART_Init      0x800'3161    0x62  Code  Lc  main.o [2]
+MX_USART2_UART_Init      0x800'31c9    0x62  Code  Lc  main.o [2]
+NMI_Handler              0x800'b6d5     0x4  Code  Gb  stm32u0xx_it.o [2]
+OpticInfor               0x800'b34f    0x3e  Code  Gb  hsCLI_Command.o [21]
+Optics_SET_Select        0x800'b261    0x62  Code  Gb  hsCLI_Command.o [21]
+PendSV_Handler           0x800'8ae7          Code  Gb  portasm.o [6]
+RCC_SetFlashLatencyFromMSIRange
+                         0x800'40b1    0x86  Code  Lc  stm32u0xx_hal_rcc.o [4]
+Read_IDDD_PD_ADC_Complete_Flag
+                         0x800'8a9f     0x6  Code  Gb  IDDD_ADC_SCAN_Drv.o [12]
+Read_Rework_PP_Drv       0x800'4191    0x14  Code  Gb  Rework_PP_Drv.o [9]
+Read_TRF_Timer_HalDrive
+                         0x800'2c91     0x4  Code  Gb  Common_HAL.o [10]
+Region$$Table$$Base      0x800'bd24           --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'bd44           --   Gb  - Linker created -
+Rework_PP_Drv_Config     0x800'4159    0x38  Code  Gb  Rework_PP_Drv.o [9]
+SVC_Handler              0x800'8b25          Code  Gb  portasm.o [6]
+SysTick_Handler          0x800'8843    0x20  Code  Gb  port.o [6]
+SystemClock_Config       0x800'2eb1    0x78  Code  Gb  main.o [2]
+SystemCoreClock         0x2000'0020     0x4  Data  Gb  system_stm32u0xx.o [3]
+SystemInit               0x800'b979    0x30  Code  Gb  system_stm32u0xx.o [3]
+TIM7_LPTIM2_IRQHandler   0x800'b71d     0xa  Code  Gb  stm32u0xx_it.o [2]
+TIM_Base_SetConfig       0x800'6c85    0x84  Code  Gb  stm32u0xx_hal_tim.o [4]
+TIM_CCxChannelCmd        0x800'7011    0x20  Code  Gb  stm32u0xx_hal_tim.o [4]
+TIM_ETR_SetConfig        0x800'6fd9    0x16  Code  Gb  stm32u0xx_hal_tim.o [4]
+TIM_ITRx_SetConfig       0x800'6fc1    0x10  Code  Lc  stm32u0xx_hal_tim.o [4]
+TIM_OC1_SetConfig        0x800'6d09    0x70  Code  Lc  stm32u0xx_hal_tim.o [4]
+TIM_OC2_SetConfig        0x800'6d79    0x6e  Code  Gb  stm32u0xx_hal_tim.o [4]
+TIM_OC3_SetConfig        0x800'6de7    0x6a  Code  Lc  stm32u0xx_hal_tim.o [4]
+TIM_OC4_SetConfig        0x800'6e55    0x50  Code  Lc  stm32u0xx_hal_tim.o [4]
+TIM_OC5_SetConfig        0x800'6eb1    0x48  Code  Lc  stm32u0xx_hal_tim.o [4]
+TIM_OC6_SetConfig        0x800'6f01    0x4c  Code  Lc  stm32u0xx_hal_tim.o [4]
+TIM_TI1_ConfigInputStage
+                         0x800'6f65    0x24  Code  Lc  stm32u0xx_hal_tim.o [4]
+TIM_TI2_ConfigInputStage
+                         0x800'6f89    0x26  Code  Lc  stm32u0xx_hal_tim.o [4]
+Trf_Run                  0x800'b38d    0x3e  Code  Gb  hsCLI_Command.o [21]
+Trf_Save                 0x800'b3d9    0x3e  Code  Gb  hsCLI_Command.o [21]
+Trf_TimeSet              0x800'b2c3    0x8c  Code  Gb  hsCLI_Command.o [21]
+UARTEx_SetNbDataToProcess
+                         0x800'71ad    0x64  Code  Lc  stm32u0xx_hal_uart_ex.o [4]
+UARTEx_SetNbDataToProcess::denominator
+                         0x800'bffc     0x8  Data  Lc  stm32u0xx_hal_uart_ex.o [4]
+UARTEx_SetNbDataToProcess::numerator
+                         0x800'bff4     0x8  Data  Lc  stm32u0xx_hal_uart_ex.o [4]
+UARTPrescTable           0x800'be88    0x18  Data  Gb  stm32u0xx_hal_uart.o [4]
+UART_AdvFeatureConfig    0x800'0975    0xde  Code  Gb  stm32u0xx_hal_uart.o [4]
+UART_CheckIdleState      0x800'0a6d    0xcc  Code  Gb  stm32u0xx_hal_uart.o [4]
+UART_DMAAbortOnError     0x800'0ed5    0x10  Code  Lc  stm32u0xx_hal_uart.o [4]
+UART_DMAError            0x800'0e85    0x50  Code  Lc  stm32u0xx_hal_uart.o [4]
+UART_DMARxOnlyAbortCallback
+                         0x800'0ee5    0x2c  Code  Lc  stm32u0xx_hal_uart.o [4]
+UART_DMATransmitCplt     0x800'0e0d    0x50  Code  Lc  stm32u0xx_hal_uart.o [4]
+UART_DMATxHalfCplt       0x800'0e5d     0xa  Code  Lc  stm32u0xx_hal_uart.o [4]
+UART_EndRxTransfer       0x800'0da5    0x64  Code  Lc  stm32u0xx_hal_uart.o [4]
+UART_EndTransmit_IT      0x800'0f11    0x2c  Code  Lc  stm32u0xx_hal_uart.o [4]
+UART_EndTxTransfer       0x800'0d69    0x3c  Code  Lc  stm32u0xx_hal_uart.o [4]
+UART_RxISR_16BIT         0x800'102f    0xf2  Code  Lc  stm32u0xx_hal_uart.o [4]
+UART_RxISR_16BIT_FIFOEN
+                         0x800'1321   0x1f4  Code  Lc  stm32u0xx_hal_uart.o [4]
+UART_RxISR_8BIT          0x800'0f3d    0xf2  Code  Lc  stm32u0xx_hal_uart.o [4]
+UART_RxISR_8BIT_FIFOEN   0x800'112d   0x1ee  Code  Lc  stm32u0xx_hal_uart.o [4]
+UART_SetConfig           0x800'0779   0x1ee  Code  Gb  stm32u0xx_hal_uart.o [4]
+UART_Start_Receive_IT    0x800'0c03   0x158  Code  Gb  stm32u0xx_hal_uart.o [4]
+UART_WaitOnFlagUntilTimeout
+                         0x800'0b65    0x9e  Code  Gb  stm32u0xx_hal_uart.o [4]
+USART1_IRQHandler        0x800'b727     0xa  Code  Gb  stm32u0xx_it.o [2]
+USART2_LPUART2_IRQHandler
+                         0x800'b731     0xa  Code  Gb  stm32u0xx_it.o [2]
+Unlock_Rework_PP_Drv     0x800'41bd    0x10  Code  Gb  Rework_PP_Drv.o [9]
+_LitobFullNoMb           0x800'a8ad   0x124  Code  Lc  xprintffull_nomb.o [25]
+_LocaleC_isspace         0x800'b0a9    0x14  Code  Gb  xlocale_c.o [25]
+_LocaleC_isupper         0x800'b09d     0x2  Code  Gb  xlocale_c.o [25]
+_LocaleC_tolower         0x800'b0bd     0xc  Code  Gb  xlocale_c.o [25]
+_Locale_lconv           0x2000'0028    0x38  Data  Lc  xlocale_c.o [25]
+_PrintfFullNoMb          0x800'9a79   0xe34  Code  Gb  xprintffull_nomb.o [25]
+_PutcharFullNoMb         0x800'aa1d    0x22  Code  Lc  xprintffull_nomb.o [25]
+_PutcharsFullNoMb        0x800'aa3f    0x36  Code  Lc  xprintffull_nomb.o [25]
+_SNProut                 0x800'be0d    0x1c  Code  Gb  xsnprout.o [25]
+__NVIC_DisableIRQ        0x800'37e5    0x20  Code  Lc  stm32u0xx_hal_cortex.o [4]
+__NVIC_EnableIRQ         0x800'37cd    0x18  Code  Lc  stm32u0xx_hal_cortex.o [4]
+__NVIC_SetPriority       0x800'3805    0x8a  Code  Lc  stm32u0xx_hal_cortex.o [4]
+__aeabi_cdcmple          0x800'ab51          Code  Gb  DblCmpLe.o [26]
+__aeabi_cdrcmple         0x800'ab83          Code  Gb  DblCmpGe.o [26]
+__aeabi_d2iz             0x800'ac25          Code  Gb  DblToI32.o [26]
+__aeabi_d2uiz            0x800'ac49          Code  Gb  DblToI32.o [26]
+__aeabi_ddiv             0x800'ae55          Code  Gb  DblDiv.o [26]
+__aeabi_dmul             0x800'af17          Code  Gb  DblMul.o [26]
+__aeabi_dsub             0x800'ad67          Code  Gb  DblAddSub.o [26]
+__aeabi_i2d              0x800'ac99          Code  Gb  IxxToDbl.o [26]
+__aeabi_idiv             0x800'26a1          Code  Gb  I32DivModFast.o [27]
+__aeabi_idiv0            0x800'4151          Code  Gb  IntDivZer.o [27]
+__aeabi_idivmod          0x800'26a1          Code  Gb  I32DivModFast.o [27]
+__aeabi_ldiv0            0x800'4155          Code  Gb  I64DivZer.o [27]
+__aeabi_lmul             0x800'2755          Code  Gb  I64Mul.o [27]
+__aeabi_memcpy           0x800'8b91          Code  Gb  ABImemcpy.o [27]
+__aeabi_memcpy4          0x800'8b5d          Code  Gb  ABImemcpy.o [27]
+__aeabi_memcpy8          0x800'8b5d          Code  Gb  ABImemcpy.o [27]
+__aeabi_memset           0x800'44b1          Code  Gb  ABImemset.o [27]
+__aeabi_ui2d             0x800'ac79          Code  Gb  IxxToDbl.o [26]
+__aeabi_uidiv            0x800'26a7          Code  Gb  I32DivModFast.o [27]
+__aeabi_uidivmod         0x800'26a7          Code  Gb  I32DivModFast.o [27]
+__aeabi_uldivmod         0x800'2787          Code  Gb  I64DivMod.o [27]
+__cmain                  0x800'bd65          Code  Gb  cmain.o [27]
+__exit                   0x800'b0e9    0x14  Code  Gb  exit.o [28]
+__g_fpErrorAction       0x2000'22d0     0x4  Data  Gb  hsGlobalErrorHandle.o [9]
+__iar_Fail_s             0x800'aac9    0x22  Code  Gb  xfail_s.o [25]
+__iar_Memchr             0x800'ab11          Code  Gb  memchr.o [27]
+__iar_Memcpy             0x800'8b9d          Code  Gb  ABImemcpy.o [27]
+__iar_Memset4_word       0x800'44d1          Code  Gb  ABImemset.o [27]
+__iar_Memset_word        0x800'44bd          Code  Gb  ABImemset.o [27]
+__iar_Stoulx             0x800'b475   0x14c  Code  Gb  iar_Stoulx.o [25]
+__iar_Strchr             0x800'aab5          Code  Gb  strchr.o [27]
+__iar_d2uiz              0x800'ac4d          Code  Gb  DblToI32.o [26]
+__iar_data_init3         0x800'bcd9    0x28  Code  Gb  data_init.o [27]
+__iar_frexp              0x800'ab33          Code  Gb  frexp.o [26]
+__iar_frexp64            0x800'ab27          Code  Gb  frexp.o [26]
+__iar_frexpl             0x800'ab33          Code  Gb  frexp.o [26]
+__iar_globLocale        0x2000'0060    0x48  Data  Lc  xlocale_c.o [25]
+__iar_global_Locale      0x800'b0c9     0x4  Code  Gb  xlocale_c.o [25]
+__iar_ldexp64            0x800'abb5          Code  Gb  ldexp.o [26]
+__iar_lz77_init_single3
+                         0x800'2803    0x7e  Code  Gb  lz77_init_single.o [27]
+__iar_program_start      0x800'bdf1          Code  Gb  cstartup_M.o [27]
+__iar_scalbln64          0x800'abb5          Code  Gb  ldexp.o [26]
+__iar_scalbn64           0x800'abb5          Code  Gb  ldexp.o [26]
+__iar_zero_init3         0x800'b9b9    0x3c  Code  Gb  zero_init3.o [27]
+__low_level_init         0x800'bd83     0x4  Code  Gb  low_level_init.o [25]
+__vector_table           0x800'0000          Data  Gb  startup_stm32u031xx.o [1]
+_call_main               0x800'bd71          Code  Gb  cmain.o [27]
+_exit                    0x800'bd91          Code  Gb  cexit.o [27]
+abort                    0x800'b0dd     0xa  Code  Gb  abort.o [25]
+backspace_tt            0x2000'0010     0x4  Data  Gb  hsDEBUG_UART_CLI_App.o [21]
+cOutputBuffer           0x2000'1cfc    0x80  Data  Gb  hsDEBUG_UART_CLI_App.o [21]
+cRxedChar               0x2000'234d     0x1  Data  Gb  hsDEBUG_UART_CLI_App.o [21]
+cliWrite                 0x800'7d99     0xc  Code  Gb  hsDEBUG_UART_CLI_App.o [21]
+cli_prompt              0x2000'000c     0x4  Data  Gb  hsDEBUG_UART_CLI_App.o [21]
+cmd_clearScreen          0x800'b0fd    0x1c  Code  Gb  hsCLI_Command.o [21]
+comIDDD_RunCmd_Get       0x800'9093    0x1a  Code  Gb  IDDD_RunCommand_Interface.o [19]
+comIDDD_RunCmd_Send      0x800'9077    0x1c  Code  Gb  IDDD_RunCommand_Interface.o [19]
+digits                   0x800'b890    0x28  Data  Lc  iar_Stoulx.o [25]
+exit                     0x800'bd87     0x8  Code  Gb  exit.o [25]
+frexp                    0x800'ab27          Code  Gb  frexp.o [26]
+frexpl                   0x800'ab27          Code  Gb  frexp.o [26]
+gFp_Uart_Rx_Callback    0x2000'224c     0x8  Data  Gb  Common_HAL.o [10]
+gFp_Uart_Tx_Callback    0x2000'2254     0x8  Data  Gb  Common_HAL.o [10]
+g_DEBUG_UART_TX_OUT_Mem
+                        0x2000'1c7c    0x80  Data  Gb  hsDEBUG_UART_CLI_App.o [21]
+g_Rework_PP_Buf         0x2000'2134    0x30  Data  Gb  Rework_PP_Drv.o [9]
+g_dwBATDispMode         0x2000'227c     0x4  Data  Gb  Display_Application.o [24]
+g_dwBLEDispMode         0x2000'2280     0x4  Data  Gb  Display_Application.o [24]
+g_dwBlanMode_TimeCnt    0x2000'2288     0x4  Data  Gb  Display_Application.o [24]
+g_dwBlankBlink_OnOff_Cnt
+                        0x2000'2284     0x4  Data  Gb  Display_Application.o [24]
+g_dwCurrentSqDispMode   0x2000'2278     0x4  Data  Gb  Display_Application.o [24]
+g_dwDAC_Convert_Count   0x2000'22f4     0x4  Data  Gb  IDDD_LED_CTRL_Drv.o [12]
+g_dwGlobalErrorStaus    0x2000'22c8     0x4  Data  Gb  hsGlobalErrorHandle.o [9]
+g_dwIDDD_DBA_RAM_MEM_Block
+                        0x2000'2184    0x1c  Data  Gb  IDDD_DBA_RAM_Interface.o [18]
+g_dwIDDD_DBA_ROM_ADD_Arry
+                        0x2000'2240     0xc  Data  Gb  IDDD_DBA_ROM_Interface.o [18]
+g_dwIDDD_DBA_ROM_MEM_Block
+                        0x2000'2088    0x44  Data  Gb  IDDD_DBA_ROM_Interface.o [18]
+g_dwIDDD_PD_ADC_CMP_Flag
+                        0x2000'22ec     0x4  Data  Gb  IDDD_ADC_SCAN_Drv.o [12]
+g_dwIDDD_PD_ADC_Mode    0x2000'22e8     0x4  Data  Gb  IDDD_ADC_SCAN_Drv.o [12]
+g_dwKeyActive_Flag      0x2000'22e0     0x4  Data  Gb  hsKey_Module.o [17]
+g_dwMainTickCnt         0x2000'2268     0x4  Data  Gb  Common_HAL.o [10]
+g_dwPop_STA_Cnt         0x2000'22dc     0x4  Data  Gb  hsKey_Module.o [17]
+g_dwPreSqDispMode       0x2000'2274     0x4  Data  Gb  Display_Application.o [24]
+g_dwPush_STA_Cnt        0x2000'22d8     0x4  Data  Gb  hsKey_Module.o [17]
+g_fpDebugMSG_Stream     0x2000'22ac     0x4  Data  Gb  hsDebug_MSG.o [9]
+g_fpPushCheck           0x2000'22e4     0x4  Data  Gb  hsKey_Module.o [17]
+g_tBLE_Drv              0x2000'19a8    0xa0  Data  Gb  hsDEBUG_UART_CLI_App.o [21]
+g_tIDDD_DBA_RAM_Drv     0x2000'21a0    0x14  Data  Gb  IDDD_DBA_RAM_Interface.o [18]
+g_tIDDD_DBA_ROM_Drv     0x2000'21b4    0x14  Data  Gb  IDDD_DBA_ROM_Interface.o [18]
+g_tIDDD_EEPROM_Drv      0x2000'2100    0x34  Data  Gb  IDDD_DBA_ROM_Interface.o [18]
+g_uDEBUG_RD_RX_DAT      0x2000'234c     0x1  Data  Gb  hsDEBUG_UART_CLI_App.o [21]
+g_uMSG_GenBuf           0x2000'1bfc    0x80  Data  Gb  hsDebug_MSG.o [9]
+g_vDISP_Param           0x2000'2270     0x4  Data  Gb  Display_Application.o [24]
+g_wADC_Buf              0x2000'2164    0x20  Data  Gb  IDDD_RunCmd_TRF_Interface.o [19]
+g_xDEBUG_UART_CLI_RX_App_Task
+                        0x2000'22c0     0x4  Data  Gb  hsDEBUG_UART_CLI_App.o [21]
+g_xDEBUG_UART_CLI_TX_App_Task
+                        0x2000'22bc     0x4  Data  Gb  hsDEBUG_UART_CLI_App.o [21]
+g_xDisp_App_TaskHandle  0x2000'226c     0x4  Data  Gb  Display_Application.o [24]
+g_xGlobalErrorStatusAccessKey
+                        0x2000'22cc     0x4  Data  Gb  hsGlobalErrorHandle.o [9]
+g_xIDDD_Run_CMD_App_Task
+                        0x2000'22f8     0x4  Data  Gb  IDDD_RunCommand_App.o [22]
+g_xKeyVal_Access_Mutex_Handle
+                        0x2000'22d4     0x4  Data  Gb  hsKey_Module.o [17]
+g_xMSG_Mutex            0x2000'22a8     0x4  Data  Gb  hsDebug_MSG.o [9]
+g_xQueDEBUG_UART_CLI_RX_DAT_Handle
+                        0x2000'22b8     0x4  Data  Gb  hsDEBUG_UART_CLI_App.o [21]
+g_xQueDEBUG_UART_CLI_TX_DAT_Handle
+                        0x2000'22b4     0x4  Data  Gb  hsDEBUG_UART_CLI_App.o [21]
+g_xQueIDDD_RunCmdCOM_Handle
+                        0x2000'2300     0x4  Data  Gb  IDDD_RunCommand_Interface.o [19]
+g_xSemaDEBUG_UART_CLI_TX_CMLT_Signel
+                        0x2000'22b0     0x4  Data  Gb  hsDEBUG_UART_CLI_App.o [21]
+g_xUserMain_Task_Handle
+                        0x2000'2340     0x4  Data  Gb  User_Main.o [8]
+gp_PD_ADC_Rwork_Drv     0x2000'22f0     0x4  Data  Gb  IDDD_ADC_SCAN_Drv.o [12]
+gp_UserMain_Param       0x2000'2344     0x4  Data  Gb  User_Main.o [8]
+gp_tBotLE_Drv           0x2000'2264     0x4  Data  Gb  BoTnLE525BLE_Drv.o [14]
+gp_vIDDD_RunCmd_Para    0x2000'22fc     0x4  Data  Gb  IDDD_RunCommand_App.o [22]
+hadc1                   0x2000'1d7c    0x64  Data  Gb  main.o [2]
+hdac1                   0x2000'21c8    0x14  Data  Gb  main.o [2]
+hdma_adc1               0x2000'1de0    0x5c  Data  Gb  main.o [2]
+hdma_usart1_tx          0x2000'1e3c    0x5c  Data  Gb  main.o [2]
+hdma_usart2_tx          0x2000'1e98    0x5c  Data  Gb  main.o [2]
+hi2c1                   0x2000'1f48    0x54  Data  Gb  main.o [2]
+hi2c2                   0x2000'1f9c    0x54  Data  Gb  main.o [2]
+hsDBA_DataBlockSizeByte_Read
+                         0x800'98c5    0x2c  Code  Gb  hsDataBlockAccess_Module.o [16]
+hsDBA_Module_Config      0x800'97d9    0x4a  Code  Gb  hsDataBlockAccess_Module.o [16]
+hsDBA_Read               0x800'9823    0x52  Code  Gb  hsDataBlockAccess_Module.o [16]
+hsDBA_Write              0x800'9875    0x50  Code  Gb  hsDataBlockAccess_Module.o [16]
+hsDEBUG_UART_CLI_App_Config
+                         0x800'7b1f    0x98  Code  Gb  hsDEBUG_UART_CLI_App.o [21]
+hsDEBUG_UART_CLI_RX_App
+                         0x800'7c37    0x9e  Code  Gb  hsDEBUG_UART_CLI_App.o [21]
+hsDEBUG_UART_CLI_RX_DMA_CMPLT_Callback
+                         0x800'7acb    0x54  Code  Gb  hsDEBUG_UART_CLI_App.o [21]
+hsDEBUG_UART_CLI_TX_App
+                         0x800'7bb7    0x80  Code  Gb  hsDEBUG_UART_CLI_App.o [21]
+hsDEBUG_UART_CLI_TX_DMA_CMPLT_Callback
+                         0x800'7a99    0x32  Code  Gb  hsDEBUG_UART_CLI_App.o [21]
+hsDEBUG_UART_TX_Char     0x800'7cd9    0x72  Code  Gb  hsDEBUG_UART_CLI_App.o [21]
+hsDEBUG_UART_TX_String   0x800'7d55    0x24  Code  Gb  hsDEBUG_UART_CLI_App.o [21]
+hsDebug_MSG              0x800'8e11    0x56  Code  Gb  hsDebug_MSG.o [9]
+hsDebug_MSG_Config       0x800'8df1    0x20  Code  Gb  hsDebug_MSG.o [9]
+hsEEPROM_Read            0x800'9a0d    0x6c  Code  Gb  hsEEPROM_Drv.o [11]
+hsEEROM_DRV_Config       0x800'98f1    0x3c  Code  Gb  hsEEPROM_Drv.o [11]
+hsEEROM_Write            0x800'992d    0xe0  Code  Gb  hsEEPROM_Drv.o [11]
+hsGlobalErrorBlocking_2nd
+                         0x800'423f    0x3c  Code  Gb  hsGlobalErrorHandle.o [9]
+hsGlobalErrorReadAllHandle
+                         0x800'4219    0x26  Code  Gb  hsGlobalErrorHandle.o [9]
+hsGlobalErrorUseConfig   0x800'41cd    0x28  Code  Gb  hsGlobalErrorHandle.o [9]
+hsGlobalErrorWriteAllHandle
+                         0x800'41f5    0x24  Code  Gb  hsGlobalErrorHandle.o [9]
+hsHW_Config              0x800'2929    0x56  Code  Gb  Common_HAL.o [10]
+hsKey_ActiveCheck        0x800'83a9    0x90  Code  Gb  hsKey_Module.o [17]
+hsKey_ActiveReset        0x800'8439    0x2c  Code  Gb  hsKey_Module.o [17]
+hsKey_Module_Config      0x800'8385    0x24  Code  Gb  hsKey_Module.o [17]
+hsKey_Status_Read        0x800'8465    0x2e  Code  Gb  hsKey_Module.o [17]
+hsMain_User_Config       0x800'451d    0x4c  Code  Gb  User_Main.o [8]
+hsUserMain_Task          0x800'4569    0xc2  Code  Gb  User_Main.o [8]
+htim3                   0x2000'1ff0    0x4c  Data  Gb  main.o [2]
+htim7                   0x2000'203c    0x4c  Data  Gb  stm32u0xx_hal_timebase_tim.o [2]
+huart1                  0x2000'1a48    0x94  Data  Gb  main.o [2]
+huart2                  0x2000'1adc    0x94  Data  Gb  main.o [2]
+isspace                  0x800'b621    0x12  Code  Gb  isspace.o [25]
+ldexp                    0x800'abb5          Code  Gb  ldexp.o [26]
+ldexpl                   0x800'abb5          Code  Gb  ldexp.o [26]
+localeconv               0x800'b0cd     0x4  Code  Gb  xlocale_c.o [25]
+main                     0x800'2e79    0x38  Code  Gb  main.o [2]
+memchr                   0x800'ab11          Code  Gb  memchr.o [27]
+memset                   0x800'2e65    0x14  Code  Gb  memset.o [27]
+ndigs                    0x800'b868    0x28  Data  Lc  iar_Stoulx.o [25]
+p_tDEBUG_UART_PP_DRV    0x2000'22c4     0x4  Data  Gb  hsDEBUG_UART_CLI_App.o [21]
+pcInputString           0x2000'20cc    0x34  Data  Gb  hsDEBUG_UART_CLI_App.o [21]
+port_hsBoTnL525BLE_UART_Config
+                         0x800'9425    0x30  Code  Gb  BoTnLE525BLE_Port.o [14]
+port_hsBoTnL525BLE_UART_RX_Run
+                         0x800'9459     0xc  Code  Gb  BoTnLE525BLE_Port.o [14]
+port_hsBoTnL525BLE_UART_RX_Stop
+                         0x800'9465     0xa  Code  Gb  BoTnLE525BLE_Port.o [14]
+port_hsBoTnL525BLE_UART_TX_Run
+                         0x800'946f     0xc  Code  Gb  BoTnLE525BLE_Port.o [14]
+port_hsDEBUG_UART_CLI_Config
+                         0x800'8d89    0x34  Code  Gb  port_hsDEBUG_UART_CLI_App.o [21]
+port_hsDEBUG_UART_RX_Run
+                         0x800'8dd7     0xc  Code  Gb  port_hsDEBUG_UART_CLI_App.o [21]
+port_hsDEBUS_UART_CLI_IRQ_Linker
+                         0x800'8dc1    0x16  Code  Gb  port_hsDEBUG_UART_CLI_App.o [21]
+port_hsDEBUS_UART_TX_Run
+                         0x800'8de3     0xc  Code  Gb  port_hsDEBUG_UART_CLI_App.o [21]
+port_hsEEPROM_Read       0x800'aa95    0x20  Code  Gb  port_hsEEPROM_Drv.o [11]
+port_hsEEPROM_Write      0x800'aa75    0x20  Code  Gb  port_hsEEPROM_Drv.o [11]
+prvAddCurrentTaskToDelayedList
+                         0x800'5249    0x80  Code  Lc  tasks.o [5]
+prvAddNewTaskToReadyList
+                         0x800'47d1    0xa4  Code  Lc  tasks.o [5]
+prvCheckTasksWaitingTermination
+                         0x800'4f59    0x36  Code  Lc  tasks.o [5]
+prvCopyDataFromQueue     0x800'79c3    0x2a  Code  Lc  queue.o [5]
+prvCopyDataToQueue       0x800'7943    0x80  Code  Lc  queue.o [5]
+prvDeleteTCB             0x800'4f99    0x36  Code  Lc  tasks.o [5]
+prvGetDisinheritPriorityAfterTimeout
+                         0x800'792d    0x16  Code  Lc  queue.o [5]
+prvGetNumberOfParameters
+                         0x800'9031    0x30  Code  Lc  FreeRTOS_CLI.o [15]
+prvHeapInit              0x800'864f    0x52  Code  Lc  heap_4.o [7]
+prvHelpCommand           0x800'8feb    0x2e  Code  Lc  FreeRTOS_CLI.o [15]
+prvHelpCommand::pxCommand
+                        0x2000'2290     0x4  Data  Lc  FreeRTOS_CLI.o [15]
+prvIdleTask              0x800'4ef9    0x14  Code  Lc  tasks.o [5]
+prvInitialiseMutex       0x800'73ad    0x1a  Code  Lc  queue.o [5]
+prvInitialiseNewQueue    0x800'7391    0x1c  Code  Lc  queue.o [5]
+prvInitialiseNewTask     0x800'4735    0x9c  Code  Lc  tasks.o [5]
+prvInitialiseTaskLists   0x800'4f11    0x44  Code  Lc  tasks.o [5]
+prvInsertBlockIntoFreeList
+                         0x800'86a1    0x5c  Code  Lc  heap_4.o [7]
+prvIsQueueEmpty          0x800'7a5b    0x1c  Code  Lc  queue.o [5]
+prvIsQueueFull           0x800'7a77    0x1e  Code  Lc  queue.o [5]
+prvRegisterCommand       0x800'8fbd    0x2e  Code  Lc  FreeRTOS_CLI.o [15]
+prvRegisterCommand::pxLastCommandInList
+                        0x2000'0008     0x4  Data  Lc  FreeRTOS_CLI.o [15]
+prvResetNextTaskUnblockTime
+                         0x800'4fcf    0x22  Code  Lc  tasks.o [5]
+prvTaskExitError         0x800'87bd    0x16  Code  Lc  port.o [6]
+prvUnlockQueue           0x800'79ed    0x6e  Code  Lc  queue.o [5]
+pvPortMalloc             0x800'84fd    0xf8  Code  Gb  heap_4.o [7]
+pvTaskIncrementMutexHeldCount
+                         0x800'520d    0x16  Code  Gb  tasks.o [5]
+pxCurrentTCB            0x2000'2304     0x4  Data  Gb  tasks.o [5]
+pxDelayedTaskList       0x2000'2308     0x4  Data  Lc  tasks.o [5]
+pxEnd                   0x2000'2294     0x4  Data  Lc  heap_4.o [7]
+pxOverflowDelayedTaskList
+                        0x2000'230c     0x4  Data  Lc  tasks.o [5]
+pxPortInitialiseStack    0x800'87a1    0x1a  Code  Gb  port.o [6]
+pxReadyTasksLists       0x2000'1b70    0x8c  Data  Lc  tasks.o [5]
+scalbln                  0x800'abb5          Code  Gb  ldexp.o [26]
+scalblnl                 0x800'abb5          Code  Gb  ldexp.o [26]
+scalbn                   0x800'abb5          Code  Gb  ldexp.o [26]
+scalbnl                  0x800'abb5          Code  Gb  ldexp.o [26]
+scale                    0x800'a9d1    0x44  Code  Lc  xprintffull_nomb.o [25]
+sec_hand                0x2000'2348     0x4  Data  Lc  xfail_s.o [25]
+snprintf                 0x800'b5d5    0x4c  Code  Gb  snprintf.o [25]
+strchr                   0x800'aab5          Code  Gb  strchr.o [27]
+strlen                   0x800'94bd          Code  Gb  strlen.o [27]
+strncmp                  0x800'94cb    0x2c  Code  Gb  strncmp.o [25]
+strncpy                  0x800'94f9          Code  Gb  strncpy.o [27]
+strtoul                  0x800'b5cd     0x6  Code  Gb  iar_Stoulx.o [25]
+tolower                  0x800'b633    0x12  Code  Gb  tolower.o [25]
+ucHeap                  0x2000'00a8  0x1800  Data  Lc  heap_4.o [7]
+ulSetInterruptMaskFromISR
+                         0x800'8b49          Code  Gb  portasm.o [6]
+uwTickFreq              0x2000'001c     0x4  Data  Gb  stm32u0xx_hal.o [4]
+uwTickPrio              0x2000'0018     0x4  Data  Gb  stm32u0xx_hal.o [4]
+uxCriticalNesting       0x2000'0014     0x4  Data  Lc  port.o [6]
+uxCurrentNumberOfTasks  0x2000'2314     0x4  Data  Lc  tasks.o [5]
+uxDeletedTasksWaitingCleanUp
+                        0x2000'2310     0x4  Data  Lc  tasks.o [5]
+uxListRemove             0x800'8777    0x28  Code  Gb  list.o [5]
+uxQueueMessagesWaiting   0x800'78f1    0x1a  Code  Gb  queue.o [5]
+uxQueueSpacesAvailable   0x800'790d    0x1e  Code  Gb  queue.o [5]
+uxSchedulerSuspended    0x2000'233c     0x4  Data  Lc  tasks.o [5]
+uxTaskGetNumberOfTasks   0x800'4b2d     0x6  Code  Gb  tasks.o [5]
+uxTaskNumber            0x2000'2330     0x4  Data  Lc  tasks.o [5]
+uxTopReadyPriority      0x2000'231c     0x4  Data  Lc  tasks.o [5]
+uxTopUsedPriority       0x2000'0024     0x4  Data  Gb  tasks.o [5]
+vApplicationGetIdleTaskMemory
+                         0x800'8875    0x18  Code  Gb  freertos.o [2]
+vApplicationMallocFailedHook
+                         0x800'888d     0xa  Code  Gb  freertos_hooks.o [2]
+vApplicationStackOverflowHook
+                         0x800'8897     0xa  Code  Gb  freertos_hooks.o [2]
+vClearInterruptMaskFromISR
+                         0x800'8b51          Code  Gb  portasm.o [6]
+vListInitialise          0x800'871d    0x1e  Code  Gb  list.o [5]
+vListInitialiseItem      0x800'873b     0x6  Code  Gb  list.o [5]
+vListInsert              0x800'8741    0x36  Code  Gb  list.o [5]
+vPortEnterCritical       0x800'8811    0x14  Code  Gb  port.o [6]
+vPortExitCritical        0x800'8825    0x1e  Code  Gb  port.o [6]
+vPortFree                0x800'85f5    0x5a  Code  Gb  heap_4.o [7]
+vPortStartFirstTask      0x800'8b27          Code  Gb  portasm.o [6]
+vPortYield               0x800'87fd    0x12  Code  Gb  port.o [6]
+vRegisterCLICommands     0x800'7d79    0x20  Code  Gb  hsDEBUG_UART_CLI_App.o [21]
+vSetMSP                  0x800'8ae1          Code  Gb  portasm.o [6]
+vTaskDelay               0x800'4875    0x30  Code  Gb  tasks.o [5]
+vTaskInternalSetTimeOutState
+                         0x800'4e59     0xe  Code  Gb  tasks.o [5]
+vTaskMissedYield         0x800'4ef1     0x8  Code  Gb  tasks.o [5]
+vTaskPlaceOnEventList    0x800'4d25    0x20  Code  Gb  tasks.o [5]
+vTaskPriorityDisinheritAfterTimeout
+                         0x800'5169    0x9e  Code  Gb  tasks.o [5]
+vTaskPrioritySet         0x800'48bd    0xcc  Code  Gb  tasks.o [5]
+vTaskStartScheduler      0x800'4995    0x6c  Code  Gb  tasks.o [5]
+vTaskSuspendAll          0x800'4a01     0xa  Code  Gb  tasks.o [5]
+vTaskSwitchContext       0x800'4ca1    0x84  Code  Gb  tasks.o [5]
+vsnprintf                0x800'947d    0x40  Code  Gb  vsnprint.o [25]
+xCommandList             0x800'b644    0x90  Data  Gb  hsCLI_Command.o [21]
+xDelayedTaskList1       0x2000'21dc    0x14  Data  Lc  tasks.o [5]
+xDelayedTaskList2       0x2000'21f0    0x14  Data  Lc  tasks.o [5]
+xFreeBytesRemaining     0x2000'2298     0x4  Data  Lc  heap_4.o [7]
+xHeapStructSize          0x800'c01c     0x4  Data  Lc  heap_4.o [7]
+xHelpCommand             0x800'beb4    0x10  Data  Lc  FreeRTOS_CLI.o [15]
+xIdleStack              0x2000'18a8   0x100  Data  Lc  freertos.o [2]
+xIdleTaskHandle         0x2000'2338     0x4  Data  Lc  tasks.o [5]
+xIdleTaskTCBBuffer      0x2000'1ef4    0x54  Data  Lc  freertos.o [2]
+xMinimumEverFreeBytesRemaining
+                        0x2000'229c     0x4  Data  Lc  heap_4.o [7]
+xNextTaskUnblockTime    0x2000'2334     0x4  Data  Lc  tasks.o [5]
+xNumOfOverflows         0x2000'232c     0x4  Data  Lc  tasks.o [5]
+xNumberOfSuccessfulAllocations
+                        0x2000'22a0     0x4  Data  Lc  heap_4.o [7]
+xNumberOfSuccessfulFrees
+                        0x2000'22a4     0x4  Data  Lc  heap_4.o [7]
+xPendedTicks            0x2000'2324     0x4  Data  Lc  tasks.o [5]
+xPendingReadyList       0x2000'2204    0x14  Data  Lc  tasks.o [5]
+xPortStartScheduler      0x800'87d3    0x2a  Code  Gb  port.o [6]
+xQueueCreateMutex        0x800'73c7    0x1a  Code  Gb  queue.o [5]
+xQueueGenericCreate      0x800'7331    0x60  Code  Gb  queue.o [5]
+xQueueGenericReset       0x800'7295    0x9c  Code  Gb  queue.o [5]
+xQueueGenericSend        0x800'73e1   0x144  Code  Gb  queue.o [5]
+xQueueGenericSendFromISR
+                         0x800'7525    0xc4  Code  Gb  queue.o [5]
+xQueueGiveFromISR        0x800'75e9    0xa0  Code  Gb  queue.o [5]
+xQueueReceive            0x800'7689   0x124  Code  Gb  queue.o [5]
+xQueueSemaphoreTake      0x800'77ad   0x144  Code  Gb  queue.o [5]
+xRegisteredCommands     0x2000'0000     0x8  Data  Lc  FreeRTOS_CLI.o [15]
+xSchedulerRunning       0x2000'2320     0x4  Data  Lc  tasks.o [5]
+xStart                  0x2000'225c     0x8  Data  Lc  heap_4.o [7]
+xSuspendedTaskList      0x2000'222c    0x14  Data  Lc  tasks.o [5]
+xTaskCheckForTimeOut     0x800'4e6d    0x84  Code  Gb  tasks.o [5]
+xTaskCreate              0x800'46b9    0x7a  Code  Gb  tasks.o [5]
+xTaskCreateStatic        0x800'4641    0x78  Code  Gb  tasks.o [5]
+xTaskGetSchedulerState   0x800'4ff1    0x1e  Code  Gb  tasks.o [5]
+xTaskIncrementTick       0x800'4b69   0x136  Code  Gb  tasks.o [5]
+xTaskPriorityDisinherit
+                         0x800'50c5    0x92  Code  Gb  tasks.o [5]
+xTaskPriorityInherit     0x800'5015    0xa2  Code  Gb  tasks.o [5]
+xTaskRemoveFromEventList
+                         0x800'4d6d    0xde  Code  Gb  tasks.o [5]
+xTaskResumeAll           0x800'4a15   0x114  Code  Gb  tasks.o [5]
+xTasksWaitingTermination
+                        0x2000'2218    0x14  Data  Lc  tasks.o [5]
+xTickCount              0x2000'2318     0x4  Data  Lc  tasks.o [5]
+xYieldPending           0x2000'2328     0x4  Data  Lc  tasks.o [5]
+
+
+[1] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\EWARM
+[2] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core
+[3] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\CMSIS
+[4] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver
+[5] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS
+[6] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\IAR
+[7] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\MemMang
+[8] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER
+[9] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common
+[10] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_00_HW
+[11] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_00_EEPROM
+[12] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_01_IDDD_TRF
+[13] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_02_IDDD_BAT_ACD
+[14] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_03_BoTnLE525_Drv
+[15] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_00_FreeRTOS_Plus_CLI
+[16] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_01_hsDBA_Module
+[17] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_02_Key_Module
+[18] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_00_IDDD_DBA_Interface
+[19] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_01_IDDD_RunCommand_Interface
+[20] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_03_IDDD_Display_Interface
+[21] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_00_hsDEBUG_USART_CLI_App
+[22] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_01_IDDD_RunCommand_App
+[23] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_02_IDDD_Main_Communication_App
+[24] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_03_IDDD_Display_App
+[25] = dl6M_tlf.a
+[26] = m6M_tl.a
+[27] = rt6M_tl.a
+[28] = shb_l.a
+
+  47'096 bytes of readonly  code memory
+   2'196 bytes of readonly  data memory
+  10'062 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<userOverrides>
+    <override>
+        <path>D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M\Core\Src\freertos_hooks.c</path>
+        <encoding>System</encoding>
+    </override>
+</userOverrides>
