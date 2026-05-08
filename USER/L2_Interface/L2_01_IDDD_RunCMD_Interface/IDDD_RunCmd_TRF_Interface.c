@@ -139,7 +139,7 @@ int32_t IDDD_RunCmd_SyncTRF_Run(uint32_t dwOPT_Ch, uint32_t dwLED_ON_Tim, uint32
   
   while(1)
   {
-    vTaskDelay(100);
+    vTaskDelay(100);  // 10ms로 Delay를 주게되면 측정 주기가 짧아진다.
     
     if(dwCnt >= TRF_TIME_OUT_CNT)
     {

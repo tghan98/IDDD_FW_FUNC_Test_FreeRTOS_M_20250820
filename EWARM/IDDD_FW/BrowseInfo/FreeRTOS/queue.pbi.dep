@@ -1,5 +1,5 @@
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\BrowseInfo\FreeRTOS\queue.pbi: \
-  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\FreeRTOS\queue.c \
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\BrowseInfo\FreeRTOS\queue.pbi: \
+  C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\FreeRTOS\queue.c \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdlib.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
@@ -10,16 +10,16 @@ D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product_stdlib.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\string.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product_string.h \
-  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\FreeRTOS.h \
+  C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\FreeRTOS.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stddef.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdint.h \
-  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Core\Inc\FreeRTOSConfig.h \
-  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\projdefs.h \
-  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\portable.h \
-  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\deprecated_definitions.h \
-  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\portable\IAR\ARM_CM0\portmacro.h \
-  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\mpu_wrappers.h \
-  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\task.h \
-  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\list.h \
-  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\queue.h \
-  D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\task.h
+  C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\Core\Inc\FreeRTOSConfig.h \
+  C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\projdefs.h \
+  C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\portable.h \
+  C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\deprecated_definitions.h \
+  C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\portable\IAR\ARM_CM0\portmacro.h \
+  C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\mpu_wrappers.h \
+  C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\task.h \
+  C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\list.h \
+  C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\queue.h \
+  C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\..\FreeRTOS\include\task.h

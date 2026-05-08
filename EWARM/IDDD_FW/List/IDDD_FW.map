@@ -1,92 +1,92 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.20.4.327/W64 for ARM                  11/Sep/2025  15:01:29
+# IAR ELF Linker V9.20.4.327/W64 for ARM                  08/May/2026  10:57:13
 # Copyright 2007-2022 IAR Systems AB.
 #
 #    Output file  =
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Exe\IDDD_FW.out
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Exe\IDDD_FW.out
 #    Map file     =
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\List\IDDD_FW.map
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\List\IDDD_FW.map
 #    Command line =
 #        -f
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Exe\IDDD_FW.out.rsp
-#        (D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_03_BoTnLE525_Drv\BoTnLE525BLE_Drv.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_03_BoTnLE525_Drv\BoTnLE525BLE_Port.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_00_HW\Common_HAL.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\croutine.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_03_IDDD_Display_App\Display_Application.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_03_IDDD_Display_Interface\Display_Interface.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\event_groups.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\freertos.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_00_FreeRTOS_Plus_CLI\FreeRTOS_CLI.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\freertos_hooks.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\MemMang\heap_4.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_00_hsDEBUG_USART_CLI_App\hsCLI_Command.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common\hsCommon_Utill.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_01_hsDBA_Module\hsDataBlockAccess_Module.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common\hsDebug_MSG.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_00_hsDEBUG_USART_CLI_App\hsDEBUG_UART_CLI_App.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_00_EEPROM\hsEEPROM_Drv.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common\hsGlobalErrorHandle.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_02_Key_Module\hsKey_Module.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_01_IDDD_TRF\IDDD_ADC_SCAN_Drv.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_02_IDDD_BAT_ACD\IDDD_BAT_ADC_Drv.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_00_IDDD_DBA_Interface\IDDD_DBA_RAM_Interface.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_00_IDDD_DBA_Interface\IDDD_DBA_ROM_Interface.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_01_IDDD_TRF\IDDD_LED_CTRL_Drv.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_01_IDDD_RunCommand_Interface\IDDD_RunCmd_TRF_Interface.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_01_IDDD_RunCommand_App\IDDD_RunCommand_App.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_01_IDDD_RunCommand_Interface\IDDD_RunCommand_Interface.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_01_IDDD_TRF\IDDD_TRF_Timer_CTRL.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\list.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\main.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_02_IDDD_Main_Communication_App\Main_Communication_App.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\IAR\port.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_00_hsDEBUG_USART_CLI_App\port_hsDEBUG_UART_CLI_App.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_00_EEPROM\port_hsEEPROM_Drv.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\IAR\portasm.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\queue.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common\Rework_PP_Drv.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\EWARM\startup_stm32u031xx.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_adc.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_adc_ex.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_cortex.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_dac.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_dac_ex.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_dma.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_dma_ex.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_exti.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_flash.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_flash_ex.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_gpio.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_i2c.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_i2c_ex.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\stm32u0xx_hal_msp.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_pwr.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_pwr_ex.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_rcc.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_rcc_ex.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_tim.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_tim_ex.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\stm32u0xx_hal_timebase_tim.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_uart.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_uart_ex.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\stm32u0xx_it.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_ll_adc.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_ll_i2c.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\stream_buffer.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\CMSIS\system_stm32u0xx.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\tasks.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\timers.o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\User_Main.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Exe\IDDD_FW.out.rsp
+#        (C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_03_BoTnLE525_Drv\BoTnLE525BLE_Drv.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_03_BoTnLE525_Drv\BoTnLE525BLE_Port.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_00_HW\Common_HAL.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\croutine.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_03_IDDD_Display_App\Display_Application.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_03_IDDD_Display_Interface\Display_Interface.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\event_groups.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\freertos.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_00_FreeRTOS_Plus_CLI\FreeRTOS_CLI.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\freertos_hooks.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\MemMang\heap_4.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_00_hsDEBUG_USART_CLI_App\hsCLI_Command.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common\hsCommon_Utill.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_01_hsDBA_Module\hsDataBlockAccess_Module.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common\hsDebug_MSG.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_00_hsDEBUG_USART_CLI_App\hsDEBUG_UART_CLI_App.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_00_EEPROM\hsEEPROM_Drv.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common\hsGlobalErrorHandle.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_02_Key_Module\hsKey_Module.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_01_IDDD_TRF\IDDD_ADC_SCAN_Drv.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_02_IDDD_BAT_ACD\IDDD_BAT_ADC_Drv.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_00_IDDD_DBA_Interface\IDDD_DBA_RAM_Interface.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_00_IDDD_DBA_Interface\IDDD_DBA_ROM_Interface.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_01_IDDD_TRF\IDDD_LED_CTRL_Drv.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_01_IDDD_RunCommand_Interface\IDDD_RunCmd_TRF_Interface.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_01_IDDD_RunCommand_App\IDDD_RunCommand_App.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_01_IDDD_RunCommand_Interface\IDDD_RunCommand_Interface.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_01_IDDD_TRF\IDDD_TRF_Timer_CTRL.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\list.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\main.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_02_IDDD_Main_Communication_App\Main_Communication_App.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\IAR\port.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_00_hsDEBUG_USART_CLI_App\port_hsDEBUG_UART_CLI_App.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_00_EEPROM\port_hsEEPROM_Drv.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\IAR\portasm.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\queue.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common\Rework_PP_Drv.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\EWARM\startup_stm32u031xx.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_adc.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_adc_ex.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_cortex.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_dac.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_dac_ex.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_dma.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_dma_ex.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_exti.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_flash.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_flash_ex.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_gpio.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_i2c.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_i2c_ex.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\stm32u0xx_hal_msp.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_pwr.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_pwr_ex.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_rcc.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_rcc_ex.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_tim.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_tim_ex.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\stm32u0xx_hal_timebase_tim.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_uart.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_hal_uart_ex.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core\stm32u0xx_it.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_ll_adc.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver\stm32u0xx_ll_i2c.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\stream_buffer.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\CMSIS\system_stm32u0xx.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\tasks.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\timers.o
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\User_Main.o
 #        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
 #        --no_out_extension -o
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Exe\IDDD_FW.out
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Exe\IDDD_FW.out
 #        --map
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\List\IDDD_FW.map
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\List\IDDD_FW.map
 #        --config
-#        D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\stm32u031xx_flash.icf
+#        C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\stm32u031xx_flash.icf
 #        --semihosting --entry __iar_program_start --vfe --text_out locale)
 #
 ###############################################################################
@@ -506,12 +506,12 @@ command line/config:
     -------------------------------------------------------
     Total:
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\EWARM: [1]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\EWARM: [1]
     startup_stm32u031xx.o             258
     -------------------------------------------------------
     Total:                            258
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core: [2]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core: [2]
     freertos.o                         24               340
     freertos_hooks.o                   20
     main.o                          1'522               936
@@ -521,12 +521,12 @@ D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\
     -------------------------------------------------------
     Total:                          3'014             1'352
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\CMSIS: [3]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\CMSIS: [3]
     system_stm32u0xx.o                 64       74        4
     -------------------------------------------------------
     Total:                             64       74        4
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver: [4]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver: [4]
     stm32u0xx_hal.o                    28        4        8
     stm32u0xx_hal_adc.o             2'404
     stm32u0xx_hal_cortex.o            240
@@ -546,113 +546,113 @@ D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\
     -------------------------------------------------------
     Total:                         20'418       44        8
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS: [5]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS: [5]
     list.o                            130
     queue.o                         2'050
     tasks.o                         3'232       10      304
     -------------------------------------------------------
     Total:                          5'412       10      304
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\IAR: [6]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\IAR: [6]
     port.o                            264        2        4
     portasm.o                         124
     -------------------------------------------------------
     Total:                            388        2        4
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\MemMang: [7]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\MemMang: [7]
     heap_4.o                          544        4    6'172
     -------------------------------------------------------
     Total:                            544        4    6'172
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER: [8]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER: [8]
     User_Main.o                       292        8        8
     -------------------------------------------------------
     Total:                            292        8        8
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common: [9]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common: [9]
     Rework_PP_Drv.o                   116                48
     hsDebug_MSG.o                     132               136
     hsGlobalErrorHandle.o             188                12
     -------------------------------------------------------
     Total:                            436               196
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_00_HW: [10]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_00_HW: [10]
     Common_HAL.o                    1'506                20
     -------------------------------------------------------
     Total:                          1'506                20
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_00_EEPROM: [11]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_00_EEPROM: [11]
     hsEEPROM_Drv.o                    392
     port_hsEEPROM_Drv.o                64
     -------------------------------------------------------
     Total:                            456
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_01_IDDD_TRF: [12]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_01_IDDD_TRF: [12]
     IDDD_ADC_SCAN_Drv.o               488                12
     IDDD_LED_CTRL_Drv.o               232                 4
     IDDD_TRF_Timer_CTRL.o             312
     -------------------------------------------------------
     Total:                          1'032                16
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_02_IDDD_BAT_ACD: [13]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_02_IDDD_BAT_ACD: [13]
     -------------------------------------------------------
     Total:
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_03_BoTnLE525_Drv: [14]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_03_BoTnLE525_Drv: [14]
     BoTnLE525BLE_Drv.o                476                 4
     BoTnLE525BLE_Port.o                86
     -------------------------------------------------------
     Total:                            562                 4
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_00_FreeRTOS_Plus_CLI: [15]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_00_FreeRTOS_Plus_CLI: [15]
     FreeRTOS_CLI.o                    492      245       20
     -------------------------------------------------------
     Total:                            492      245       20
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_01_hsDBA_Module: [16]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_01_hsDBA_Module: [16]
     hsDataBlockAccess_Module.o        280
     -------------------------------------------------------
     Total:                            280
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_02_Key_Module: [17]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_02_Key_Module: [17]
     hsKey_Module.o                    292                20
     -------------------------------------------------------
     Total:                            292                20
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_00_IDDD_DBA_Interface: [18]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_00_IDDD_DBA_Interface: [18]
     IDDD_DBA_RAM_Interface.o           68                48
     IDDD_DBA_ROM_Interface.o          408               152
     -------------------------------------------------------
     Total:                            476               200
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_01_IDDD_RunCommand_Interface: [19]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_01_IDDD_RunCommand_Interface: [19]
     IDDD_RunCmd_TRF_Interface.o       356       40       32
     IDDD_RunCommand_Interface.o        80                 4
     -------------------------------------------------------
     Total:                            436       40       36
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_03_IDDD_Display_Interface: [20]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_03_IDDD_Display_Interface: [20]
     Display_Interface.o                84
     -------------------------------------------------------
     Total:                             84
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_00_hsDEBUG_USART_CLI_App: [21]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_00_hsDEBUG_USART_CLI_App: [21]
     hsCLI_Command.o                   888    1'108
     hsDEBUG_UART_CLI_App.o          1'044       84      502
     port_hsDEBUG_UART_CLI_App.o       102
     -------------------------------------------------------
     Total:                          2'034    1'192      502
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_01_IDDD_RunCommand_App: [22]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_01_IDDD_RunCommand_App: [22]
     IDDD_RunCommand_App.o             516      284        8
     -------------------------------------------------------
     Total:                            516      284        8
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_02_IDDD_Main_Communication_App: [23]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_02_IDDD_Main_Communication_App: [23]
     -------------------------------------------------------
     Total:
 
-D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_03_IDDD_Display_App: [24]
+C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_03_IDDD_Display_App: [24]
     Display_Application.o             724        8       32
     -------------------------------------------------------
     Total:                            724        8       32
@@ -1458,30 +1458,30 @@ xTickCount              0x2000'2318     0x4  Data  Lc  tasks.o [5]
 xYieldPending           0x2000'2328     0x4  Data  Lc  tasks.o [5]
 
 
-[1] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\EWARM
-[2] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core
-[3] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\CMSIS
-[4] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver
-[5] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS
-[6] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\IAR
-[7] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\MemMang
-[8] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER
-[9] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common
-[10] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_00_HW
-[11] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_00_EEPROM
-[12] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_01_IDDD_TRF
-[13] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_02_IDDD_BAT_ACD
-[14] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_03_BoTnLE525_Drv
-[15] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_00_FreeRTOS_Plus_CLI
-[16] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_01_hsDBA_Module
-[17] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_02_Key_Module
-[18] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_00_IDDD_DBA_Interface
-[19] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_01_IDDD_RunCommand_Interface
-[20] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_03_IDDD_Display_Interface
-[21] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_00_hsDEBUG_USART_CLI_App
-[22] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_01_IDDD_RunCommand_App
-[23] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_02_IDDD_Main_Communication_App
-[24] = D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_03_IDDD_Display_App
+[1] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\EWARM
+[2] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Application\User\Core
+[3] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\CMSIS
+[4] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\Drivers\STM32U0xx_HAL_Driver
+[5] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS
+[6] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\IAR
+[7] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\FreeRTOS\MemMang
+[8] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER
+[9] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L0_Common
+[10] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_00_HW
+[11] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_00_EEPROM
+[12] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_01_IDDD_TRF
+[13] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_02_IDDD_BAT_ACD
+[14] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_01_Component\L1_01_03_BoTnLE525_Drv
+[15] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_00_FreeRTOS_Plus_CLI
+[16] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_01_hsDBA_Module
+[17] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L1_Drive\L1_02_Module\L1_02_02_Key_Module
+[18] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_00_IDDD_DBA_Interface
+[19] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_01_IDDD_RunCommand_Interface
+[20] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L2_Interface\L2_03_IDDD_Display_Interface
+[21] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_00_hsDEBUG_USART_CLI_App
+[22] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_01_IDDD_RunCommand_App
+[23] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_02_IDDD_Main_Communication_App
+[24] = C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\IDDD_FW\Obj\USER\L3_Application\L3_03_IDDD_Display_App
 [25] = dl6M_tlf.a
 [26] = m6M_tl.a
 [27] = rt6M_tl.a

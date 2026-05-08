@@ -20,12 +20,12 @@
         <EnforceMemoryConfiguration>1</EnforceMemoryConfiguration>
     </ArmDriver>
     <StLinkDriver>
-        <stlinkserialNo>49FF68067087535024371467</stlinkserialNo>
+        <stlinkserialNo>55FF6F066767564840101867</stlinkserialNo>
         <stlinkfoundProbes />
-        <stlinkResetStyle>4</stlinkResetStyle>
-        <stlinkResetStrategy>2</stlinkResetStrategy>
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
         <CStepIntDis>_ 0</CStepIntDis>
+        <stlinkResetStyle>4</stlinkResetStyle>
+        <stlinkResetStrategy>2</stlinkResetStrategy>
     </StLinkDriver>
     <Trace1>
         <Enabled>0</Enabled>
@@ -36,11 +36,14 @@
         <StopOnThrow>_ 0</StopOnThrow>
     </Exceptions>
     <DebugChecksum>
-        <Checksum>1621862459</Checksum>
+        <Checksum>1737173009</Checksum>
     </DebugChecksum>
     <Disassembly>
         <MixedMode>1</MixedMode>
     </Disassembly>
+    <CallStack>
+        <ShowArgs>0</ShowArgs>
+    </CallStack>
     <Trace2>
         <Enabled>0</Enabled>
         <ShowSource>0</ShowSource>
@@ -49,9 +52,6 @@
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>
     </TermIOLog>
-    <CallStack>
-        <ShowArgs>0</ShowArgs>
-    </CallStack>
     <CallStackLog>
         <Enabled>0</Enabled>
     </CallStackLog>

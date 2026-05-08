@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\settings\IDDD_FW.IDDD_FW.general.xcl" --backend -f "D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\settings\IDDD_FW.IDDD_FW.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\settings\IDDD_FW.IDDD_FW.general.xcl" --backend -f "C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\settings\IDDD_FW.IDDD_FW.driver.xcl" 
 }
 else
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\settings\IDDD_FW.IDDD_FW.general.xcl" --debug_file=$debugfile --backend -f "D:\Project\Miro_Optic_System\Infectious_disease_Detection_Device_SCH\FW\IDDD_FW\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\settings\IDDD_FW.IDDD_FW.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\settings\IDDD_FW.IDDD_FW.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\hansu\Documents\STM32_iar_Workspace\IDDD_FW_FUNC_Test_FreeRTOS_M_20250820\EWARM\settings\IDDD_FW.IDDD_FW.driver.xcl" 
 }

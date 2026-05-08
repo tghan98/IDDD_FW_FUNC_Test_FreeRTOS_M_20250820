@@ -1,0 +1,1 @@
+[20251124-132535] : [SerialCtrl::openSerial] Find Serial Port : COM3
