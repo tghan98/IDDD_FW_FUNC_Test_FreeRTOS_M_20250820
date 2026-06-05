@@ -311,8 +311,10 @@ void hsDEBUG_UART_CLI_RX_App(void *p_vParam)
   if(dwCheck) hsDEBUG_ERROR_HANDLE(dwCheck);
   
   HW_BLE_Power_ONnOFF(ON);
+  vTaskDelay(1000);
+  BoTnLE_AT_Command_Send(&g_tBLE_Drv, "AT+SECLV=4\r"); //Restore security level 4
+  vTaskDelay(1500); //Wait for module auto-reset
 
-  
   //CLI Config
   vRegisterCLICommands();
   hsDebug_MSG("*** Micro Optics Test Command Line Interface ***\n");
@@ -330,16 +332,16 @@ void hsDEBUG_UART_CLI_RX_App(void *p_vParam)
     {
       cRxedChar = cReceivedValue & 0xFF;
       uTempStr[0] = cRxedChar;
-      
+
       cliWrite(uTempStr); //echo recevied char
-      
+
       if( (cRxedChar == '\r') || (cRxedChar == '\n') )
       {
         CLI_HandleNewline(pcInputString, cOutputBuffer, &cInputIndex); //// user pressed enter, process the command
       }
       else
       {
-        CLI_HandleCharacterInput(&cInputIndex, pcInputString); //user pressed a character add it to the input string    
+        CLI_HandleCharacterInput(&cInputIndex, pcInputString); //user pressed a character add it to the input string
       }
     }
     //--------------------------------------------------------------------------

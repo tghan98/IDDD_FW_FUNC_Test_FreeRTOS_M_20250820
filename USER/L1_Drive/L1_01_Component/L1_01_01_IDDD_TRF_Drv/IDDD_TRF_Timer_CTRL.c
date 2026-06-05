@@ -103,7 +103,8 @@ int32_t IDDD_TRF_TImer_Config(uint32_t dwLED_ON_Time_us, uint32_t dwPD_ADC_Scan_
   dwCheck = HAL_TIM_PWM_ConfigChannel(p_HAL_Time, &sConfigOC, TIM_CHANNEL_2);
   if(dwCheck) return dwCheck;
   
-  HAL_TIM_MspPostInit(p_HAL_Time);
+  /* Stage0: PA6/PA7 are GPIO outputs, TIM3 PWM AF PostInit no longer required */
+  /* HAL_TIM_MspPostInit(p_HAL_Time); */
   
   return dwCheck;
 }

@@ -37,6 +37,15 @@
 #define TRF_READ_BUF_SZ         15
 #define TRF_TIME_OUT_CNT        30 //100 msec x 20 =  2 sec 
 
+/* Timing profile for software GPIO sequence (unit: us) */
+#define TRF_TIMING_PROFILE_LED_ON_US            1000U
+#define TRF_TIMING_PROFILE_RESIDUAL_WAIT_US      200U
+#define TRF_TIMING_PROFILE_ADC_WINDOW_US         700U
+#define TRF_TIMING_PROFILE_STABILIZE_US          100U
+#define TRF_TIMING_PROFILE_CYCLE_US             2000U
+
+#define TRF_RUN_TIMEOUT_MS               (TRF_TIME_OUT_CNT * 100U)
+
 //Typedef
 /* Extern --------------------------------------------------------------------*/
 
@@ -48,6 +57,12 @@
 uint16_t g_wADC_Buf[TRF_READ_BUF_SZ];
 
 /* Private function prototypes -----------------------------------------------*/
+static int32_t TRF_SequenceTimingProfile_Validate(void);
+static void TRF_SequenceTimer_Start(void);
+static void TRF_SequenceTimer_Stop(void);
+static void TRF_SequenceSignal_SetLow(void);
+static void TRF_SequenceWaitUntilUs(uint32_t dwTargetTimeUs);
+static void TRF_RunOneSequenceCycle(void);
 
 /* Interrupt  ----------------------------------------------------------------*/
 
@@ -67,6 +82,94 @@ int32_t IDDD_RunCmd_TRF_Config(void)
   IDDD_PD_ADC_Channel_Select(OPT_PD_ADC_CH_REG);
     
   return dwCheck;
+}
+
+static int32_t TRF_SequenceTimingProfile_Validate(void)
+{
+  uint32_t dwActiveSumUs;
+
+  dwActiveSumUs = TRF_TIMING_PROFILE_LED_ON_US
+                + TRF_TIMING_PROFILE_RESIDUAL_WAIT_US
+                + TRF_TIMING_PROFILE_ADC_WINDOW_US
+                + TRF_TIMING_PROFILE_STABILIZE_US;
+
+  if(dwActiveSumUs > TRF_TIMING_PROFILE_CYCLE_US) return DAT_ERR_PARAM_DATA;
+
+  /* TIM3 period is 9999 in current profile, keep cycle within 1 counter lap */
+  if(TRF_TIMING_PROFILE_CYCLE_US > 9999U) return DAT_ERR_PARAM_DATA;
+
+  return RETURN_OK;
+}
+
+static void TRF_SequenceTimer_Start(void)
+{
+  TIM3->CNT = 0;
+  TIM3->CR1 |= TIM_CR1_CEN;
+}
+
+static void TRF_SequenceTimer_Stop(void)
+{
+  TIM3->CR1 &= ~(TIM_CR1_CEN);
+  TIM3->CNT = 0;
+}
+
+static void TRF_SequenceSignal_SetLow(void)
+{
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET);
+}
+
+static void TRF_SequenceWaitUntilUs(uint32_t dwTargetTimeUs)
+{
+  while(Read_IDDD_PD_ADC_Complete_Flag() == SET)
+  {
+    if(TIM3->CNT >= dwTargetTimeUs) break;
+  }
+}
+
+static void TRF_RunOneSequenceCycle(void)
+{
+  uint32_t phase_led_on_end_us;
+  uint32_t phase_residual_wait_end_us;
+  uint32_t phase_adc_window_end_us;
+  uint32_t phase_stabilize_end_us;
+  uint32_t phase_cycle_end_us;
+
+  phase_led_on_end_us = TRF_TIMING_PROFILE_LED_ON_US;
+  phase_residual_wait_end_us = phase_led_on_end_us + TRF_TIMING_PROFILE_RESIDUAL_WAIT_US;
+  phase_adc_window_end_us = phase_residual_wait_end_us + TRF_TIMING_PROFILE_ADC_WINDOW_US;
+  phase_stabilize_end_us = phase_adc_window_end_us + TRF_TIMING_PROFILE_STABILIZE_US;
+  phase_cycle_end_us = TRF_TIMING_PROFILE_CYCLE_US;
+
+  TRF_SequenceSignal_SetLow();
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);
+
+  TRF_SequenceTimer_Start();
+
+  /* LED ON */
+  TRF_SequenceWaitUntilUs(phase_led_on_end_us);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);
+  if(Read_IDDD_PD_ADC_Complete_Flag() == RESET) goto RUNCYCLE_EXIT;
+
+  /* Residual wait */
+  TRF_SequenceWaitUntilUs(phase_residual_wait_end_us);
+  if(Read_IDDD_PD_ADC_Complete_Flag() == RESET) goto RUNCYCLE_EXIT;
+
+  /* ADC window start: rising edge on PA7 */
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
+  TRF_SequenceWaitUntilUs(phase_adc_window_end_us);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET);
+  if(Read_IDDD_PD_ADC_Complete_Flag() == RESET) goto RUNCYCLE_EXIT;
+
+  /* Stabilize and cycle tail */
+  TRF_SequenceWaitUntilUs(phase_stabilize_end_us);
+  if(Read_IDDD_PD_ADC_Complete_Flag() == RESET) goto RUNCYCLE_EXIT;
+
+  TRF_SequenceWaitUntilUs(phase_cycle_end_us);
+
+RUNCYCLE_EXIT:
+  TRF_SequenceTimer_Stop();
+  TRF_SequenceSignal_SetLow();
 }
 
 /**
@@ -103,7 +206,7 @@ int32_t IDDD_RunCmd_TRF_Config(void)
 int32_t IDDD_RunCmd_SyncTRF_Run(uint32_t dwOPT_Ch, uint32_t dwLED_ON_Tim, uint32_t dwADC_Trigger_Tim, uint32_t dwLEDCurrent)
 {
   int32_t dwCheck = 0;
-  uint32_t dwReadFlag, dwCnt;
+  uint32_t dwCnt, dwStartTickMs;
   uint32_t dwADC_out[15];
   
   dwCheck = IDDD_PD_ADC_Lock();
@@ -127,30 +230,25 @@ int32_t IDDD_RunCmd_SyncTRF_Run(uint32_t dwOPT_Ch, uint32_t dwLED_ON_Tim, uint32
   
   
   //TRF Run ----------------------------------
+  dwCheck = TRF_SequenceTimingProfile_Validate();
+  if(dwCheck) goto RUNCMD_SYNCTRF_EXIT;
+
   IDDD_PD_ADC_Complete_Flag_CTRL(SET);
   
   dwCheck = IDDD_PD_ADC_DMA_Start(g_wADC_Buf, TRF_READ_BUF_SZ - 3); //Data Size 12 cnt
   if(dwCheck) goto RUNCMD_SYNCTRF_EXIT;
-  
-  IDDD_TRF_PWM_Start();
-  
-  dwCnt = 0;
-  dwReadFlag = 0;
-  
-  while(1)
+
+  dwStartTickMs = HAL_GetTick();
+
+  while(Read_IDDD_PD_ADC_Complete_Flag() == SET)
   {
-    vTaskDelay(100);
-    
-    if(dwCnt >= TRF_TIME_OUT_CNT)
+    if((HAL_GetTick() - dwStartTickMs) >= TRF_RUN_TIMEOUT_MS)
     {
       dwCheck = DEV_CMPLT_TIMOUT;
       goto RUNCMD_SYNCTRF_EXIT;
     }
-    
-    dwReadFlag = Read_IDDD_PD_ADC_Complete_Flag();
-    if(dwReadFlag == RESET) break;
-    
-    dwCnt++;
+
+    TRF_RunOneSequenceCycle();
   }
   
   hsDebug_MSG("-----   TRF ADC ------\n");
@@ -164,6 +262,8 @@ int32_t IDDD_RunCmd_SyncTRF_Run(uint32_t dwOPT_Ch, uint32_t dwLED_ON_Tim, uint32
   
   
 RUNCMD_SYNCTRF_EXIT:
+
+  TRF_SequenceSignal_SetLow();
   
   IDDD_PD_ADC_DMA_Stop();
   IDDD_TRF_PWM_Stop();
