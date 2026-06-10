@@ -46,6 +46,11 @@
 
 #define TRF_RUN_TIMEOUT_MS               (TRF_TIME_OUT_CNT * 100U)
 
+/* Stage1 measurement (runtime profile) */
+#define TRF_MEAS_SAMPLE_COUNT            100U   /* ADC samples per DMA burst */
+#define TRF_MEAS_REPEAT_COUNT            100U   /* repeated bursts for statistics */
+#define TRF_MEAS_TIMEOUT_MS              100U   /* per-burst completion timeout */
+
 //Typedef
 /* Extern --------------------------------------------------------------------*/
 
@@ -55,6 +60,7 @@
 
 //Other 
 uint16_t g_wADC_Buf[TRF_READ_BUF_SZ];
+uint16_t g_wTRF_MeasBuf[TRF_MEAS_SAMPLE_COUNT];
 
 /* Private function prototypes -----------------------------------------------*/
 static int32_t TRF_SequenceTimingProfile_Validate(void);
@@ -276,6 +282,110 @@ RUNCMD_SYNCTRF_EXIT:
 }
 
 //g_wADC_Buf
+
+/**
+  * @brief  Stage1 ADC timing measurement.
+  *         Repeats a 100-sample SW-start/DMA burst and reports the per-burst
+  *         total time (avg/min/max, us). A marker pulse on TRF_MEAS_MARK (PC1)
+  *         brackets each burst for oscilloscope cross-check.
+  *         Runtime-only: Stage0 path and CubeMX ADC config are not modified.
+  * @retval 0 on success, error code otherwise
+  */
+int32_t IDDD_RunCmd_TRF_Meas(void)
+{
+  int32_t dwCheck = 0;
+  uint32_t dwRep;
+  uint32_t dwStartCnt, dwEndCnt, dwDeltaUs;
+  uint32_t dwStartTickMs;
+  uint32_t dwSum = 0;
+  uint32_t dwMin = 0xFFFFFFFFU;
+  uint32_t dwMax = 0;
+  uint32_t dwCount = 0;
+
+  dwCheck = IDDD_PD_ADC_Lock();
+  if(dwCheck) return dwCheck;
+
+  // 1) Stage1 ADC: SW start + continuous + DMA continuous
+  dwCheck = IDDD_PD_ADC_Config_Stage1Meas();
+  if(dwCheck) goto TRF_MEAS_EXIT;
+
+  IDDD_PD_ADC_Channel_Select(OPT_PD_ADC_CH1);
+
+  // 2) TIM3 as free-running 1us counter
+  IDDD_TRF_MeasTimer_Init();
+
+  // 3) enter measurement mode (callback captures end CNT + done flag)
+  IDDD_TRF_Meas_Mode_CTRL(SET);
+
+  for(dwRep = 0; dwRep < TRF_MEAS_REPEAT_COUNT; dwRep++)
+  {
+    // 3.1) arm: clear done flag, latch start timestamp
+    IDDD_TRF_Meas_Done_Flag_CTRL(RESET);
+    TIM3->CNT = 0;
+    dwStartCnt = TIM3->CNT;
+
+    // 3.2) marker High at burst start
+    HAL_GPIO_WritePin(TRF_MEAS_MARK_GPIO_Port, TRF_MEAS_MARK_Pin, GPIO_PIN_SET);
+
+    // 3.3) launch 100-sample DMA burst
+    dwCheck = IDDD_PD_ADC_DMA_Start(g_wTRF_MeasBuf, TRF_MEAS_SAMPLE_COUNT);
+    if(dwCheck)
+    {
+      HAL_GPIO_WritePin(TRF_MEAS_MARK_GPIO_Port, TRF_MEAS_MARK_Pin, GPIO_PIN_RESET);
+      goto TRF_MEAS_EXIT;
+    }
+
+    // 3.4) poll completion flag with timeout
+    dwStartTickMs = HAL_GetTick();
+    while(Read_IDDD_TRF_Meas_Done_Flag() == RESET)
+    {
+      if((HAL_GetTick() - dwStartTickMs) >= TRF_MEAS_TIMEOUT_MS)
+      {
+        dwCheck = DEV_CMPLT_TIMOUT;
+        break;
+      }
+    }
+
+    // 3.5) marker Low right after flag recognition (per design decision)
+    HAL_GPIO_WritePin(TRF_MEAS_MARK_GPIO_Port, TRF_MEAS_MARK_Pin, GPIO_PIN_RESET);
+
+    IDDD_PD_ADC_DMA_Stop();
+
+    if(dwCheck) goto TRF_MEAS_EXIT;
+
+    // 3.6) total burst time = end CNT - start CNT (overflow-safe, us)
+    dwEndCnt = Read_IDDD_TRF_Meas_End_Cnt();
+    dwDeltaUs = IDDD_TRF_Timer_DiffUs(dwStartCnt, dwEndCnt);
+
+    dwSum += dwDeltaUs;
+    if(dwDeltaUs < dwMin) dwMin = dwDeltaUs;
+    if(dwDeltaUs > dwMax) dwMax = dwDeltaUs;
+    dwCount++;
+  }
+
+TRF_MEAS_EXIT:
+
+  // 4) leave measurement mode and restore peripherals
+  IDDD_TRF_Meas_Mode_CTRL(RESET);
+  IDDD_PD_ADC_DMA_Stop();
+  IDDD_TRF_MeasTimer_Stop();
+  IDDD_PD_ADC_Unlock();
+  IDDD_PD_ADC_Channel_Select(OPT_PD_ADC_CH_REG);
+
+  // 5) fixed log output (unit: 100-sample burst total time, us)
+  hsDebug_MSG("----- TRF MEAS (100-sample burst total, us) -----\n");
+  if(dwCount > 0)
+  {
+    uint32_t dwAvg = dwSum / dwCount;
+    hsDebug_MSG("avg:%d min:%d max:%d count:%d\n", dwAvg, dwMin, dwMax, dwCount);
+  }
+  else
+  {
+    hsDebug_MSG("no valid sample (check[%d])\n", dwCheck);
+  }
+
+  return dwCheck;
+}
 
 /**
   * @brief  This 

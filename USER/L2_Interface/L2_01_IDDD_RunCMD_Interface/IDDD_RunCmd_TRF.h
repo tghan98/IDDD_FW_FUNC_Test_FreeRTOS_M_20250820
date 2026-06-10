@@ -40,6 +40,9 @@ int32_t IDDD_RunCmd_TRF_Config(void);
 //TRF Run Interface
 int32_t IDDD_RunCmd_SyncTRF_Run(uint32_t dwOPT_Ch, uint32_t dwLED_ON_Tim, uint32_t dwADC_Trigger_Tim, uint32_t dwLEDCurrent);
 
+//Stage1 measurement (temporary)
+int32_t IDDD_RunCmd_TRF_Meas(void);
+
  
 //DBA Interface
 int32_t IDDD_OPT_LED_CurrentData_Write_Interface(uint32_t dwCh, uint32_t dwWriteData);

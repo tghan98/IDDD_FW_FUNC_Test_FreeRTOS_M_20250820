@@ -597,6 +597,9 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(BLE_PW_nONOFF_GPIO_Port, BLE_PW_nONOFF_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, TRF_MEAS_MARK_Pin|CC_CK_G_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
@@ -607,20 +610,17 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOB, Prog_R1_Pin|FLU_B_G_Pin|FLU_B_R_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(CC_CK_G_GPIO_Port, CC_CK_G_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, FLU_A_G_Pin|FLU_A_R_Pin|PW_G_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(BLE_G_GPIO_Port, BLE_G_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : MPW_ONOFF_Pin CC_PW_nONOFF_Pin COVID_G_Pin COVID_R_Pin
-                           Prog_G1_Pin Prog_G2_Pin Prog_G3_Pin CC_CK_G_Pin
-                           BAT_G1_Pin BAT_G2_Pin BAT_G3_Pin */
-  GPIO_InitStruct.Pin = MPW_ONOFF_Pin|CC_PW_nONOFF_Pin|COVID_G_Pin|COVID_R_Pin
-                          |Prog_G1_Pin|Prog_G2_Pin|Prog_G3_Pin|CC_CK_G_Pin
-                          |BAT_G1_Pin|BAT_G2_Pin|BAT_G3_Pin;
+  /*Configure GPIO pins : MPW_ONOFF_Pin CC_PW_nONOFF_Pin TRF_MEAS_MARK_Pin COVID_G_Pin
+                           COVID_R_Pin Prog_G1_Pin Prog_G2_Pin Prog_G3_Pin
+                           CC_CK_G_Pin BAT_G1_Pin BAT_G2_Pin BAT_G3_Pin */
+  GPIO_InitStruct.Pin = MPW_ONOFF_Pin|CC_PW_nONOFF_Pin|TRF_MEAS_MARK_Pin|COVID_G_Pin
+                          |COVID_R_Pin|Prog_G1_Pin|Prog_G2_Pin|Prog_G3_Pin
+                          |CC_CK_G_Pin|BAT_G1_Pin|BAT_G2_Pin|BAT_G3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -635,7 +635,7 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin : BLE_C_CK_Pin */
   GPIO_InitStruct.Pin = BLE_C_CK_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(BLE_C_CK_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : BLE_PW_nONOFF_Pin */

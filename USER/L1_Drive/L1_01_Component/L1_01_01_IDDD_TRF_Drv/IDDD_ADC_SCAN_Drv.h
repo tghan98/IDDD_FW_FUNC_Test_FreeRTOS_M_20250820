@@ -48,6 +48,8 @@ void IDDD_PD_ADC_Unlock(void);
 
 int32_t IDDD_PD_ADC_Config(void);
 
+int32_t IDDD_PD_ADC_Config_Stage1Meas(void);
+
 void IDDD_PD_ADC_Channel_Select(uint32_t dwCH);
 
 int32_t IDDD_PD_ADC_DMA_Start(uint16_t *p_DMA_Buff, uint32_t dwBuff_SZ);
@@ -57,6 +59,15 @@ int32_t IDDD_PD_ADC_DMA_Stop(void);
 void IDDD_PD_ADC_Complete_Flag_CTRL(uint32_t dwSET_nRESET);
 
 uint32_t Read_IDDD_PD_ADC_Complete_Flag(void);
+
+//Stage1 measurement accessors
+void IDDD_TRF_Meas_Mode_CTRL(uint32_t dwSET_nRESET);
+
+void IDDD_TRF_Meas_Done_Flag_CTRL(uint32_t dwSET_nRESET);
+
+uint32_t Read_IDDD_TRF_Meas_Done_Flag(void);
+
+uint32_t Read_IDDD_TRF_Meas_End_Cnt(void);
 
 #endif /* __IDDD_ADC_SCAN_DRV_H__ */
 

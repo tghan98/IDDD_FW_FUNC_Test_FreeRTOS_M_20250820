@@ -82,6 +82,8 @@ void Error_Handler(void);
 #define BLE_C_CK_GPIO_Port GPIOF
 #define BLE_PW_nONOFF_Pin GPIO_PIN_1
 #define BLE_PW_nONOFF_GPIO_Port GPIOF
+#define TRF_MEAS_MARK_Pin GPIO_PIN_1
+#define TRF_MEAS_MARK_GPIO_Port GPIOC
 #define BAT_LV_ADC1_IN4_Pin GPIO_PIN_0
 #define BAT_LV_ADC1_IN4_GPIO_Port GPIOA
 #define EX_PW_CK_Pin GPIO_PIN_5
