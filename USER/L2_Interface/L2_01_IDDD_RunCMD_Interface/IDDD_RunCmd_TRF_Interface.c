@@ -301,6 +301,9 @@ int32_t IDDD_RunCmd_TRF_Meas(void)
   uint32_t dwMin = 0xFFFFFFFFU;
   uint32_t dwMax = 0;
   uint32_t dwCount = 0;
+  uint32_t dwAdcAccSum = 0;       /* per-burst ADC avg 누적 */
+  uint32_t dwAdcAccMin = 0xFFFFFFFFU;
+  uint32_t dwAdcAccMax = 0;
 
   dwCheck = IDDD_PD_ADC_Lock();
   if(dwCheck) return dwCheck;
@@ -361,6 +364,25 @@ int32_t IDDD_RunCmd_TRF_Meas(void)
     if(dwDeltaUs < dwMin) dwMin = dwDeltaUs;
     if(dwDeltaUs > dwMax) dwMax = dwDeltaUs;
     dwCount++;
+
+    // 3.7) per-burst ADC value statistics
+    {
+      uint32_t adcSum = 0;
+      uint32_t adcMin = 0xFFFFU;
+      uint32_t adcMax = 0;
+      uint32_t i;
+      for(i = 0; i < TRF_MEAS_SAMPLE_COUNT; i++)
+      {
+        uint32_t v = g_wTRF_MeasBuf[i];
+        adcSum += v;
+        if(v < adcMin) adcMin = v;
+        if(v > adcMax) adcMax = v;
+      }
+      // per-burst average only (min/max are per-sample extremes)
+      dwAdcAccSum += (adcSum / TRF_MEAS_SAMPLE_COUNT);
+      if(adcMin < dwAdcAccMin) dwAdcAccMin = adcMin;
+      if(adcMax > dwAdcAccMax) dwAdcAccMax = adcMax;
+    }
   }
 
 TRF_MEAS_EXIT:
@@ -377,7 +399,9 @@ TRF_MEAS_EXIT:
   if(dwCount > 0)
   {
     uint32_t dwAvg = dwSum / dwCount;
-    hsDebug_MSG("avg:%d min:%d max:%d count:%d\n", dwAvg, dwMin, dwMax, dwCount);
+    hsDebug_MSG("time avg:%d min:%d max:%d count:%d\n", dwAvg, dwMin, dwMax, dwCount);
+    hsDebug_MSG("adc  avg:%d min:%d max:%d\n",
+                dwAdcAccSum / dwCount, dwAdcAccMin, dwAdcAccMax);
   }
   else
   {

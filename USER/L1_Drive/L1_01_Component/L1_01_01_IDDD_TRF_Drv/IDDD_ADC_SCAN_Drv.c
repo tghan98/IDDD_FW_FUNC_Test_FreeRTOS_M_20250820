@@ -192,7 +192,7 @@ int32_t IDDD_PD_ADC_Config_Stage1Meas(void)
   pHL_ADC->Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
   pHL_ADC->Init.DMAContinuousRequests = ENABLE;
   pHL_ADC->Init.Overrun = ADC_OVR_DATA_OVERWRITTEN;
-  pHL_ADC->Init.SamplingTimeCommon1 = ADC_SAMPLETIME_3CYCLES_5;
+  pHL_ADC->Init.SamplingTimeCommon1 = ADC_SAMPLETIME_79CYCLES_5;  /* final */
   pHL_ADC->Init.SamplingTimeCommon2 = ADC_SAMPLETIME_1CYCLE_5;
   pHL_ADC->Init.OversamplingMode = DISABLE;
   pHL_ADC->Init.TriggerFrequencyMode = ADC_TRIGGER_FREQ_HIGH;
