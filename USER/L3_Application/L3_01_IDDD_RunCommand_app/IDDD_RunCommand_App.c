@@ -208,8 +208,8 @@ int32_t IDDD_RunCmd_Exec(IDDD_Run_Cmd_COM_t *p_tRunCommand)
   case cmdIDDD_TRF_RUN:
     vTaskDelay(100);
     
-    /* Stage1 measurement (temporary). Stage0 path: dwCheck = CmdRun_TRF_Run(); */
-    dwCheck = IDDD_RunCmd_TRF_Meas();
+    /* Stage2 복귀 (SamplingTime 3CYCLES_5 검증) */
+    dwCheck = IDDD_RunCmd_TRF_Real();
     
     break;
   case cmdIDDD_INFO:

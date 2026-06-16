@@ -210,6 +210,54 @@ int32_t IDDD_PD_ADC_Config_Stage1Meas(void)
 }
 
 /**
+  * @brief  Stage2 poll measurement ADC profile: single conversion + SW start + no DMA.
+  *         Used by IDDD_RunCmd_TRF_Real() for TIM3-CNT-gated sampling.
+  *         Sampling time 79.5 cycles keeps per-conversion time ≈ 1.64 µs.
+  * @retval HAL status (0 == OK)
+  */
+int32_t IDDD_PD_ADC_Config_Stage1Poll(void)
+{
+  ADC_HandleTypeDef *pHL_ADC;
+  ADC_ChannelConfTypeDef sConfig = {0};
+
+  int32_t dwCheck = 0;
+
+  pHL_ADC = gp_PD_ADC_Rwork_Drv->p_PP_Drv;
+
+  // 1) single conversion, SW start, DMA off
+  pHL_ADC->Instance = ADC1;
+  pHL_ADC->Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV1;
+  pHL_ADC->Init.Resolution = ADC_RESOLUTION_12B;
+  pHL_ADC->Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  pHL_ADC->Init.ScanConvMode = ADC_SCAN_DISABLE;
+  pHL_ADC->Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  pHL_ADC->Init.LowPowerAutoWait = DISABLE;
+  pHL_ADC->Init.LowPowerAutoPowerOff = DISABLE;
+  pHL_ADC->Init.ContinuousConvMode = DISABLE;
+  pHL_ADC->Init.NbrOfConversion = 1;
+  pHL_ADC->Init.DiscontinuousConvMode = DISABLE;
+  pHL_ADC->Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  pHL_ADC->Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+  pHL_ADC->Init.DMAContinuousRequests = DISABLE;
+  pHL_ADC->Init.Overrun = ADC_OVR_DATA_OVERWRITTEN;
+  pHL_ADC->Init.SamplingTimeCommon1 = ADC_SAMPLETIME_79CYCLES_5;  /* Stage1 검증 완료: 79.5 cycle */
+  pHL_ADC->Init.SamplingTimeCommon2 = ADC_SAMPLETIME_1CYCLE_5;
+  pHL_ADC->Init.OversamplingMode = DISABLE;
+  pHL_ADC->Init.TriggerFrequencyMode = ADC_TRIGGER_FREQ_HIGH;
+
+  dwCheck = HAL_ADC_Init(pHL_ADC);
+  if(dwCheck) return dwCheck;
+
+  // 2) regular channel
+  sConfig.Channel = ADC_CHANNEL_0;
+  sConfig.Rank = ADC_REGULAR_RANK_1;
+  sConfig.SamplingTime = ADC_SAMPLINGTIME_COMMON_1;
+  dwCheck = HAL_ADC_ConfigChannel(pHL_ADC, &sConfig);
+
+  return dwCheck;
+}
+
+/**
   * @brief  This 
   * @param  file: 
   * @param  line: 
@@ -307,8 +355,17 @@ int32_t IDDD_PD_ADC_DMA_Stop(void)
   int32_t dwCheck = 0;
   
   dwCheck = HAL_ADC_Stop_DMA(gp_PD_ADC_Rwork_Drv->p_PP_Drv);
-  
+
   return dwCheck;
+}
+
+/**
+  * @brief  Return the ADC1 HAL handle for direct single-conversion polling.
+  * @retval ADC_HandleTypeDef pointer (valid after IDDD_PD_ADC_Lock)
+  */
+ADC_HandleTypeDef* IDDD_PD_ADC_GetHandle(void)
+{
+  return gp_PD_ADC_Rwork_Drv->p_PP_Drv;
 }
 
 

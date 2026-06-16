@@ -50,11 +50,15 @@ int32_t IDDD_PD_ADC_Config(void);
 
 int32_t IDDD_PD_ADC_Config_Stage1Meas(void);
 
+int32_t IDDD_PD_ADC_Config_Stage1Poll(void);
+
 void IDDD_PD_ADC_Channel_Select(uint32_t dwCH);
 
 int32_t IDDD_PD_ADC_DMA_Start(uint16_t *p_DMA_Buff, uint32_t dwBuff_SZ);
 
 int32_t IDDD_PD_ADC_DMA_Stop(void);
+
+ADC_HandleTypeDef* IDDD_PD_ADC_GetHandle(void);
 
 void IDDD_PD_ADC_Complete_Flag_CTRL(uint32_t dwSET_nRESET);
 

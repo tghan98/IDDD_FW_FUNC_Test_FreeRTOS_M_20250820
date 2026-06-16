@@ -51,6 +51,22 @@
 #define TRF_MEAS_REPEAT_COUNT            100U   /* repeated bursts for statistics */
 #define TRF_MEAS_TIMEOUT_MS              100U   /* per-burst completion timeout */
 
+/* 실측 검증 (real measurement) — Stage2 TIM-CNT polling */
+#define TRF_REAL_SAMPLE_COUNT           100U   /* samples across 0~2000us */
+#define TRF_REAL_SAMPLE_INTERVAL_US      20U   /* uniform interval */
+#define TRF_REAL_LED_ON_US              200U   /* TIM3 CNT threshold: LED ON */
+#define TRF_REAL_LED_OFF_US            1200U   /* TIM3 CNT threshold: LED OFF */
+#define TRF_REAL_DARK_COUNT              10U   /* first N samples treated as dark */
+#define TRF_REAL_LED_CURRENT            500U   /* LED drive current (unit: x100uA) */
+#define TRF_REAL_DMA_TIMEOUT_MS         100U   /* kept for Stage1Meas path; not used in Stage2 */
+
+/* Stage2 sample record */
+typedef struct
+{
+  uint16_t tim_us;
+  uint16_t adc_val;
+} TRF_Sample_t;
+
 //Typedef
 /* Extern --------------------------------------------------------------------*/
 
@@ -60,7 +76,12 @@
 
 //Other 
 uint16_t g_wADC_Buf[TRF_READ_BUF_SZ];
+
+/* Stage1 measurement DMA buffer (used by IDDD_RunCmd_TRF_Meas) */
 uint16_t g_wTRF_MeasBuf[TRF_MEAS_SAMPLE_COUNT];
+
+/* Stage2 poll buffer (400 bytes) */
+TRF_Sample_t g_TRF_Samples[TRF_REAL_SAMPLE_COUNT];
 
 /* Private function prototypes -----------------------------------------------*/
 static int32_t TRF_SequenceTimingProfile_Validate(void);
@@ -407,6 +428,127 @@ TRF_MEAS_EXIT:
   {
     hsDebug_MSG("no valid sample (check[%d])\n", dwCheck);
   }
+
+  return dwCheck;
+}
+
+/**
+  * @brief  Stage2 실측: TIM3 CNT 폴링으로 0~2000us 전 구간 ADC 단발 샘플링.
+  *         100 samples at uniform 20us interval.
+  *         LED ON @200us, OFF @1200us.
+  * @retval 0 on success
+  */
+int32_t IDDD_RunCmd_TRF_Real(void)
+{
+  int32_t dwCheck = 0;
+  uint32_t dwDarkAvg = 0;
+  uint32_t i;
+  uint32_t dwTim;
+  uint16_t wVal;
+  uint32_t dwOptCh;
+  uint32_t dwLedCurr;
+  ADC_HandleTypeDef *pADC;
+
+  // 1) optsel 채널 + LED 전류 ROM에서 읽기
+  dwCheck = IDDD_OPT_OPT_Channel_SEL_Read_Interface(&dwOptCh);
+  if(dwCheck) return dwCheck;
+
+  dwCheck = IDDD_OPT_LED_Current_Read_Interface(dwOptCh, &dwLedCurr);
+  if(dwCheck) dwLedCurr = TRF_REAL_LED_CURRENT;  /* ROM 읽기 실패 시 define 값 fallback */
+
+  // 2) ADC Lock + Stage2 Poll 설정
+  dwCheck = IDDD_PD_ADC_Lock();
+  if(dwCheck) return dwCheck;
+
+  dwCheck = IDDD_PD_ADC_Config_Stage1Poll();
+  if(dwCheck) goto REAL_EXIT;
+
+  IDDD_PD_ADC_Channel_Select(dwOptCh);
+
+  // 3) 완전 OFF 상태로 시작
+  IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
+  TRF_SequenceSignal_SetLow();
+
+  // 4) ADC 핸들 확보 (단발 변환용)
+  pADC = IDDD_PD_ADC_GetHandle();
+
+  // 5) TIM3 free counter 시작 (1us tick)
+  IDDD_TRF_MeasTimer_Init();
+  TIM3->CNT = 0;
+
+  // 6) LED 상태 추적 플래그
+  {
+    uint8_t bLedOn = 0;
+
+    // 7) 100샘플 폴링 루프
+    for(i = 0; i < TRF_REAL_SAMPLE_COUNT; i++)
+    {
+      uint32_t dwTarget = i * TRF_REAL_SAMPLE_INTERVAL_US;
+
+      // 7a) 목표 시각까지 대기
+      while(TIM3->CNT < dwTarget);
+
+      // 7b) 타임스탬프 캡처
+      dwTim = TIM3->CNT;
+
+      // 7c) LED ON 조건: 200us 도달, 아직 안 켰으면
+      if((dwTim >= TRF_REAL_LED_ON_US) && (bLedOn == 0))
+      {
+        IDDD_LED_Current_Set(dwLedCurr);
+        IDDD_LED_Channel_Select(dwOptCh);
+        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);
+        bLedOn = 1;
+      }
+
+      // 7d) LED OFF 조건: 1200us 도달, 아직 안 껐으면
+      if((dwTim >= TRF_REAL_LED_OFF_US) && (bLedOn == 1))
+      {
+        TRF_SequenceSignal_SetLow();
+        IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
+        bLedOn = 0;
+      }
+
+      // 7e) ADC 단발 변환
+      dwCheck = HAL_ADC_Start(pADC);
+      if(dwCheck) goto REAL_EXIT;
+
+      dwCheck = HAL_ADC_PollForConversion(pADC, 10);
+      if(dwCheck) { HAL_ADC_Stop(pADC); goto REAL_EXIT; }
+
+      wVal = HAL_ADC_GetValue(pADC);
+      HAL_ADC_Stop(pADC);
+
+      // 6f) 저장
+      g_TRF_Samples[i].tim_us  = (uint16_t)dwTim;
+      g_TRF_Samples[i].adc_val = wVal;
+    }
+  }
+
+  // 7) dark avg: 첫 10샘플
+  {
+    uint32_t sum = 0;
+    for(i = 0; i < TRF_REAL_DARK_COUNT; i++) sum += g_TRF_Samples[i].adc_val;
+    dwDarkAvg = sum / TRF_REAL_DARK_COUNT;
+  }
+
+  // 8) 일괄 출력
+  hsDebug_MSG("----- TRF REAL Stage2 (TIM-CNT poll) -----\n");
+  hsDebug_MSG("ch:%d cur:%d dark:%d samples:%d interval:%dus\n",
+              dwOptCh, dwLedCurr, dwDarkAvg,
+              TRF_REAL_SAMPLE_COUNT, TRF_REAL_SAMPLE_INTERVAL_US);
+  for(i = 0; i < TRF_REAL_SAMPLE_COUNT; i++)
+  {
+    hsDebug_MSG("[t=%dus]%d ", g_TRF_Samples[i].tim_us, g_TRF_Samples[i].adc_val);
+  }
+  hsDebug_MSG("\n");
+
+REAL_EXIT:
+
+  TRF_SequenceSignal_SetLow();
+  IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
+  IDDD_TRF_MeasTimer_Stop();
+  IDDD_PD_ADC_Unlock();
+  IDDD_PD_ADC_Channel_Select(OPT_PD_ADC_CH_REG);
 
   return dwCheck;
 }
