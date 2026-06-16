@@ -478,7 +478,8 @@ int32_t IDDD_RunCmd_TRF_Real(void)
 
   // 6) LED 상태 추적 플래그
   {
-    uint8_t bLedOn = 0;
+    uint8_t bLedOnDone  = 0;
+    uint8_t bLedOffDone = 0;
 
     // 7) 100샘플 폴링 루프
     for(i = 0; i < TRF_REAL_SAMPLE_COUNT; i++)
@@ -492,20 +493,20 @@ int32_t IDDD_RunCmd_TRF_Real(void)
       dwTim = TIM3->CNT;
 
       // 7c) LED ON 조건: 200us 도달, 아직 안 켰으면
-      if((dwTim >= TRF_REAL_LED_ON_US) && (bLedOn == 0))
+      if((dwTim >= TRF_REAL_LED_ON_US) && (bLedOnDone == 0))
       {
         IDDD_LED_Current_Set(dwLedCurr);
         IDDD_LED_Channel_Select(dwOptCh);
-        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);
-        bLedOn = 1;
+        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);  /* nONOFF active LOW */
+        bLedOnDone = 1;
       }
 
       // 7d) LED OFF 조건: 1200us 도달, 아직 안 껐으면
-      if((dwTim >= TRF_REAL_LED_OFF_US) && (bLedOn == 1))
+      if((dwTim >= TRF_REAL_LED_OFF_US) && (bLedOffDone == 0))
       {
-        TRF_SequenceSignal_SetLow();
+        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);    /* nONOFF HIGH = OFF */
         IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
-        bLedOn = 0;
+        bLedOffDone = 1;
       }
 
       // 7e) ADC 단발 변환
