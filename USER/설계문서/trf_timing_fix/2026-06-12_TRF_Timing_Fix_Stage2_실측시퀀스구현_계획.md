@@ -1,4 +1,4 @@
-# 2026-06-12_01_TRF_Timing_Fix_Stage2_실측_계획
+# 2026-06-12_TRF_Timing_Fix_Stage2_실측_계획
 
 ## 1. 작업 목적
 

@@ -52,8 +52,8 @@
 #define TRF_MEAS_TIMEOUT_MS              100U   /* per-burst completion timeout */
 
 /* 실측 검증 (real measurement) — Stage2 TIM-CNT polling */
-#define TRF_REAL_SAMPLE_COUNT           100U   /* samples across 0~2000us */
-#define TRF_REAL_SAMPLE_INTERVAL_US      20U   /* uniform interval */
+#define TRF_REAL_SAMPLE_COUNT           200U   /* samples across 0~10000us */
+#define TRF_REAL_SAMPLE_INTERVAL_US      50U   /* uniform interval */
 #define TRF_REAL_LED_ON_US              200U   /* TIM3 CNT threshold: LED ON */
 #define TRF_REAL_LED_OFF_US            1200U   /* TIM3 CNT threshold: LED OFF */
 #define TRF_REAL_DARK_COUNT              10U   /* first N samples treated as dark */
@@ -80,7 +80,7 @@ uint16_t g_wADC_Buf[TRF_READ_BUF_SZ];
 /* Stage1 measurement DMA buffer (used by IDDD_RunCmd_TRF_Meas) */
 uint16_t g_wTRF_MeasBuf[TRF_MEAS_SAMPLE_COUNT];
 
-/* Stage2 poll buffer (400 bytes) */
+/* Stage2 poll buffer (800 bytes at 200 samples) */
 TRF_Sample_t g_TRF_Samples[TRF_REAL_SAMPLE_COUNT];
 
 /* Private function prototypes -----------------------------------------------*/
@@ -525,11 +525,17 @@ int32_t IDDD_RunCmd_TRF_Real(void)
     }
   }
 
-  // 7) dark avg: 첫 10샘플
+  // 7) dark avg: samples before LED ON
   {
     uint32_t sum = 0;
-    for(i = 0; i < TRF_REAL_DARK_COUNT; i++) sum += g_TRF_Samples[i].adc_val;
-    dwDarkAvg = sum / TRF_REAL_DARK_COUNT;
+    uint32_t count = 0;
+    for(i = 0; i < TRF_REAL_SAMPLE_COUNT; i++)
+    {
+      if(g_TRF_Samples[i].tim_us >= TRF_REAL_LED_ON_US) break;
+      sum += g_TRF_Samples[i].adc_val;
+      count++;
+    }
+    if(count > 0) dwDarkAvg = sum / count;
   }
 
   // 8) 일괄 출력
