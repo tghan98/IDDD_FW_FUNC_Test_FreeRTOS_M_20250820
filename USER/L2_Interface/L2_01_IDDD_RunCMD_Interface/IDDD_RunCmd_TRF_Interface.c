@@ -52,13 +52,22 @@
 #define TRF_MEAS_TIMEOUT_MS              100U   /* per-burst completion timeout */
 
 /* 실측 검증 (real measurement) — Stage2 TIM-CNT polling */
-#define TRF_REAL_SAMPLE_COUNT           200U   /* samples across 0~10000us */
+#define TRF_REAL_SAMPLE_COUNT           200U   /* samples across 0~2000us */
 #define TRF_REAL_SAMPLE_INTERVAL_US      50U   /* uniform interval */
 #define TRF_REAL_LED_ON_US              200U   /* TIM3 CNT threshold: LED ON */
 #define TRF_REAL_LED_OFF_US            1200U   /* TIM3 CNT threshold: LED OFF */
 #define TRF_REAL_DARK_COUNT              10U   /* first N samples treated as dark */
 #define TRF_REAL_LED_CURRENT            500U   /* LED drive current (unit: x100uA) */
 #define TRF_REAL_DMA_TIMEOUT_MS         100U   /* kept for Stage1Meas path; not used in Stage2 */
+
+/* Stage5 2-cycle (step3): keep 50us/200 samples in 1st implementation */
+#define TRF2_SAMPLE_COUNT                TRF_REAL_SAMPLE_COUNT
+#define TRF2_SAMPLE_INTERVAL_US          TRF_REAL_SAMPLE_INTERVAL_US
+#define TRF2_LED_ON1_US                  200U
+#define TRF2_LED_OFF1_US                1200U
+#define TRF2_LED_ON2_US                 2000U
+#define TRF2_LED_OFF2_US                3000U
+#define TRF2_OBSERVE_END_US            10000U
 
 /* Stage2 sample record */
 typedef struct
@@ -550,6 +559,164 @@ int32_t IDDD_RunCmd_TRF_Real(void)
   hsDebug_MSG("\n");
 
 REAL_EXIT:
+
+  TRF_SequenceSignal_SetLow();
+  IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
+  IDDD_TRF_MeasTimer_Stop();
+  IDDD_PD_ADC_Unlock();
+  IDDD_PD_ADC_Channel_Select(OPT_PD_ADC_CH_REG);
+
+  return dwCheck;
+}
+
+/**
+  * @brief  Stage5 2-cycle 실측: TIM3 CNT 폴링 + ON1/OFF1/ON2/OFF2 시퀀스.
+  * @retval 0 on success
+  */
+int32_t IDDD_RunCmd_TRF_Real2Cycle(void)
+{
+  int32_t dwCheck = 0;
+  uint32_t dwDarkAvg = 0;
+  uint32_t i;
+  uint32_t dwTim;
+  uint16_t wVal;
+  uint32_t dwOptCh;
+  uint32_t dwLedCurr;
+  ADC_HandleTypeDef *pADC;
+
+  // 1) optsel 채널 + LED 전류 ROM에서 읽기
+  dwCheck = IDDD_OPT_OPT_Channel_SEL_Read_Interface(&dwOptCh);
+  if(dwCheck) return dwCheck;
+
+  dwCheck = IDDD_OPT_LED_Current_Read_Interface(dwOptCh, &dwLedCurr);
+  if(dwCheck) dwLedCurr = TRF_REAL_LED_CURRENT;  /* ROM 읽기 실패 시 define 값 fallback */
+
+  // 2) ADC Lock + Stage2 Poll 설정
+  dwCheck = IDDD_PD_ADC_Lock();
+  if(dwCheck) return dwCheck;
+
+  dwCheck = IDDD_PD_ADC_Config_Stage1Poll();
+  if(dwCheck) goto REAL2_EXIT;
+
+  IDDD_PD_ADC_Channel_Select(dwOptCh);
+
+  // 3) 완전 OFF 상태로 시작
+  IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
+  TRF_SequenceSignal_SetLow();
+
+  // 4) ADC 핸들 확보 (단발 변환용)
+  pADC = IDDD_PD_ADC_GetHandle();
+
+  // 5) TIM3 free counter 시작 (1us tick)
+  IDDD_TRF_MeasTimer_Init();
+  TIM3->CNT = 0;
+
+  // 6) LED 상태/전환시각 추적
+  {
+    uint8_t bLedOn1Done  = 0;
+    uint8_t bLedOff1Done = 0;
+    uint8_t bLedOn2Done  = 0;
+    uint8_t bLedOff2Done = 0;
+    uint32_t dwOn1TimUs = 0;
+    uint32_t dwOff1TimUs = 0;
+    uint32_t dwOn2TimUs = 0;
+    uint32_t dwOff2TimUs = 0;
+
+    // 7) 200샘플 폴링 루프 (step3: 50us/200 고정)
+    for(i = 0; i < TRF2_SAMPLE_COUNT; i++)
+    {
+      uint32_t dwTarget = i * TRF2_SAMPLE_INTERVAL_US;
+
+      // 7a) 목표 시각까지 대기
+      while(TIM3->CNT < dwTarget);
+
+      // 7b) 타임스탬프 캡처
+      dwTim = TIM3->CNT;
+
+      // 7c) LED ON1 조건: 200us 도달
+      if((dwTim >= TRF2_LED_ON1_US) && (bLedOn1Done == 0))
+      {
+        IDDD_LED_Current_Set(dwLedCurr);
+        IDDD_LED_Channel_Select(dwOptCh);
+        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);  /* nONOFF active LOW */
+        bLedOn1Done = 1;
+        dwOn1TimUs = dwTim;
+      }
+
+      // 7d) LED OFF1 조건: 1200us 도달
+      if((dwTim >= TRF2_LED_OFF1_US) && (bLedOff1Done == 0))
+      {
+        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);    /* nONOFF HIGH = OFF */
+        IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
+        bLedOff1Done = 1;
+        dwOff1TimUs = dwTim;
+      }
+
+      // 7e) LED ON2 조건: 2000us 도달
+      if((dwTim >= TRF2_LED_ON2_US) && (bLedOn2Done == 0))
+      {
+        IDDD_LED_Current_Set(dwLedCurr);
+        IDDD_LED_Channel_Select(dwOptCh);
+        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);  /* nONOFF active LOW */
+        bLedOn2Done = 1;
+        dwOn2TimUs = dwTim;
+      }
+
+      // 7f) LED OFF2 조건: 3000us 도달
+      if((dwTim >= TRF2_LED_OFF2_US) && (bLedOff2Done == 0))
+      {
+        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);    /* nONOFF HIGH = OFF */
+        IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
+        bLedOff2Done = 1;
+        dwOff2TimUs = dwTim;
+      }
+
+      // 7g) ADC 단발 변환
+      dwCheck = HAL_ADC_Start(pADC);
+      if(dwCheck) goto REAL2_EXIT;
+
+      dwCheck = HAL_ADC_PollForConversion(pADC, 10);
+      if(dwCheck) { HAL_ADC_Stop(pADC); goto REAL2_EXIT; }
+
+      wVal = HAL_ADC_GetValue(pADC);
+      HAL_ADC_Stop(pADC);
+
+      // 7h) 저장
+      g_TRF_Samples[i].tim_us  = (uint16_t)dwTim;
+      g_TRF_Samples[i].adc_val = wVal;
+    }
+
+    // 8) dark avg: samples before LED ON1
+    {
+      uint32_t sum = 0;
+      uint32_t count = 0;
+      for(i = 0; i < TRF2_SAMPLE_COUNT; i++)
+      {
+        if(g_TRF_Samples[i].tim_us >= TRF2_LED_ON1_US) break;
+        sum += g_TRF_Samples[i].adc_val;
+        count++;
+      }
+      if(count > 0) dwDarkAvg = sum / count;
+    }
+
+    // 9) 일괄 출력 (2-cycle 구분 헤더 + 실측 전환시각)
+    hsDebug_MSG("----- TRF REAL 2-CYCLE (TIM-CNT poll) -----\n");
+    hsDebug_MSG("ch:%d cur:%d dark:%d samples:%d interval:%dus\n",
+                dwOptCh, dwLedCurr, dwDarkAvg,
+                TRF2_SAMPLE_COUNT, TRF2_SAMPLE_INTERVAL_US);
+    hsDebug_MSG("nom(us) on1:%d off1:%d on2:%d off2:%d end:%d\n",
+                TRF2_LED_ON1_US, TRF2_LED_OFF1_US,
+                TRF2_LED_ON2_US, TRF2_LED_OFF2_US, TRF2_OBSERVE_END_US);
+    hsDebug_MSG("act(us) on1:%d off1:%d on2:%d off2:%d\n",
+                dwOn1TimUs, dwOff1TimUs, dwOn2TimUs, dwOff2TimUs);
+    for(i = 0; i < TRF2_SAMPLE_COUNT; i++)
+    {
+      hsDebug_MSG("[t=%dus]%d ", g_TRF_Samples[i].tim_us, g_TRF_Samples[i].adc_val);
+    }
+    hsDebug_MSG("\n");
+  }
+
+REAL2_EXIT:
 
   TRF_SequenceSignal_SetLow();
   IDDD_LED_Channel_Select(OPT_LED_CH_OFF);

@@ -46,6 +46,9 @@ int32_t IDDD_RunCmd_TRF_Meas(void);
 //실측 검증 (temporary)
 int32_t IDDD_RunCmd_TRF_Real(void);
 
+//실측 검증 2-cycle (skeleton, temporary)
+int32_t IDDD_RunCmd_TRF_Real2Cycle(void);
+
  
 //DBA Interface
 int32_t IDDD_OPT_LED_CurrentData_Write_Interface(uint32_t dwCh, uint32_t dwWriteData);
