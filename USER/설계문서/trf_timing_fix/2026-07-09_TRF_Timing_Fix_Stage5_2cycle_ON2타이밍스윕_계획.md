@@ -59,6 +59,16 @@ DeltaNorm은 두께별 절대 신호 크기 차이를 보정하기 위한 지표
 
 선정 결과는 수치표와 함께 근거 문장(왜 해당 ON2를 선택했는지)을 같이 남긴다.
 
+### 2.5 예상 코드 변경사항
+
+ON2 타이밍 스윕 시 코드 변경은 TRF 2-cycle 타이밍 define 구간으로 한정한다.
+
+- 변경 대상 파일: `USER/L2_Interface/L2_01_IDDD_RunCMD_Interface/IDDD_RunCmd_TRF_Interface.c`
+- 변경 항목: `TRF2_LED_ON2_US`, `TRF2_LED_OFF2_US`
+- 변경 규칙: `TRF2_LED_OFF2_US = TRF2_LED_ON2_US + 1000us` 유지
+
+명령 매핑(`trfrun`)과 함수 선언은 현재 구조를 유지하며 추가 변경하지 않는다. 또한 ON2 조건별 비교 일관성을 위해 로그 포맷(`nom/act us`)은 동일하게 유지한다.
+
 ## 3. 검증 계획
 
 - [ ] ON2별(2000/3000/4000/5000) 측정 로그 확보

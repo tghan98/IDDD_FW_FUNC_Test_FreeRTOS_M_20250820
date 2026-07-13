@@ -65,8 +65,8 @@
 #define TRF2_SAMPLE_INTERVAL_US          TRF_REAL_SAMPLE_INTERVAL_US
 #define TRF2_LED_ON1_US                  200U
 #define TRF2_LED_OFF1_US                1200U
-#define TRF2_LED_ON2_US                 2000U
-#define TRF2_LED_OFF2_US                3000U
+#define TRF2_LED_ON2_US                 5000U
+#define TRF2_LED_OFF2_US                6000U
 #define TRF2_OBSERVE_END_US            10000U
 
 /* Stage2 sample record */
