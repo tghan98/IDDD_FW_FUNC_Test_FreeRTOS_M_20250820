@@ -65,9 +65,10 @@
 #define TRF2_SAMPLE_INTERVAL_US          TRF_REAL_SAMPLE_INTERVAL_US
 #define TRF2_LED_ON1_US                  200U
 #define TRF2_LED_OFF1_US                1200U
-#define TRF2_LED_ON2_US                 5000U
-#define TRF2_LED_OFF2_US                6000U
+#define TRF2_LED_ON2_US                 200U
+#define TRF2_LED_OFF2_US                1200U
 #define TRF2_OBSERVE_END_US            10000U
+#define TRF2_GAP_DELAY_MS                120U
 
 /* Stage2 sample record */
 typedef struct
@@ -91,6 +92,10 @@ uint16_t g_wTRF_MeasBuf[TRF_MEAS_SAMPLE_COUNT];
 
 /* Stage2 poll buffer (800 bytes at 200 samples) */
 TRF_Sample_t g_TRF_Samples[TRF_REAL_SAMPLE_COUNT];
+
+/* Stage6 split buffers: ON1 phase and ON2 phase captured separately */
+TRF_Sample_t g_TRF2_Ph1_Samples[TRF2_SAMPLE_COUNT];
+TRF_Sample_t g_TRF2_Ph2_Samples[TRF2_SAMPLE_COUNT];
 
 /* Private function prototypes -----------------------------------------------*/
 static int32_t TRF_SequenceTimingProfile_Validate(void);
@@ -717,6 +722,214 @@ int32_t IDDD_RunCmd_TRF_Real2Cycle(void)
   }
 
 REAL2_EXIT:
+
+  TRF_SequenceSignal_SetLow();
+  IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
+  IDDD_TRF_MeasTimer_Stop();
+  IDDD_PD_ADC_Unlock();
+  IDDD_PD_ADC_Channel_Select(OPT_PD_ADC_CH_REG);
+
+  return dwCheck;
+}
+
+/**
+  * @brief  Stage6 2-cycle 실측: ON1/OFF1 측정 후 100ms 이상 대기, ON2/OFF2 분리 측정.
+  * @retval 0 on success
+  */
+int32_t IDDD_RunCmd_TRF_Real2Cycle_Gap100ms(void)
+{
+  int32_t dwCheck = 0;
+  uint32_t i;
+  uint32_t dwTim;
+  uint16_t wVal;
+  uint32_t dwOptCh;
+  uint32_t dwLedCurr;
+  uint32_t dwDarkAvgPh1 = 0;
+  uint32_t dwDarkAvgPh2 = 0;
+  ADC_HandleTypeDef *pADC;
+
+  uint32_t dwOn1TimUs = 0;
+  uint32_t dwOff1TimUs = 0;
+  uint32_t dwOn2TimUs = 0;
+  uint32_t dwOff2TimUs = 0;
+
+  // 1) optsel 채널 + LED 전류 ROM에서 읽기
+  dwCheck = IDDD_OPT_OPT_Channel_SEL_Read_Interface(&dwOptCh);
+  if(dwCheck) return dwCheck;
+
+  dwCheck = IDDD_OPT_LED_Current_Read_Interface(dwOptCh, &dwLedCurr);
+  if(dwCheck) dwLedCurr = TRF_REAL_LED_CURRENT;
+
+  // 2) ADC Lock + Poll 설정
+  dwCheck = IDDD_PD_ADC_Lock();
+  if(dwCheck) return dwCheck;
+
+  dwCheck = IDDD_PD_ADC_Config_Stage1Poll();
+  if(dwCheck) goto REAL2_GAP_EXIT;
+
+  IDDD_PD_ADC_Channel_Select(dwOptCh);
+
+  // 3) OFF 상태에서 시작
+  IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
+  TRF_SequenceSignal_SetLow();
+
+  // 4) ADC 핸들 확보
+  pADC = IDDD_PD_ADC_GetHandle();
+
+  // ------------------------------------------------------------------------
+  // Phase-1: ON1/OFF1 only
+  IDDD_TRF_MeasTimer_Init();
+  TIM3->CNT = 0;
+
+  {
+    uint8_t bLedOn1Done  = 0;
+    uint8_t bLedOff1Done = 0;
+
+    for(i = 0; i < TRF2_SAMPLE_COUNT; i++)
+    {
+      uint32_t dwTarget = i * TRF2_SAMPLE_INTERVAL_US;
+
+      while(TIM3->CNT < dwTarget);
+      dwTim = TIM3->CNT;
+
+      if((dwTim >= TRF2_LED_ON1_US) && (bLedOn1Done == 0))
+      {
+        IDDD_LED_Current_Set(dwLedCurr);
+        IDDD_LED_Channel_Select(dwOptCh);
+        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);
+        bLedOn1Done = 1;
+        dwOn1TimUs = dwTim;
+      }
+
+      if((dwTim >= TRF2_LED_OFF1_US) && (bLedOff1Done == 0))
+      {
+        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);
+        IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
+        bLedOff1Done = 1;
+        dwOff1TimUs = dwTim;
+      }
+
+      dwCheck = HAL_ADC_Start(pADC);
+      if(dwCheck) goto REAL2_GAP_EXIT;
+
+      dwCheck = HAL_ADC_PollForConversion(pADC, 10);
+      if(dwCheck) { HAL_ADC_Stop(pADC); goto REAL2_GAP_EXIT; }
+
+      wVal = HAL_ADC_GetValue(pADC);
+      HAL_ADC_Stop(pADC);
+
+      g_TRF2_Ph1_Samples[i].tim_us  = (uint16_t)dwTim;
+      g_TRF2_Ph1_Samples[i].adc_val = wVal;
+    }
+  }
+
+  // Phase-1 dark avg
+  {
+    uint32_t sum = 0;
+    uint32_t count = 0;
+    for(i = 0; i < TRF2_SAMPLE_COUNT; i++)
+    {
+      if(g_TRF2_Ph1_Samples[i].tim_us >= TRF2_LED_ON1_US) break;
+      sum += g_TRF2_Ph1_Samples[i].adc_val;
+      count++;
+    }
+    if(count > 0) dwDarkAvgPh1 = sum / count;
+  }
+
+  TRF_SequenceSignal_SetLow();
+  IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
+  IDDD_TRF_MeasTimer_Stop();
+
+  // 100ms+ gap to remove residual tail influence before ON2 phase
+  vTaskDelay(TRF2_GAP_DELAY_MS);
+
+  // ------------------------------------------------------------------------
+  // Phase-2: ON2/OFF2 only (timer re-started from zero)
+  IDDD_TRF_MeasTimer_Init();
+  TIM3->CNT = 0;
+
+  {
+    uint8_t bLedOn2Done  = 0;
+    uint8_t bLedOff2Done = 0;
+
+    for(i = 0; i < TRF2_SAMPLE_COUNT; i++)
+    {
+      uint32_t dwTarget = i * TRF2_SAMPLE_INTERVAL_US;
+
+      while(TIM3->CNT < dwTarget);
+      dwTim = TIM3->CNT;
+
+      if((dwTim >= TRF2_LED_ON2_US) && (bLedOn2Done == 0))
+      {
+        IDDD_LED_Current_Set(dwLedCurr);
+        IDDD_LED_Channel_Select(dwOptCh);
+        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);
+        bLedOn2Done = 1;
+        dwOn2TimUs = dwTim;
+      }
+
+      if((dwTim >= TRF2_LED_OFF2_US) && (bLedOff2Done == 0))
+      {
+        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);
+        IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
+        bLedOff2Done = 1;
+        dwOff2TimUs = dwTim;
+      }
+
+      dwCheck = HAL_ADC_Start(pADC);
+      if(dwCheck) goto REAL2_GAP_EXIT;
+
+      dwCheck = HAL_ADC_PollForConversion(pADC, 10);
+      if(dwCheck) { HAL_ADC_Stop(pADC); goto REAL2_GAP_EXIT; }
+
+      wVal = HAL_ADC_GetValue(pADC);
+      HAL_ADC_Stop(pADC);
+
+      g_TRF2_Ph2_Samples[i].tim_us  = (uint16_t)dwTim;
+      g_TRF2_Ph2_Samples[i].adc_val = wVal;
+    }
+  }
+
+  // Phase-2 dark avg (before ON2)
+  {
+    uint32_t sum = 0;
+    uint32_t count = 0;
+    for(i = 0; i < TRF2_SAMPLE_COUNT; i++)
+    {
+      if(g_TRF2_Ph2_Samples[i].tim_us >= TRF2_LED_ON2_US) break;
+      sum += g_TRF2_Ph2_Samples[i].adc_val;
+      count++;
+    }
+    if(count > 0) dwDarkAvgPh2 = sum / count;
+  }
+
+  // 5) 일괄 출력 (GAP100MS 식별 태그)
+  hsDebug_MSG("----- TRF REAL 2-CYCLE GAP100MS (TIM-CNT poll) -----\n");
+  hsDebug_MSG("ch:%d cur:%d gap:%dms samples:%d interval:%dus\n",
+              dwOptCh, dwLedCurr, TRF2_GAP_DELAY_MS,
+              TRF2_SAMPLE_COUNT, TRF2_SAMPLE_INTERVAL_US);
+  hsDebug_MSG("nom(us) on1:%d off1:%d on2:%d off2:%d end:%d\n",
+              TRF2_LED_ON1_US, TRF2_LED_OFF1_US,
+              TRF2_LED_ON2_US, TRF2_LED_OFF2_US, TRF2_OBSERVE_END_US);
+  hsDebug_MSG("act(us) on1:%d off1:%d on2:%d off2:%d\n",
+              dwOn1TimUs, dwOff1TimUs, dwOn2TimUs, dwOff2TimUs);
+  hsDebug_MSG("dark ph1:%d ph2:%d\n", dwDarkAvgPh1, dwDarkAvgPh2);
+
+  hsDebug_MSG("PH1:");
+  for(i = 0; i < TRF2_SAMPLE_COUNT; i++)
+  {
+    hsDebug_MSG("[t=%dus]%d ", g_TRF2_Ph1_Samples[i].tim_us, g_TRF2_Ph1_Samples[i].adc_val);
+  }
+  hsDebug_MSG("\n");
+
+  hsDebug_MSG("PH2:");
+  for(i = 0; i < TRF2_SAMPLE_COUNT; i++)
+  {
+    hsDebug_MSG("[t=%dus]%d ", g_TRF2_Ph2_Samples[i].tim_us, g_TRF2_Ph2_Samples[i].adc_val);
+  }
+  hsDebug_MSG("\n");
+
+REAL2_GAP_EXIT:
 
   TRF_SequenceSignal_SetLow();
   IDDD_LED_Channel_Select(OPT_LED_CH_OFF);

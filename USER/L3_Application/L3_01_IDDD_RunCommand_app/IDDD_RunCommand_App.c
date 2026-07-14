@@ -209,7 +209,8 @@ int32_t IDDD_RunCmd_Exec(IDDD_Run_Cmd_COM_t *p_tRunCommand)
     vTaskDelay(100);
     
     /* Stage2 단발 원복용: dwCheck = IDDD_RunCmd_TRF_Real(); */
-    dwCheck = IDDD_RunCmd_TRF_Real2Cycle();
+    /* Stage5 연속측정 원복용: dwCheck = IDDD_RunCmd_TRF_Real2Cycle(); */
+    dwCheck = IDDD_RunCmd_TRF_Real2Cycle_Gap100ms();
     
     break;
   case cmdIDDD_INFO:
