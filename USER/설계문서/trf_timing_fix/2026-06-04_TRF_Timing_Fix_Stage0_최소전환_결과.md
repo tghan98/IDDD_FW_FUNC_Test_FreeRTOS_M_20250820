@@ -19,6 +19,19 @@ LED ON 시작, LED ON 종료, residual wait, ADC window 시작과 종료, stabil
 ### 2.5 기존 TRF Run 본문을 교체했다
 기존 PWM Start + 100ms polling 루프 구조를 제거하고, 프로파일 검사 -> DMA 시작 -> ADC complete flag가 SET인 동안 1사이클 반복 -> timeout 검사 -> 종료 시 PA6/PA7 Low 정리 순서로 본문을 교체했다. 기존 골격 중 ADC 설정, LED 전류 설정, 채널 선택, DMA start/stop, 결과 출력 경로는 유지했다.
 
+### 2.6 5구간 시간상수 합의값을 기록했다
+Stage0 기준 5구간 시간상수 합의값은 다음과 같다.
+
+- LED ON: 1000us
+- Residual wait: 200us
+- ADC window: 700us
+- Stabilize: 100us
+- Cycle: 2000us
+
+합산 검증식은 1000 + 200 + 700 + 100 = 2000us로, 제약식(LED ON + residual wait + ADC window + stabilize <= cycle)을 만족한다.
+
+기준 소스 코드 위치: [USER/L2_Interface/L2_01_IDDD_RunCMD_Interface/IDDD_RunCmd_TRF_Interface.c](USER/L2_Interface/L2_01_IDDD_RunCMD_Interface/IDDD_RunCmd_TRF_Interface.c)
+
 ## 3. 다음 단계
 - 잔여 검증 3항목을 완료한 뒤 Stage0 완료 판정을 확정한다.
 - Stage0 완료 판정 후 Stage1(trfmeas 및 통계 기능) 범위를 별도 문서로 이관한다.

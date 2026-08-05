@@ -52,21 +52,21 @@
 #define TRF_MEAS_TIMEOUT_MS              100U   /* per-burst completion timeout */
 
 /* 실측 검증 (real measurement) — Stage2 TIM-CNT polling */
-#define TRF_REAL_SAMPLE_COUNT           200U   /* samples across 0~2000us */
+#define TRF_REAL_SAMPLE_COUNT           400U   /* samples across 0~20000us (50us interval) */
 #define TRF_REAL_SAMPLE_INTERVAL_US      50U   /* uniform interval */
 #define TRF_REAL_LED_ON_US              200U   /* TIM3 CNT threshold: LED ON */
-#define TRF_REAL_LED_OFF_US            1200U   /* TIM3 CNT threshold: LED OFF */
+#define TRF_REAL_LED_OFF_US            4200U   /* TIM3 CNT threshold: LED OFF (2ms pulse from 200us) */
 #define TRF_REAL_DARK_COUNT              10U   /* first N samples treated as dark */
 #define TRF_REAL_LED_CURRENT            500U   /* LED drive current (unit: x100uA) */
 #define TRF_REAL_DMA_TIMEOUT_MS         100U   /* kept for Stage1Meas path; not used in Stage2 */
 
-/* Stage5 2-cycle (step3): keep 50us/200 samples in 1st implementation */
+/* Stage5 2-cycle (step3): reuses Stage2 sample-count/interval constants */
 #define TRF2_SAMPLE_COUNT                TRF_REAL_SAMPLE_COUNT
 #define TRF2_SAMPLE_INTERVAL_US          TRF_REAL_SAMPLE_INTERVAL_US
 #define TRF2_LED_ON1_US                  200U
 #define TRF2_LED_OFF1_US                1200U
-#define TRF2_LED_ON2_US                 200U
-#define TRF2_LED_OFF2_US                1200U
+#define TRF2_LED_ON2_US                 5000U
+#define TRF2_LED_OFF2_US                6000U
 #define TRF2_OBSERVE_END_US            10000U
 #define TRF2_GAP_DELAY_MS                120U
 
@@ -90,7 +90,7 @@ uint16_t g_wADC_Buf[TRF_READ_BUF_SZ];
 /* Stage1 measurement DMA buffer (used by IDDD_RunCmd_TRF_Meas) */
 uint16_t g_wTRF_MeasBuf[TRF_MEAS_SAMPLE_COUNT];
 
-/* Stage2 poll buffer (800 bytes at 200 samples) */
+/* Stage2 poll buffer (1600 bytes at 400 samples) */
 TRF_Sample_t g_TRF_Samples[TRF_REAL_SAMPLE_COUNT];
 
 /* Stage6 split buffers: ON1 phase and ON2 phase captured separately */
@@ -447,9 +447,9 @@ TRF_MEAS_EXIT:
 }
 
 /**
-  * @brief  Stage2 실측: TIM3 CNT 폴링으로 0~2000us 전 구간 ADC 단발 샘플링.
-  *         100 samples at uniform 20us interval.
-  *         LED ON @200us, OFF @1200us.
+  * @brief  Stage2 실측: TIM3 CNT 폴링으로 0~20000us 관찰창 ADC 단발 샘플링.
+  *         400 samples at uniform 50us interval.
+  *         LED ON @200us, OFF @2200us.
   * @retval 0 on success
   */
 int32_t IDDD_RunCmd_TRF_Real(void)
@@ -495,7 +495,7 @@ int32_t IDDD_RunCmd_TRF_Real(void)
     uint8_t bLedOnDone  = 0;
     uint8_t bLedOffDone = 0;
 
-    // 7) 100샘플 폴링 루프
+    // 7) 400샘플 폴링 루프
     for(i = 0; i < TRF_REAL_SAMPLE_COUNT; i++)
     {
       uint32_t dwTarget = i * TRF_REAL_SAMPLE_INTERVAL_US;
@@ -515,7 +515,7 @@ int32_t IDDD_RunCmd_TRF_Real(void)
         bLedOnDone = 1;
       }
 
-      // 7d) LED OFF 조건: 1200us 도달, 아직 안 껐으면
+      // 7d) LED OFF 조건: 2200us 도달, 아직 안 껐으면
       if((dwTim >= TRF_REAL_LED_OFF_US) && (bLedOffDone == 0))
       {
         HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);    /* nONOFF HIGH = OFF */
@@ -705,7 +705,7 @@ int32_t IDDD_RunCmd_TRF_Real2Cycle(void)
     }
 
     // 9) 일괄 출력 (2-cycle 구분 헤더 + 실측 전환시각)
-    hsDebug_MSG("----- TRF REAL 2-CYCLE (TIM-CNT poll) -----\n");
+    hsDebug_MSG("----- TRF REAL 2-CYCLE SWEEP (TIM-CNT poll) -----\n");
     hsDebug_MSG("ch:%d cur:%d dark:%d samples:%d interval:%dus\n",
                 dwOptCh, dwLedCurr, dwDarkAvg,
                 TRF2_SAMPLE_COUNT, TRF2_SAMPLE_INTERVAL_US);
