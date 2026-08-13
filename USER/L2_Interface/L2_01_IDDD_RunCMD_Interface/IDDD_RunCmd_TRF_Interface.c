@@ -25,6 +25,9 @@
 //Interface & Handle
 #include "IDDD_DBA_ROM_Interface.h"
 #include "IDDD_DBA_RAM_Interface.h"
+#include "hsDEBUG_UART_CLI_App.h"
+
+#include <stdio.h>
 
 
 //-----------------------------------------------------------------------------
@@ -38,11 +41,12 @@
 #define TRF_TIME_OUT_CNT        30 //100 msec x 20 =  2 sec 
 
 /* Timing profile for software GPIO sequence (unit: us) */
-#define TRF_TIMING_PROFILE_LED_ON_US            1000U
-#define TRF_TIMING_PROFILE_RESIDUAL_WAIT_US      200U
-#define TRF_TIMING_PROFILE_ADC_WINDOW_US         700U
+/* Stage8: 5-region burst profile (LED ON 4000us, burst at OFF+150us) */
+#define TRF_TIMING_PROFILE_LED_ON_US            4000U
+#define TRF_TIMING_PROFILE_RESIDUAL_WAIT_US      150U
+#define TRF_TIMING_PROFILE_ADC_WINDOW_US         200U
 #define TRF_TIMING_PROFILE_STABILIZE_US          100U
-#define TRF_TIMING_PROFILE_CYCLE_US             2000U
+#define TRF_TIMING_PROFILE_CYCLE_US             5000U
 
 #define TRF_RUN_TIMEOUT_MS               (TRF_TIME_OUT_CNT * 100U)
 
@@ -50,6 +54,8 @@
 #define TRF_MEAS_SAMPLE_COUNT            100U   /* ADC samples per DMA burst */
 #define TRF_MEAS_REPEAT_COUNT            100U   /* repeated bursts for statistics */
 #define TRF_MEAS_TIMEOUT_MS              100U   /* per-burst completion timeout */
+
+#define TRF_BURST_LOG_LINE_SZ             128U
 
 /* 실측 검증 (real measurement) — Stage2 TIM-CNT polling */
 #define TRF_REAL_SAMPLE_COUNT           400U   /* samples across 0~20000us (50us interval) */
@@ -136,8 +142,8 @@ static int32_t TRF_SequenceTimingProfile_Validate(void)
 
   if(dwActiveSumUs > TRF_TIMING_PROFILE_CYCLE_US) return DAT_ERR_PARAM_DATA;
 
-  /* TIM3 period is 9999 in current profile, keep cycle within 1 counter lap */
-  if(TRF_TIMING_PROFILE_CYCLE_US > 9999U) return DAT_ERR_PARAM_DATA;
+  /* MeasTimer is a 1us free counter (period 0xFFFF); keep cycle within 1 lap */
+  if(TRF_TIMING_PROFILE_CYCLE_US > 65535U) return DAT_ERR_PARAM_DATA;
 
   return RETURN_OK;
 }
@@ -565,6 +571,164 @@ int32_t IDDD_RunCmd_TRF_Real(void)
 
 REAL_EXIT:
 
+  TRF_SequenceSignal_SetLow();
+  IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
+  IDDD_TRF_MeasTimer_Stop();
+  IDDD_PD_ADC_Unlock();
+  IDDD_PD_ADC_Channel_Select(OPT_PD_ADC_CH_REG);
+
+  return dwCheck;
+}
+
+/**
+  * @brief  Stage8 실측 버스트: 5구간 시퀀스 + OFF+150us 100샘플 DMA 버스트.
+  *         LED ON@t=0, OFF@t=4000us, 버스트 시작@t=4150us(OFF+150us).
+  *         버스트 시작/종료 CNT로 시간축을 복원하고 원시 100샘플을 출력한다.
+  *         dark 차분은 함수 내부에서 수행하지 않는다(오프라인 처리).
+  * @retval 0 on success, error code otherwise
+  */
+int32_t IDDD_RunCmd_TRF_Real_Burst(void)
+{
+  int32_t dwCheck = 0;
+  uint32_t dwOptCh;
+  uint32_t dwLedCurr;
+  uint32_t dwStartCnt = 0, dwEndCnt = 0;
+  uint32_t dwTotalUs = 0, dwIntervalX100 = 0;
+  uint32_t dwStartTickMs;
+  uint32_t i;
+  uint32_t dwBlockingTxActive = RESET;
+  char uLine[TRF_BURST_LOG_LINE_SZ];
+  int n;
+
+  // 버스트 타이밍 기준 (프로파일 상수에서 유도)
+  const uint32_t dwLedOffUs    = TRF_TIMING_PROFILE_LED_ON_US;                                        /* 4000us */
+  const uint32_t dwBurstFireUs = TRF_TIMING_PROFILE_LED_ON_US + TRF_TIMING_PROFILE_RESIDUAL_WAIT_US;  /* 4150us */
+
+  // 1) optsel 채널 + LED 전류 ROM에서 읽기
+  dwCheck = IDDD_OPT_OPT_Channel_SEL_Read_Interface(&dwOptCh);
+  if(dwCheck) return dwCheck;
+
+  dwCheck = IDDD_OPT_LED_Current_Read_Interface(dwOptCh, &dwLedCurr);
+  if(dwCheck) dwLedCurr = TRF_REAL_LED_CURRENT;  /* ROM 읽기 실패 시 define 값 fallback */
+
+  // 2) ADC Lock + Stage1Meas 설정 (SW start + continuous + DMA)
+  dwCheck = IDDD_PD_ADC_Lock();
+  if(dwCheck) return dwCheck;
+
+  dwCheck = IDDD_PD_ADC_Config_Stage1Meas();
+  if(dwCheck) goto BURST_EXIT;
+
+  IDDD_PD_ADC_Channel_Select(dwOptCh);
+
+  // 3) 완전 OFF 상태로 시작
+  IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
+  TRF_SequenceSignal_SetLow();
+
+  // 4) TIM3 free counter 시작 (1us tick)
+  IDDD_TRF_MeasTimer_Init();
+
+  // 5) 측정 모드 진입 (콜백이 종료 CNT + 완료 플래그 래치)
+  IDDD_TRF_Meas_Mode_CTRL(SET);
+  IDDD_TRF_Meas_Done_Flag_CTRL(RESET);
+
+  // 6) t=0: LED ON (active LOW), 카운터 리셋
+  IDDD_LED_Current_Set(dwLedCurr);
+  TIM3->CNT = 0;
+  IDDD_LED_Channel_Select(dwOptCh);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);  /* nONOFF active LOW = LED ON */
+
+  // 7) LED ON 유지 후 t=4000us에 OFF
+  while(TIM3->CNT < dwLedOffUs);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);    /* nONOFF HIGH = LED OFF */
+  IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
+
+  // 8) Residual wait: t=4150us(OFF+150us)까지 대기
+  while(TIM3->CNT < dwBurstFireUs);
+
+  // 9) 버스트 시작: 시작 CNT 래치 후 100샘플 DMA 버스트 실행
+  dwStartCnt = TIM3->CNT;
+  dwCheck = IDDD_PD_ADC_DMA_Start(g_wTRF_MeasBuf, TRF_MEAS_SAMPLE_COUNT);
+  if(dwCheck) goto BURST_EXIT;
+
+  // 10) 완료 플래그 폴링 (타임아웃)
+  dwStartTickMs = HAL_GetTick();
+  while(Read_IDDD_TRF_Meas_Done_Flag() == RESET)
+  {
+    if((HAL_GetTick() - dwStartTickMs) >= TRF_MEAS_TIMEOUT_MS)
+    {
+      dwCheck = DEV_CMPLT_TIMOUT;
+      break;
+    }
+  }
+
+  IDDD_PD_ADC_DMA_Stop();
+  if(dwCheck) goto BURST_EXIT;
+
+  // 11) 버스트 총시간 = 종료 CNT - 시작 CNT (overflow-safe, us)
+  dwEndCnt = Read_IDDD_TRF_Meas_End_Cnt();
+  dwTotalUs = IDDD_TRF_Timer_DiffUs(dwStartCnt, dwEndCnt);
+
+  // 12) per-sample 간격 = total / (count-1), us x100 로 소수 보존
+  dwIntervalX100 = (dwTotalUs * 100U) / (TRF_MEAS_SAMPLE_COUNT - 1U);
+
+  // 13) 출력: 헤더 1줄(BURST_OFF150 태그) + 원시 100샘플
+  dwCheck = hsDEBUG_UART_TX_BlockingStart();
+  if(dwCheck) goto BURST_EXIT;
+  dwBlockingTxActive = SET;
+
+  n = snprintf(uLine, sizeof(uLine), "----- TRF BURST_OFF150 (Stage8 DMA burst) -----\n");
+  if((n <= 0) || ((uint32_t)n >= sizeof(uLine))) { dwCheck = DAT_ERR_PARAM_DATA; goto BURST_EXIT; }
+  dwCheck = hsDEBUG_UART_TX_BlockingString(uLine);
+  if(dwCheck) goto BURST_EXIT;
+
+  n = snprintf(uLine, sizeof(uLine), "ch:%d cur:%d start:%dus total:%dus intvx100:%d samples:%d\n",
+               dwOptCh, dwLedCurr, dwStartCnt, dwTotalUs,
+               dwIntervalX100, TRF_MEAS_SAMPLE_COUNT);
+  if((n <= 0) || ((uint32_t)n >= sizeof(uLine))) { dwCheck = DAT_ERR_PARAM_DATA; goto BURST_EXIT; }
+  dwCheck = hsDEBUG_UART_TX_BlockingString(uLine);
+  if(dwCheck) goto BURST_EXIT;
+
+  n = snprintf(uLine, sizeof(uLine), "====== value\t\t\n");
+  if((n <= 0) || ((uint32_t)n >= sizeof(uLine))) { dwCheck = DAT_ERR_PARAM_DATA; goto BURST_EXIT; }
+  dwCheck = hsDEBUG_UART_TX_BlockingString(uLine);
+  if(dwCheck) goto BURST_EXIT;
+  for(i = 0; (i + 5U) < TRF_MEAS_SAMPLE_COUNT; i += 6U)
+  {
+    n = snprintf(uLine, sizeof(uLine),
+                 "Num[%d] : [%d] Num[%d] : [%d] Num[%d] : [%d] Num[%d] : [%d] Num[%d] : [%d] Num[%d] : [%d]\n",
+                 i, g_wTRF_MeasBuf[i],
+                 i + 1U, g_wTRF_MeasBuf[i + 1U],
+                 i + 2U, g_wTRF_MeasBuf[i + 2U],
+                 i + 3U, g_wTRF_MeasBuf[i + 3U],
+                 i + 4U, g_wTRF_MeasBuf[i + 4U],
+                 i + 5U, g_wTRF_MeasBuf[i + 5U]);
+    if((n <= 0) || ((uint32_t)n >= sizeof(uLine))) { dwCheck = DAT_ERR_PARAM_DATA; goto BURST_EXIT; }
+    dwCheck = hsDEBUG_UART_TX_BlockingString(uLine);
+    if(dwCheck) goto BURST_EXIT;
+  }
+  for(; i < TRF_MEAS_SAMPLE_COUNT; i++)
+  {
+    n = snprintf(uLine, sizeof(uLine), "Num[%d] : [%d]\n", i, g_wTRF_MeasBuf[i]);
+    if((n <= 0) || ((uint32_t)n >= sizeof(uLine))) { dwCheck = DAT_ERR_PARAM_DATA; goto BURST_EXIT; }
+    dwCheck = hsDEBUG_UART_TX_BlockingString(uLine);
+    if(dwCheck) goto BURST_EXIT;
+  }
+
+  n = snprintf(uLine, sizeof(uLine), "====== value\t\t\n");
+  if((n <= 0) || ((uint32_t)n >= sizeof(uLine))) { dwCheck = DAT_ERR_PARAM_DATA; goto BURST_EXIT; }
+  dwCheck = hsDEBUG_UART_TX_BlockingString(uLine);
+  if(dwCheck) goto BURST_EXIT;
+
+BURST_EXIT:
+
+  if(dwBlockingTxActive)
+  {
+    hsDEBUG_UART_TX_BlockingEnd();
+  }
+
+  IDDD_TRF_Meas_Mode_CTRL(RESET);
+  IDDD_PD_ADC_DMA_Stop();
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);   /* LED OFF 보장 */
   TRF_SequenceSignal_SetLow();
   IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
   IDDD_TRF_MeasTimer_Stop();

@@ -84,6 +84,9 @@ Rework_PP_Drv_t *p_tDEBUG_UART_PP_DRV;
 
 uint8_t g_DEBUG_UART_TX_OUT_Mem[hsDEBUG_UART_TX_QUE_SZ];
 
+volatile uint32_t g_dwDEBUG_UART_TX_ExclusiveReq;
+volatile uint32_t g_dwDEBUG_UART_TX_ExclusiveActive;
+
 BoTnLE523_Drv_t g_tBLE_Drv;
 
 uint8_t g_uBLE_Read_Rx_Buff[BOTNLE523_RX_BUFF_SZ];
@@ -241,6 +244,12 @@ void hsDEBUG_UART_CLI_TX_App(void *p_vParam)
     
   for(;;)
   {
+    if(g_dwDEBUG_UART_TX_ExclusiveActive)
+    {
+      vTaskDelay(1);
+      continue;
+    }
+
     if(HW_ReadPin_BLE_ConnectStatus())
     {
       //--------------------------------------------------------------------------
@@ -372,6 +381,17 @@ int32_t hsDEBUG_UART_TX_Char(char uDat)
   BaseType_t xToken;
   UBaseType_t xCnt;
   int32_t dwCheck = 0;
+  uint32_t dwWaitCnt;
+
+  for(dwWaitCnt = 0; g_dwDEBUG_UART_TX_ExclusiveReq && (dwWaitCnt < hsDEBUG_UART_CLI_TX_CMPLT_TIME); dwWaitCnt++)
+  {
+    vTaskDelay(1);
+  }
+
+  if(g_dwDEBUG_UART_TX_ExclusiveReq)
+  {
+    return OS_QUE_PUT_FAIL;
+  }
   
   xCnt = uxQueueSpacesAvailable(g_xQueDEBUG_UART_CLI_TX_DAT_Handle);
   if(xCnt < 2)
@@ -401,6 +421,84 @@ int32_t hsDEBUG_UART_TX_Char(char uDat)
     dwCheck = OS_QUE_PUT_FAIL;
   }
   
+  return dwCheck;
+}
+
+int32_t hsDEBUG_UART_TX_BlockingStart(void)
+{
+  UART_HandleTypeDef *p_HAL_UART;
+  uint32_t dwWaitCnt;
+
+  if((p_tDEBUG_UART_PP_DRV == NULL) ||
+     (g_xQueDEBUG_UART_CLI_TX_DAT_Handle == NULL))
+  {
+    return DAT_ERR_PARAM_DATA;
+  }
+
+  p_HAL_UART = (UART_HandleTypeDef *)p_tDEBUG_UART_PP_DRV->p_PP_Drv;
+
+  g_dwDEBUG_UART_TX_ExclusiveReq = SET;
+
+  for(dwWaitCnt = 0; dwWaitCnt < hsDEBUG_UART_CLI_TX_CMPLT_TIME; dwWaitCnt++)
+  {
+    if((uxQueueMessagesWaiting(g_xQueDEBUG_UART_CLI_TX_DAT_Handle) == 0U) &&
+       (p_HAL_UART->gState == HAL_UART_STATE_READY))
+    {
+      break;
+    }
+
+    vTaskDelay(1);
+  }
+
+  if(dwWaitCnt >= hsDEBUG_UART_CLI_TX_CMPLT_TIME)
+  {
+    g_dwDEBUG_UART_TX_ExclusiveReq = RESET;
+    return DEV_CMPLT_TIMOUT;
+  }
+
+  g_dwDEBUG_UART_TX_ExclusiveActive = SET;
+
+  return RETURN_OK;
+}
+
+void hsDEBUG_UART_TX_BlockingEnd(void)
+{
+  g_dwDEBUG_UART_TX_ExclusiveActive = RESET;
+  g_dwDEBUG_UART_TX_ExclusiveReq = RESET;
+}
+
+int32_t hsDEBUG_UART_TX_BlockingString(char *p_uStringData)
+{
+  UART_HandleTypeDef *p_HAL_UART;
+  uint16_t wLen;
+  int32_t dwCheck = 0;
+  uint32_t dwOwnLock = RESET;
+
+  if((p_uStringData == NULL) || (p_tDEBUG_UART_PP_DRV == NULL))
+  {
+    return DAT_ERR_PARAM_DATA;
+  }
+
+  if(g_dwDEBUG_UART_TX_ExclusiveActive == RESET)
+  {
+    dwCheck = hsDEBUG_UART_TX_BlockingStart();
+    if(dwCheck) return dwCheck;
+    dwOwnLock = SET;
+  }
+
+  p_HAL_UART = (UART_HandleTypeDef *)p_tDEBUG_UART_PP_DRV->p_PP_Drv;
+
+  wLen = (uint16_t)strlen(p_uStringData);
+  if(wLen > 0U)
+  {
+    dwCheck = HAL_UART_Transmit(p_HAL_UART, (uint8_t *)p_uStringData, wLen, hsDEBUG_UART_CLI_TX_CMPLT_TIME);
+  }
+
+  if(dwOwnLock)
+  {
+    hsDEBUG_UART_TX_BlockingEnd();
+  }
+
   return dwCheck;
 }
 

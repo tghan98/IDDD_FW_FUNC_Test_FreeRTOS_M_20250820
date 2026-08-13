@@ -29,6 +29,9 @@
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 int32_t hsDEBUG_UART_CLI_App_Config(void);
+int32_t hsDEBUG_UART_TX_BlockingStart(void);
+int32_t hsDEBUG_UART_TX_BlockingString(char *p_uStringData);
+void hsDEBUG_UART_TX_BlockingEnd(void);
 
 
 #endif /* __hsDEBUG_UART_CLI_App_H */

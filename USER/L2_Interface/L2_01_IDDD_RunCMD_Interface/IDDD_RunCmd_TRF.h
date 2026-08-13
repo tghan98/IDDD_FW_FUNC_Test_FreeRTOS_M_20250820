@@ -52,6 +52,9 @@ int32_t IDDD_RunCmd_TRF_Real2Cycle(void);
 //실측 검증 2-cycle (ON1 측정 후 100ms 대기 뒤 ON2 분리 측정)
 int32_t IDDD_RunCmd_TRF_Real2Cycle_Gap100ms(void);
 
+//Stage8 실측 버스트 (OFF+150us 100샘플 DMA 버스트)
+int32_t IDDD_RunCmd_TRF_Real_Burst(void);
+
  
 //DBA Interface
 int32_t IDDD_OPT_LED_CurrentData_Write_Interface(uint32_t dwCh, uint32_t dwWriteData);
