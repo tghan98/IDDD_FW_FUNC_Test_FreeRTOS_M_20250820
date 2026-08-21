@@ -620,9 +620,10 @@ int32_t IDDD_RunCmd_TRF_Real_Burst(void)
 
   IDDD_PD_ADC_Channel_Select(dwOptCh);
 
-  // 3) 완전 OFF 상태로 시작
+  // 3) 완전 OFF 상태로 시작 (nONOFF active LOW: SET = LED OFF)
   IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
-  TRF_SequenceSignal_SetLow();
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);
 
   // 4) TIM3 free counter 시작 (1us tick)
   IDDD_TRF_MeasTimer_Init();
@@ -728,9 +729,9 @@ BURST_EXIT:
 
   IDDD_TRF_Meas_Mode_CTRL(RESET);
   IDDD_PD_ADC_DMA_Stop();
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);   /* LED OFF 보장 */
-  TRF_SequenceSignal_SetLow();
   IDDD_LED_Channel_Select(OPT_LED_CH_OFF);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);   /* nONOFF HIGH = LED OFF 확정 */
   IDDD_TRF_MeasTimer_Stop();
   IDDD_PD_ADC_Unlock();
   IDDD_PD_ADC_Channel_Select(OPT_PD_ADC_CH_REG);
